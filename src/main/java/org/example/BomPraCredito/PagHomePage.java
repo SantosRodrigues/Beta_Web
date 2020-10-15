@@ -17,7 +17,7 @@ public class PagHomePage {
     private WebElement btnContinuar;
     private WebElement btnOfertas;
 
-    public void preencherDados(){
+    public void preencherDados() {
         btnValor = getDriver().findElement(By.cssSelector("#btnTwoThousand"));
         btnQtdParcelas = getDriver().findElement(By.cssSelector("#btnNineTerm"));
         inpNomeCompleto = getDriver().findElement(By.cssSelector("#name"));
@@ -35,13 +35,11 @@ public class PagHomePage {
 
     }
 
-
-
-    public static boolean aguardar(){
-        try{
-          getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Voltar']")));
+    public boolean aguardar() {
+        try {
+            getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Voltar']")));
             return true;
-        }catch (TimeoutException e){
+        } catch (TimeoutException e) {
             return false;
         }
 

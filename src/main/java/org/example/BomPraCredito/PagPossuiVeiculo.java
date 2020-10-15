@@ -5,14 +5,14 @@ import org.openqa.selenium.WebElement;
 
 import static org.example.WebDriverAcoes.getDriver;
 
-public class PagMotivoEmprestimo {
+public class PagPossuiVeiculo {
 
     private PagHomePage homePage;
-    private WebElement btnOutrosMotivos;
+    private WebElement btnNaoPossui;
 
-    public void escolherMotivo() {
-        btnOutrosMotivos = getDriver().findElement(By.xpath("//span[text()='Outro ']"));
-        btnOutrosMotivos.click();
+    public void escolherPossuiVeiculo() {
+        btnNaoPossui = getDriver().findElement(By.cssSelector(".sc-Axmtr.brgfRr"));
+        btnNaoPossui.click();
     }
 
     public boolean aguardar() {
