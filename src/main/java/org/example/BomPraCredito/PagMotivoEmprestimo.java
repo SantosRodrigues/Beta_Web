@@ -9,22 +9,21 @@ import static org.example.WebDriverAcoes.getWait;
 
 public class PagMotivoEmprestimo {
 
-    private PagHomePage homePage = new PagHomePage();
-
+    private PagHomePage homePage;
     private WebElement btnOutrosMotivos;
 
     public void escolherMotivo() {
-
         btnOutrosMotivos = getDriver().findElement(By.xpath("//span[text()='Outro ']"));
         btnOutrosMotivos.click();
     }
 
     public boolean aguardar() {
-        try{
+        try {
             getWait().until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".sc-Axmtr.dHxBdi > [src='./static/media/no.6dc4fcf6.svg']")));
             return true;
-        }catch(Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
 }
+

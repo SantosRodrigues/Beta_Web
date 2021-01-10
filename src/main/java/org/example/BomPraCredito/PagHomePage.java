@@ -35,7 +35,8 @@ public class PagHomePage {
 
     }
 
-    public static boolean aguardar() {
+
+    public boolean aguardar() {
         try {
             getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Voltar']")));
             return true;

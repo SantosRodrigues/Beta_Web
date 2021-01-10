@@ -1,13 +1,11 @@
 package org.example;
 
-import static org.example.WebDriverAcoes.getDriver;
-import static org.junit.Assert.assertTrue;
 
 import org.example.BomPraCredito.PagHomePage;
 import org.example.BomPraCredito.PagMotivoEmprestimo;
 import org.example.BomPraCredito.PagPossueVeiculo;
-import org.junit.After;
 import org.junit.Assert;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,8 +18,8 @@ public class Runner {
 
     @Before
     public void iniciarTeste() {
-    WebDriverAcoes driverAcoes = new WebDriverAcoes();
-    driverAcoes.inicalizarDriverChrome();
+        WebDriverAcoes driverAcoes = new WebDriverAcoes();
+        driverAcoes.iniciarNavegador("chrome");
     }
 
     @Test
@@ -36,10 +34,12 @@ public class Runner {
         Assert.assertTrue(motivoEmprestimo.aguardar());
         possueVeiculo.escolherNaoPossouVeiculo();
         Assert.assertTrue(possueVeiculo.aguardar());
+
     }
 
     @After
     public void encerrarTeste() {
 //        getDriver().quit();
+
     }
 }
