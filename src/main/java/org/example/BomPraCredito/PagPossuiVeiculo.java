@@ -10,12 +10,12 @@ import static org.example.WebDriverAcoes.getWait;
 public class PagPossuiVeiculo {
 
 
-    private WebElement naoPossouVeiculo;
+    private WebElement btnNaoPossouVeiculo;
 
     public void escolherNaoPossouVeiculo(){
 
-        naoPossouVeiculo = getDriver().findElement(By.cssSelector(".sc-Axmtr.dHxBdi > [src='./static/media/no.6dc4fcf6.svg']"));
-        naoPossouVeiculo.click();
+        btnNaoPossouVeiculo = getDriver().findElement(By.cssSelector(".sc-Axmtr.dHxBdi > [src='./static/media/no.6dc4fcf6.svg']"));
+        btnNaoPossouVeiculo.click();
     }
 
     public boolean aguardar(){

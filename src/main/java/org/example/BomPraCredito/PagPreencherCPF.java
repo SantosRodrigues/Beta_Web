@@ -1,6 +1,5 @@
 package org.example.BomPraCredito;
 
-import org.example.GeradorDeCpf;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,17 +10,17 @@ import static org.example.WebDriverAcoes.getWait;
 
 public class PagPreencherCPF {
 
-    private WebElement cpf;
-    private WebElement proximo;
+    private WebElement lblCpf;
+    private WebElement btnProximo;
 
     public void preencherCPF(){
 
-        cpf = getDriver().findElement(By.cssSelector(".sc-fzoLsD.gdXpyc"));
+        lblCpf = getDriver().findElement(By.cssSelector(".sc-fzoLsD.gdXpyc"));
         getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='cpf']")));
-        proximo = getDriver().findElement(By.cssSelector(".sc-AxhUy.sc-AxgMl.bidPMB"));
+        btnProximo = getDriver().findElement(By.cssSelector(".sc-AxhUy.sc-AxgMl.bidPMB"));
 
-        cpf.sendKeys(cpf());
-        proximo.click();
+        lblCpf.sendKeys(cpf());
+        btnProximo.click();
     }
 
     public boolean aguardar(){
