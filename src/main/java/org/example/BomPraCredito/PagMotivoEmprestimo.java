@@ -9,7 +9,6 @@ import static org.example.WebDriverAcoes.getWait;
 
 public class PagMotivoEmprestimo {
 
-    private PagHomePage homePage;
     private WebElement btnOutrosMotivos;
 
     public void escolherMotivo() {

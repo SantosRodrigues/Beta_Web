@@ -6,10 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-<<<<<<< HEAD
-=======
-        <module name="BetaGitLab" />
->>>>>>> a0d366a36ec9a099b6b7828b8deff376857eb5be
         <module name="Beta" />
       </profile>
     </annotationProcessing>

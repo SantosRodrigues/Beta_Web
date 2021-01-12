@@ -1,20 +1,18 @@
 package org.example;
 
-
-import org.example.BomPraCredito.PagHomePage;
-import org.example.BomPraCredito.PagMotivoEmprestimo;
-import org.example.BomPraCredito.PagPossueVeiculo;
+import org.example.BomPraCredito.*;
 import org.junit.Assert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-
 public class Runner {
 
     private PagHomePage homePage;
     private PagMotivoEmprestimo motivoEmprestimo;
-    private PagPossueVeiculo possueVeiculo;
+    private PagPossuiVeiculo possuiVeiculo;
+    private PagPossuiImovel possuiImovel;
+    private PagPreencherCPF preencherCPF;
 
     @Before
     public void iniciarTeste() {
@@ -26,20 +24,24 @@ public class Runner {
     public void execucaoDoTeste() {
         homePage = new PagHomePage();
         motivoEmprestimo = new PagMotivoEmprestimo();
-        possueVeiculo = new PagPossueVeiculo();
+        possuiVeiculo = new PagPossuiVeiculo();
+        possuiImovel = new PagPossuiImovel();
+        preencherCPF = new PagPreencherCPF();
 
         homePage.preencherDados();
         Assert.assertTrue(homePage.aguardar());
         motivoEmprestimo.escolherMotivo();
         Assert.assertTrue(motivoEmprestimo.aguardar());
-        possueVeiculo.escolherNaoPossouVeiculo();
-        Assert.assertTrue(possueVeiculo.aguardar());
-
+        possuiVeiculo.escolherNaoPossouVeiculo();
+        Assert.assertTrue(possuiVeiculo.aguardar());
+        possuiImovel.escolherNaoPossouVeiculo();
+        Assert.assertTrue(possuiImovel.aguardar());
+        preencherCPF.preencherCPF();
+        Assert.assertTrue(preencherCPF.aguardar());
     }
 
     @After
     public void encerrarTeste() {
 //        getDriver().quit();
-
     }
 }

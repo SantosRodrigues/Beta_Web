@@ -1,10 +1,12 @@
 package org.example.BomPraCredito;
 
+import org.example.GeradorDeCpf;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import static org.example.GeradorDeCpf.cpf;
 import static org.example.WebDriverAcoes.getDriver;
 import static org.example.WebDriverAcoes.getWait;
 
@@ -27,7 +29,7 @@ public class PagHomePage {
 
 
         btnValor.click();
-        inpEmail.sendKeys("456465454646545@gmail.com");
+        inpEmail.sendKeys(cpf() + "@gmail.com");
         inpNomeCompleto.sendKeys("Ricador Silva");
         btnQtdParcelas.click();
         btnOfertas.click();
