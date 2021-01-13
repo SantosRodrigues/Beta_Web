@@ -1,7 +1,8 @@
 package org.example.BomPraCredito;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static org.example.WebDriverAcoes.getDriver;
@@ -9,19 +10,24 @@ import static org.example.WebDriverAcoes.getWait;
 
 public class PagPossuiImovel {
 
+    public PagPossuiImovel() {
+        PageFactory.initElements(getDriver(), this);
+    }
+
+    @FindBy(css = "[class='sc-Axmtr dHxBdi'] > [src='./static/media/no.6dc4fcf6.svg']")
     private WebElement btnNaoPossouImovel;
+    @FindBy(xpath = "//input[@name='cpf']")
+    private WebElement lblCpf;
 
-    public void escolherNaoPossouVeiculo(){
-
-        btnNaoPossouImovel = getDriver().findElement(By.cssSelector("[class='sc-Axmtr dHxBdi'] > [src='./static/media/no.6dc4fcf6.svg']"));
+    public void escolherNaoPossouVeiculo() {
         btnNaoPossouImovel.click();
     }
 
-    public boolean aguardar(){
-        try{
-            getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='cpf']")));
+    public boolean aguardar() {
+        try {
+            getWait().until(ExpectedConditions.visibilityOf(lblCpf));
             return true;
-        }catch(Exception e){
+        } catch (Exception e) {
             return false;
         }
     }

@@ -37,7 +37,6 @@ public class Runner {
         possuiImovel.escolherNaoPossouVeiculo();
         Assert.assertTrue(possuiImovel.aguardar());
         preencherCPF.preencherCPF();
-        Assert.assertTrue(preencherCPF.aguardar());
     }
 
     @After

@@ -1,29 +1,25 @@
 package org.example.BomPraCredito;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import static org.example.GeradorDeCpf.cpf;
 import static org.example.WebDriverAcoes.getDriver;
-import static org.example.WebDriverAcoes.getWait;
 
 public class PagPreencherCPF {
 
-    private WebElement lblCpf;
-    private WebElement btnProximo;
-
-    public void preencherCPF(){
-
-        lblCpf = getDriver().findElement(By.cssSelector(".sc-fzoLsD.gdXpyc"));
-        getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='cpf']")));
-        btnProximo = getDriver().findElement(By.cssSelector(".sc-AxhUy.sc-AxgMl.bidPMB"));
-
-        lblCpf.sendKeys(cpf());
-        btnProximo.click();
+    public PagPreencherCPF() {
+        PageFactory.initElements(getDriver(), this);
     }
 
-    public boolean aguardar(){
-        return true;
+    @FindBy(css = ".sc-AxhUy.sc-AxgMl.bidPMB")
+    private WebElement btnProximo;
+    @FindBy(xpath = "//input[@name='cpf']")
+    private WebElement lblCpf;
+
+    public void preencherCPF() {
+        lblCpf.sendKeys(cpf());
+        btnProximo.click();
     }
 }
