@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.example.WebDriverAcoes.getDriver;
+
 public class Runner {
 
     private PagHomePage homePage;
@@ -13,6 +15,7 @@ public class Runner {
     private PagPossuiVeiculo possuiVeiculo;
     private PagPossuiImovel possuiImovel;
     private PagPreencherCPF preencherCPF;
+    private Pag4devs pag4devs;
 
     @Before
     public void iniciarTeste() {
@@ -28,6 +31,7 @@ public class Runner {
         possuiImovel = new PagPossuiImovel();
         preencherCPF = new PagPreencherCPF();
 
+
         homePage.preencherDados();
         Assert.assertTrue(homePage.aguardar());
         motivoEmprestimo.escolherMotivo();
@@ -36,11 +40,13 @@ public class Runner {
         Assert.assertTrue(possuiVeiculo.aguardar());
         possuiImovel.escolherNaoPossouVeiculo();
         Assert.assertTrue(possuiImovel.aguardar());
+        pag4devs = new Pag4devs();
+        pag4devs.coletarCpfSemPontuacao();
         preencherCPF.preencherCPF();
     }
 
     @After
     public void encerrarTeste() {
-//        getDriver().quit();
+        getDriver().quit();
     }
 }

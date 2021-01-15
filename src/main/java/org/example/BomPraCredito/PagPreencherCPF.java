@@ -1,25 +1,25 @@
 package org.example.BomPraCredito;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import static org.example.GeradorDeCpf.cpf;
-import static org.example.WebDriverAcoes.getDriver;
+import static org.example.WebDriverAcoes.*;
 
 public class PagPreencherCPF {
 
-    public PagPreencherCPF() {
-        PageFactory.initElements(getDriver(), this);
-    }
-
-    @FindBy(css = ".sc-AxhUy.sc-AxgMl.bidPMB")
-    private WebElement btnProximo;
-    @FindBy(xpath = "//input[@name='cpf']")
     private WebElement lblCpf;
+    private WebElement btnProximo;
 
-    public void preencherCPF() {
-        lblCpf.sendKeys(cpf());
+
+    public void preencherCPF(){
+        getWait().until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".sc-fzoLsD.gdXpyc")));
+        lblCpf = getDriver().findElement(By.cssSelector(".sc-fzoLsD.gdXpyc"));
+        lblCpf.sendKeys(Keys.CONTROL, "v");
+
+        getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='cpf']")));
+        btnProximo = getDriver().findElement(By.cssSelector(".sc-AxhUy.sc-AxgMl.bidPMB"));
         btnProximo.click();
     }
 }

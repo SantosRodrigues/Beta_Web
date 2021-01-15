@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class WebDriverAcoes {
     private static WebDriver driver;
     private static WebDriverWait wait;
+    private static WebDriver driver4Devs;
+    private static WebDriverWait wait4Devs;
 
     public void iniciarNavegador(String navegador) {
         switch (navegador) {
@@ -28,12 +30,27 @@ public class WebDriverAcoes {
     }
 
 
+    public static void abrirPagina4devsCPF(){
+        driver4Devs = new ChromeDriver();
+        driver4Devs.manage().window().maximize();
+        driver4Devs.get("https://www.4devs.com.br/gerador_de_cpf");
+        wait4Devs = new WebDriverWait(driver4Devs,30);
+    }
+
     public static WebDriver getDriver() {
         return driver;
     }
 
     public static WebDriverWait getWait() {
         return wait;
+    }
+
+    public static WebDriver getDriver4Devs() {
+        return driver4Devs;
+    }
+
+    public static WebDriverWait getWait4Devs() {
+        return wait4Devs;
     }
 
 }
