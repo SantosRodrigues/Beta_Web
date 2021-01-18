@@ -1,6 +1,7 @@
-package org.example;
+package org.example.Runner;
 
 import org.example.BomPraCredito.*;
+import org.example.WebDriverAcoes;
 import org.junit.Assert;
 import org.junit.After;
 import org.junit.Before;
