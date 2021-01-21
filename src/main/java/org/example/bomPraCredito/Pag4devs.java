@@ -1,4 +1,4 @@
-package org.example.BomPraCredito;
+package org.example.bomPraCredito;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -16,7 +16,7 @@ public class Pag4devs {
     private WebElement btnGerarCPF;
     private WebElement spnCopiar;
 
-    public void coletarCpfSemPontuacao() {
+    public void gerarCpfSemPontuacao() {
         getWait4Devs().until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[id='pontuacao_nao']")));
         inpSemPontuacao = getDriver4Devs().findElement(By.cssSelector("[id='pontuacao_nao']"));
         inpSemPontuacao.click();
@@ -24,11 +24,19 @@ public class Pag4devs {
         btnGerarCPF = getDriver4Devs().findElement(By.cssSelector("#bt_gerar_cpf"));
         btnGerarCPF.click();
 
+
+
+    }
+    public void copiarCpf(){
         spnCopiar = getWait4Devs().until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".clipboard-copy")));
         spnCopiar = getDriver4Devs().findElement(By.cssSelector(".clipboard-copy"));
         spnCopiar.click();
-        getDriver4Devs().quit();
 
     }
+
+    public void encerrarPagina4devs(){
+        getDriver4Devs().quit();
+    }
+
 
 }

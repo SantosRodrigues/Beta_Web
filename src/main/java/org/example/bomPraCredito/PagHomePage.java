@@ -1,6 +1,5 @@
-package org.example.BomPraCredito;
+package org.example.bomPraCredito;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -44,34 +43,54 @@ public class PagHomePage {
 
     Random random = new Random();
 
-    public void preencherDados() {
-        inpEmail.sendKeys(cpf() + "@gmail.com");
-        inpNomeCompleto.sendKeys("Ricador Silva");
+    public void preencherDados(String nome, String email, String parcelas) {
+        inpEmail.sendKeys(email);
+        inpNomeCompleto.sendKeys(nome);
         btnValor.click();
+
 
         for (int i = 0; i < 1; i++) {
             numeroRandom = random.nextInt(4);
         }
 
-        switch (numeroRandom) {
-            case 0:
+        switch (parcelas) {
+            case "12":
                 btnQtdParcelas12.click();
                 break;
-
-            case 1:
+            case "9":
                 btnQtdParcelas9.click();
                 break;
-            case 2:
+            case "18":
                 btnQtdParcelas18.click();
                 break;
-            case 3:
+            case "24":
                 btnQtdParcelas24.click();
                 break;
             default:
-                System.err.println("Houve um problema com a escolha da quantidade de parcelas, reveja o for.");
-                break;
+                switch (numeroRandom) {
+                    case 0:
+                        btnQtdParcelas12.click();
+                        break;
+                    case 1:
+                        btnQtdParcelas9.click();
+                        break;
+                    case 2:
+                        btnQtdParcelas18.click();
+                        break;
+                    case 3:
+                        btnQtdParcelas24.click();
+                        break;
+                }
+            {
+
+            }
         }
+
         btnOfertas.click();
+
+    }
+
+    public void avancar(){
         btnContinuar.click();
     }
 

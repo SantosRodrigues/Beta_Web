@@ -1,4 +1,4 @@
-package org.example.BomPraCredito;
+package org.example.bomPraCredito;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

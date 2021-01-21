@@ -1,4 +1,4 @@
-package org.example.BomPraCredito;
+package org.example.bomPraCredito;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -13,13 +13,23 @@ public class PagPreencherCPF {
     private WebElement btnProximo;
 
 
-    public void preencherCPF(){
+    public void preencherCPF() {
         getWait().until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".sc-fzoLsD.gdXpyc")));
         lblCpf = getDriver().findElement(By.cssSelector(".sc-fzoLsD.gdXpyc"));
         lblCpf.sendKeys(Keys.CONTROL, "v");
 
         getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='cpf']")));
         btnProximo = getDriver().findElement(By.cssSelector(".sc-AxhUy.sc-AxgMl.bidPMB"));
-        btnProximo.click();
+
     }
+
+    public boolean avancar() {
+        try {
+            btnProximo.click();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
 }

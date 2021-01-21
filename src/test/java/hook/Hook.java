@@ -1,18 +1,18 @@
-package org.example.Hook;
+package hook;
 
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import org.example.WebDriverAcoes;
-import org.junit.After;
-import org.junit.Before;
 
 public class Hook extends WebDriverAcoes {
 
-        private WebDriverAcoes driverAcoes = new WebDriverAcoes();
+
 
         @Before
         public void Before(){
-            driverAcoes.iniciarNavegador("chrome");
-
+            iniciarNavegador("chrome");
         }
+
         @After
         public void After(){
             getDriver().quit();
