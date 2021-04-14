@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/features/",
+        features = "classpath:features",
         glue = {"bomPraCredito","hook"},
         tags = {"@NovoClienteSucesso4devs"},
         plugin = {
