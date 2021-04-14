@@ -8,24 +8,24 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import static org.example.webDriverAcoes.WebDriverAcoes.getDriver;
 import static org.example.webDriverAcoes.WebDriverAcoes.getWait;
 
-public class PagPossuiImovel {
+public class PagPossuiVeiculoPO {
 
-    public PagPossuiImovel() {
+    public PagPossuiVeiculoPO() {
         PageFactory.initElements(getDriver(), this);
     }
 
+    @FindBy(css = ".sc-Axmtr.dHxBdi > [src='./static/media/no.6dc4fcf6.svg']")
+    private WebElement btnNaoPossouVeiculo;
     @FindBy(css = "[class='sc-Axmtr dHxBdi'] > [src='./static/media/no.6dc4fcf6.svg']")
     private WebElement btnNaoPossouImovel;
-    @FindBy(xpath = "//input[@name='cpf']")
-    private WebElement lblCpf;
 
     public void escolherNaoPossouVeiculo() {
-        btnNaoPossouImovel.click();
+        btnNaoPossouVeiculo.click();
     }
 
     public boolean aguardar() {
         try {
-            getWait().until(ExpectedConditions.visibilityOf(lblCpf));
+            getWait().until(ExpectedConditions.visibilityOf(btnNaoPossouImovel));
             return true;
         } catch (Exception e) {
             return false;

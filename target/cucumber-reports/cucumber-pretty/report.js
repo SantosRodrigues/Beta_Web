@@ -161,7 +161,7 @@ formatter.examples({
   "keyword": "Exemplos"
 });
 formatter.before({
-  "duration": 7881373200,
+  "duration": 8029897900,
   "status": "passed"
 });
 formatter.scenario({
@@ -292,24 +292,24 @@ formatter.step({
   "keyword": "Entao "
 });
 formatter.match({
-  "location": "NovoCliente.preencho_as_seguintes_informacoes(DataTable)"
+  "location": "NovoClienteStepDef.preencho_as_seguintes_informacoes(DataTable)"
 });
 formatter.result({
-  "duration": 925957100,
+  "duration": 1121266800,
   "status": "passed"
 });
 formatter.match({
-  "location": "NovoCliente.clico_no_botao_continuar_sem_custo_e_sem_compromisso()"
+  "location": "NovoClienteStepDef.clico_no_botao_continuar_sem_custo_e_sem_compromisso()"
 });
 formatter.result({
-  "duration": 108021000,
+  "duration": 121946100,
   "status": "passed"
 });
 formatter.match({
-  "location": "NovoCliente.aguardo_o_carregamento_da_tela_de_motivo_do_emprestimo()"
+  "location": "NovoClienteStepDef.aguardo_o_carregamento_da_tela_de_motivo_do_emprestimo()"
 });
 formatter.result({
-  "duration": 2979215900,
+  "duration": 2625207400,
   "status": "passed"
 });
 formatter.match({
@@ -319,17 +319,17 @@ formatter.match({
       "offset": 13
     }
   ],
-  "location": "NovoCliente.seleciono_o_motivo_do_emprestimo(String)"
+  "location": "NovoClienteStepDef.seleciono_o_motivo_do_emprestimo(String)"
 });
 formatter.result({
-  "duration": 170493600,
+  "duration": 180789900,
   "status": "passed"
 });
 formatter.match({
-  "location": "NovoCliente.aguardo_o_carregamento_da_tela_de_possui_veiculo()"
+  "location": "NovoClienteStepDef.aguardo_o_carregamento_da_tela_de_possui_veiculo()"
 });
 formatter.result({
-  "duration": 1161312300,
+  "duration": 1165980900,
   "status": "passed"
 });
 formatter.match({
@@ -339,17 +339,17 @@ formatter.match({
       "offset": 44
     }
   ],
-  "location": "NovoCliente.seleciono_uma_altenativa_na_tela_de_possui_veiculo(String)"
+  "location": "NovoClienteStepDef.seleciono_uma_altenativa_na_tela_de_possui_veiculo(String)"
 });
 formatter.result({
-  "duration": 134370100,
+  "duration": 135470000,
   "status": "passed"
 });
 formatter.match({
-  "location": "NovoCliente.aguardo_o_carregamento_da_tela_possui_imovel()"
+  "location": "NovoClienteStepDef.aguardo_o_carregamento_da_tela_possui_imovel()"
 });
 formatter.result({
-  "duration": 1170761100,
+  "duration": 1151877500,
   "status": "passed"
 });
 formatter.match({
@@ -359,63 +359,63 @@ formatter.match({
       "offset": 45
     }
   ],
-  "location": "NovoCliente.seleciono_uma_alternativa_na_tela_de_possui_imovel(String)"
+  "location": "NovoClienteStepDef.seleciono_uma_alternativa_na_tela_de_possui_imovel(String)"
 });
 formatter.result({
-  "duration": 138191800,
+  "duration": 128101200,
   "status": "passed"
 });
 formatter.match({
-  "location": "NovoCliente.aguardo_o_carregamento_da_tela_de_cpf()"
+  "location": "NovoClienteStepDef.aguardo_o_carregamento_da_tela_de_cpf()"
 });
 formatter.result({
-  "duration": 1147695200,
+  "duration": 1188383100,
   "status": "passed"
 });
 formatter.match({
-  "location": "NovoCliente.acesso_o_site_do_devs()"
+  "location": "NovoClienteStepDef.acesso_o_site_do_devs()"
 });
 formatter.result({
-  "duration": 4586411800,
+  "duration": 4297516700,
   "status": "passed"
 });
 formatter.match({
-  "location": "NovoCliente.solicito_a_geracao_de_um_novo_cpf()"
+  "location": "NovoClienteStepDef.solicito_a_geracao_de_um_novo_cpf()"
 });
 formatter.result({
-  "duration": 468505300,
+  "duration": 883084800,
   "status": "passed"
 });
 formatter.match({
-  "location": "NovoCliente.copio_o_cpf_gerado()"
+  "location": "NovoClienteStepDef.copio_o_cpf_gerado()"
 });
 formatter.result({
-  "duration": 2624615800,
+  "duration": 766922600,
   "status": "passed"
 });
 formatter.match({
-  "location": "NovoCliente.encerro_a_pagina_do_devs()"
+  "location": "NovoClienteStepDef.encerro_a_pagina_do_devs()"
 });
 formatter.result({
-  "duration": 991586100,
+  "duration": 974354000,
   "status": "passed"
 });
 formatter.match({
-  "location": "NovoCliente.colo_o_documento_no_campo_cpf()"
+  "location": "NovoClienteStepDef.colo_o_documento_no_campo_cpf()"
 });
 formatter.result({
-  "duration": 229161100,
+  "duration": 218573700,
   "status": "passed"
 });
 formatter.match({
-  "location": "NovoCliente.clico_no_botao_continuar()"
+  "location": "NovoClienteStepDef.clico_no_botao_continuar()"
 });
 formatter.result({
-  "duration": 88255600,
+  "duration": 68816500,
   "status": "passed"
 });
 formatter.after({
-  "duration": 976626100,
+  "duration": 1006990200,
   "status": "passed"
 });
 });
