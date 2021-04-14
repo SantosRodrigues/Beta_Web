@@ -1,17 +1,15 @@
-package bomPraCredito;
+package org.example.bomPraCredito;
 
 import cucumber.api.DataTable;
 import cucumber.api.java.pt.Dado;
-import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
-import org.example.WebDriverAcoes;
-import org.example.bomPraCredito.*;
+import org.example.webDriverAcoes.WebDriverAcoes;
 import org.junit.Assert;
 
 import java.util.List;
 import java.util.Map;
 
-import static org.example.GeradorDeCpf.cpf;
+import static org.example.geradorDeCpf.GeradorDeCpf.cpf;
 
 public class NovoCliente {
 

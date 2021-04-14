@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Novo Cliente - BomPracredito.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("features/Novo Cliente - BomPracredito.feature");
 formatter.feature({
   "comments": [
     {
@@ -161,7 +161,7 @@ formatter.examples({
   "keyword": "Exemplos"
 });
 formatter.before({
-  "duration": 10159065500,
+  "duration": 7881373200,
   "status": "passed"
 });
 formatter.scenario({
@@ -295,21 +295,21 @@ formatter.match({
   "location": "NovoCliente.preencho_as_seguintes_informacoes(DataTable)"
 });
 formatter.result({
-  "duration": 857763700,
+  "duration": 925957100,
   "status": "passed"
 });
 formatter.match({
   "location": "NovoCliente.clico_no_botao_continuar_sem_custo_e_sem_compromisso()"
 });
 formatter.result({
-  "duration": 96282600,
+  "duration": 108021000,
   "status": "passed"
 });
 formatter.match({
   "location": "NovoCliente.aguardo_o_carregamento_da_tela_de_motivo_do_emprestimo()"
 });
 formatter.result({
-  "duration": 2798385100,
+  "duration": 2979215900,
   "status": "passed"
 });
 formatter.match({
@@ -322,14 +322,14 @@ formatter.match({
   "location": "NovoCliente.seleciono_o_motivo_do_emprestimo(String)"
 });
 formatter.result({
-  "duration": 137416300,
+  "duration": 170493600,
   "status": "passed"
 });
 formatter.match({
   "location": "NovoCliente.aguardo_o_carregamento_da_tela_de_possui_veiculo()"
 });
 formatter.result({
-  "duration": 1120091200,
+  "duration": 1161312300,
   "status": "passed"
 });
 formatter.match({
@@ -342,14 +342,14 @@ formatter.match({
   "location": "NovoCliente.seleciono_uma_altenativa_na_tela_de_possui_veiculo(String)"
 });
 formatter.result({
-  "duration": 110225200,
+  "duration": 134370100,
   "status": "passed"
 });
 formatter.match({
   "location": "NovoCliente.aguardo_o_carregamento_da_tela_possui_imovel()"
 });
 formatter.result({
-  "duration": 1101250900,
+  "duration": 1170761100,
   "status": "passed"
 });
 formatter.match({
@@ -362,60 +362,60 @@ formatter.match({
   "location": "NovoCliente.seleciono_uma_alternativa_na_tela_de_possui_imovel(String)"
 });
 formatter.result({
-  "duration": 99472000,
+  "duration": 138191800,
   "status": "passed"
 });
 formatter.match({
   "location": "NovoCliente.aguardo_o_carregamento_da_tela_de_cpf()"
 });
 formatter.result({
-  "duration": 1100589400,
+  "duration": 1147695200,
   "status": "passed"
 });
 formatter.match({
   "location": "NovoCliente.acesso_o_site_do_devs()"
 });
 formatter.result({
-  "duration": 10727180500,
+  "duration": 4586411800,
   "status": "passed"
 });
 formatter.match({
   "location": "NovoCliente.solicito_a_geracao_de_um_novo_cpf()"
 });
 formatter.result({
-  "duration": 212466000,
+  "duration": 468505300,
   "status": "passed"
 });
 formatter.match({
   "location": "NovoCliente.copio_o_cpf_gerado()"
 });
 formatter.result({
-  "duration": 648147500,
+  "duration": 2624615800,
   "status": "passed"
 });
 formatter.match({
   "location": "NovoCliente.encerro_a_pagina_do_devs()"
 });
 formatter.result({
-  "duration": 988019500,
+  "duration": 991586100,
   "status": "passed"
 });
 formatter.match({
   "location": "NovoCliente.colo_o_documento_no_campo_cpf()"
 });
 formatter.result({
-  "duration": 183449100,
+  "duration": 229161100,
   "status": "passed"
 });
 formatter.match({
   "location": "NovoCliente.clico_no_botao_continuar()"
 });
 formatter.result({
-  "duration": 72767200,
+  "duration": 88255600,
   "status": "passed"
 });
 formatter.after({
-  "duration": 736568100,
+  "duration": 976626100,
   "status": "passed"
 });
 });

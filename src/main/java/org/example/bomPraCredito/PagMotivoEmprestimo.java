@@ -5,8 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import static org.example.WebDriverAcoes.getDriver;
-import static org.example.WebDriverAcoes.getWait;
+import static org.example.webDriverAcoes.WebDriverAcoes.getDriver;
+import static org.example.webDriverAcoes.WebDriverAcoes.getWait;
 
 public class PagMotivoEmprestimo {
 

@@ -5,7 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import static org.example.WebDriverAcoes.*;
+import static org.example.webDriverAcoes.WebDriverAcoes.*;
 
 public class PagPreencherCPF {
 

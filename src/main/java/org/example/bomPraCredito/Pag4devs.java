@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import static org.example.WebDriverAcoes.*;
+import static org.example.webDriverAcoes.WebDriverAcoes.*;
 
 public class Pag4devs {
 

@@ -1,5 +1,4 @@
-package runner;
-
+package org.example.runner;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -8,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "classpath:features",
-        glue = {"bomPraCredito","hook"},
+        glue = {"org.example"},
         tags = {"@NovoClienteSucesso4devs"},
         plugin = {
                 "pretty",
