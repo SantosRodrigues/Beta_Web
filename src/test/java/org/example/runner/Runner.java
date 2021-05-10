@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "classpath:features",
         glue = {"org.example"},
-        tags = {"@CTAmazon"},
+        tags = {"@NovoClienteSucesso4devs"},
         plugin = {
                 "pretty",
                 "html:target/cucumber-reports/cucumber-pretty"

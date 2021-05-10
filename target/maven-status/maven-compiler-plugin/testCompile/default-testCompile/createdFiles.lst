@@ -1,3 +1,4 @@
 org\example\bomPraCredito\NovoClienteStepDef.class
 org\example\runner\Runner.class
+org\example\amazon\PesquisarProdutoStepDef.class
 org\example\hook\Hook.class

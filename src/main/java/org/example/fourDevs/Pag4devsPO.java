@@ -1,4 +1,4 @@
-package org.example.geradorDeCpf;
+package org.example.fourDevs;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

@@ -1,178 +1,449 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("features/amazon/Pesquisar produtos - Amazon.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("features/bomPraCredito/Novo Cliente - BomPracredito.feature");
 formatter.feature({
   "comments": [
     {
       "line": 1,
-      "value": "#language: pt"
+      "value": "# language: pt"
     }
   ],
   "line": 3,
-  "name": "Pesquisar lista de produto desejado",
+  "name": "Solicitação de emprestimo",
   "description": "",
-  "id": "pesquisar-lista-de-produto-desejado",
+  "id": "solicitação-de-emprestimo",
   "keyword": "Funcionalidade"
 });
 formatter.scenarioOutline({
-  "line": 8,
-  "name": "Pesquisar produto que esteja disponivel",
+  "line": 6,
+  "name": "Cenario: Novo cliente solicita credito com sucesso - Pegando CPF do 4Devs",
   "description": "",
-  "id": "pesquisar-lista-de-produto-desejado;pesquisar-produto-que-esteja-disponivel",
+  "id": "solicitação-de-emprestimo;cenario:-novo-cliente-solicita-credito-com-sucesso---pegando-cpf-do-4devs",
   "type": "scenario_outline",
   "keyword": "Esquema do Cenario",
   "tags": [
     {
-      "line": 7,
-      "name": "@CTAmazon"
+      "line": 5,
+      "name": "@NovoClienteSucesso4devs"
     }
   ]
 });
 formatter.step({
-  "line": 9,
-  "name": "que seja acessado o \"\u003csite\u003e\" da amazon",
+  "line": 7,
+  "name": "que eu acesse o \"\u003csite\u003e\"",
   "keyword": "Dado "
 });
 formatter.step({
-  "line": 10,
-  "name": "seja preenchida a barra de pesquisa com o nome do \"\u003cproduto\u003e\" que desejo procurar",
+  "line": 8,
+  "name": "preencho as seguintes informacoes",
+  "rows": [
+    {
+      "cells": [
+        "valor",
+        "parcelas",
+        "nome",
+        "email",
+        "aceitoTermo"
+      ],
+      "line": 9
+    },
+    {
+      "cells": [
+        "\u003cvalor\u003e",
+        "\u003cparcelas\u003e",
+        "\u003cnome\u003e",
+        "\u003cemail\u003e",
+        "\u003caceitoTermo\u003e"
+      ],
+      "line": 10
+    }
+  ],
   "keyword": "E "
 });
 formatter.step({
   "line": 11,
-  "name": "o botao de pesquisar e pressionado",
-  "keyword": "Quando "
+  "name": "clico no botao continuar sem custo e sem compromisso",
+  "keyword": "E "
 });
 formatter.step({
   "line": 12,
-  "name": "deve ser retornado o \"\u003cproduto\u003e\" pesquisado",
+  "name": "aguardo o carregamento da tela de motivo do emprestimo",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 13,
+  "name": "seleciono o \"\u003cmotivo\u003e\" do emprestimo",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 14,
+  "name": "aguardo o carregamento da tela de possui veiculo",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 15,
+  "name": "seleciono uma altenativa na tela de possui \"\u003cveiculo\u003e\"",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 16,
+  "name": "aguardo o carregamento da tela possui imovel",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 17,
+  "name": "seleciono uma alternativa na tela de possui \"\u003cimovel\u003e\"",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 18,
+  "name": "aguardo o carregamento da tela de cpf",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 19,
+  "name": "acesso o site do 4devs",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 20,
+  "name": "solicito a geracao de um novo cpf",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 21,
+  "name": "copio o cpf gerado",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 22,
+  "name": "encerro a pagina do fourdevs",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 23,
+  "name": "colo o documento no campo cpf",
+  "keyword": "Quando "
+});
+formatter.step({
+  "line": 24,
+  "name": "clico no botao continuar",
   "keyword": "Entao "
 });
 formatter.examples({
-  "line": 13,
+  "line": 25,
   "name": "",
   "description": "",
-  "id": "pesquisar-lista-de-produto-desejado;pesquisar-produto-que-esteja-disponivel;",
+  "id": "solicitação-de-emprestimo;cenario:-novo-cliente-solicita-credito-com-sucesso---pegando-cpf-do-4devs;",
   "rows": [
     {
       "cells": [
-        "produto",
-        "site"
+        "site",
+        "valor",
+        "parcelas",
+        "nome",
+        "email",
+        "aceitoTermo",
+        "motivo",
+        "veiculo",
+        "imovel"
       ],
-      "line": 14,
-      "id": "pesquisar-lista-de-produto-desejado;pesquisar-produto-que-esteja-disponivel;;1"
+      "line": 26,
+      "id": "solicitação-de-emprestimo;cenario:-novo-cliente-solicita-credito-com-sucesso---pegando-cpf-do-4devs;;1"
     },
     {
       "cells": [
-        "mi band",
-        "https://www.amazon.com.br/ref\u003dnav_logo"
+        "https://www.bompracredito.com.br",
+        "1500",
+        "12",
+        "marcos silva",
+        "auto",
+        "sim",
+        "outro",
+        "nao",
+        "nao"
       ],
-      "line": 15,
-      "id": "pesquisar-lista-de-produto-desejado;pesquisar-produto-que-esteja-disponivel;;2"
+      "line": 27,
+      "id": "solicitação-de-emprestimo;cenario:-novo-cliente-solicita-credito-com-sucesso---pegando-cpf-do-4devs;;2"
     }
   ],
   "keyword": "Exemplos"
 });
 formatter.before({
-  "duration": 2136352000,
+  "duration": 2135470400,
   "status": "passed"
 });
-formatter.background({
-  "line": 5,
-  "name": "Buscar pelo produto desejado para realizar a compra",
-  "description": "",
-  "type": "background",
-  "keyword": "Contexto"
-});
 formatter.scenario({
-  "line": 15,
-  "name": "Pesquisar produto que esteja disponivel",
+  "line": 27,
+  "name": "Cenario: Novo cliente solicita credito com sucesso - Pegando CPF do 4Devs",
   "description": "",
-  "id": "pesquisar-lista-de-produto-desejado;pesquisar-produto-que-esteja-disponivel;;2",
+  "id": "solicitação-de-emprestimo;cenario:-novo-cliente-solicita-credito-com-sucesso---pegando-cpf-do-4devs;;2",
   "type": "scenario",
   "keyword": "Esquema do Cenario",
   "tags": [
     {
-      "line": 7,
-      "name": "@CTAmazon"
+      "line": 5,
+      "name": "@NovoClienteSucesso4devs"
     }
   ]
 });
 formatter.step({
-  "line": 9,
-  "name": "que seja acessado o \"https://www.amazon.com.br/ref\u003dnav_logo\" da amazon",
+  "line": 7,
+  "name": "que eu acesse o \"https://www.bompracredito.com.br\"",
   "matchedColumns": [
-    1
+    0
   ],
   "keyword": "Dado "
 });
 formatter.step({
-  "line": 10,
-  "name": "seja preenchida a barra de pesquisa com o nome do \"mi band\" que desejo procurar",
+  "line": 8,
+  "name": "preencho as seguintes informacoes",
   "matchedColumns": [
-    0
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "rows": [
+    {
+      "cells": [
+        "valor",
+        "parcelas",
+        "nome",
+        "email",
+        "aceitoTermo"
+      ],
+      "line": 9
+    },
+    {
+      "cells": [
+        "1500",
+        "12",
+        "marcos silva",
+        "auto",
+        "sim"
+      ],
+      "line": 10
+    }
   ],
   "keyword": "E "
 });
 formatter.step({
   "line": 11,
-  "name": "o botao de pesquisar e pressionado",
-  "keyword": "Quando "
+  "name": "clico no botao continuar sem custo e sem compromisso",
+  "keyword": "E "
 });
 formatter.step({
   "line": 12,
-  "name": "deve ser retornado o \"mi band\" pesquisado",
+  "name": "aguardo o carregamento da tela de motivo do emprestimo",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 13,
+  "name": "seleciono o \"outro\" do emprestimo",
   "matchedColumns": [
-    0
+    6
   ],
+  "keyword": "E "
+});
+formatter.step({
+  "line": 14,
+  "name": "aguardo o carregamento da tela de possui veiculo",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 15,
+  "name": "seleciono uma altenativa na tela de possui \"nao\"",
+  "matchedColumns": [
+    7
+  ],
+  "keyword": "E "
+});
+formatter.step({
+  "line": 16,
+  "name": "aguardo o carregamento da tela possui imovel",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 17,
+  "name": "seleciono uma alternativa na tela de possui \"nao\"",
+  "matchedColumns": [
+    8
+  ],
+  "keyword": "E "
+});
+formatter.step({
+  "line": 18,
+  "name": "aguardo o carregamento da tela de cpf",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 19,
+  "name": "acesso o site do 4devs",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 20,
+  "name": "solicito a geracao de um novo cpf",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 21,
+  "name": "copio o cpf gerado",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 22,
+  "name": "encerro a pagina do fourdevs",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 23,
+  "name": "colo o documento no campo cpf",
+  "keyword": "Quando "
+});
+formatter.step({
+  "line": 24,
+  "name": "clico no botao continuar",
   "keyword": "Entao "
 });
 formatter.match({
   "arguments": [
     {
-      "val": "https://www.amazon.com.br/ref\u003dnav_logo",
-      "offset": 21
+      "val": "https://www.bompracredito.com.br",
+      "offset": 17
     }
   ],
-  "location": "PesquisarProdutoStepDef.que_seja_acessado_o_site_da_amazon(String)"
+  "location": "NovoClienteStepDef.que_eu_acesse_o_site(String)"
 });
 formatter.result({
-  "duration": 1415348300,
+  "duration": 2531215800,
+  "status": "passed"
+});
+formatter.match({
+  "location": "NovoClienteStepDef.preencho_as_seguintes_informacoes(DataTable)"
+});
+formatter.result({
+  "duration": 405142900,
+  "status": "passed"
+});
+formatter.match({
+  "location": "NovoClienteStepDef.clico_no_botao_continuar_sem_custo_e_sem_compromisso()"
+});
+formatter.result({
+  "duration": 48983100,
+  "status": "passed"
+});
+formatter.match({
+  "location": "NovoClienteStepDef.aguardo_o_carregamento_da_tela_de_motivo_do_emprestimo()"
+});
+formatter.result({
+  "duration": 2341271200,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "mi band",
-      "offset": 51
+      "val": "outro",
+      "offset": 13
     }
   ],
-  "location": "PesquisarProdutoStepDef.seja_preenchida_a_barra_de_pesquisa_com_o_nome_do_produto_que_desejo_procurar(String)"
+  "location": "NovoClienteStepDef.seleciono_o_motivo_do_emprestimo(String)"
 });
 formatter.result({
-  "duration": 190834600,
+  "duration": 112431200,
   "status": "passed"
 });
 formatter.match({
-  "location": "PesquisarProdutoStepDef.o_botao_de_pesquisar_e_pressionado()"
+  "location": "NovoClienteStepDef.aguardo_o_carregamento_da_tela_de_possui_veiculo()"
 });
 formatter.result({
-  "duration": 1429279000,
+  "duration": 1106373900,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "mi band",
-      "offset": 22
+      "val": "nao",
+      "offset": 44
     }
   ],
-  "location": "PesquisarProdutoStepDef.deve_ser_retornado_o_produto_pesquisado(String)"
+  "location": "NovoClienteStepDef.seleciono_uma_altenativa_na_tela_de_possui_veiculo(String)"
 });
 formatter.result({
-  "duration": 1673616400,
+  "duration": 61103500,
+  "status": "passed"
+});
+formatter.match({
+  "location": "NovoClienteStepDef.aguardo_o_carregamento_da_tela_possui_imovel()"
+});
+formatter.result({
+  "duration": 1122486600,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "nao",
+      "offset": 45
+    }
+  ],
+  "location": "NovoClienteStepDef.seleciono_uma_alternativa_na_tela_de_possui_imovel(String)"
+});
+formatter.result({
+  "duration": 67740400,
+  "status": "passed"
+});
+formatter.match({
+  "location": "NovoClienteStepDef.aguardo_o_carregamento_da_tela_de_cpf()"
+});
+formatter.result({
+  "duration": 1123716100,
+  "status": "passed"
+});
+formatter.match({
+  "location": "NovoClienteStepDef.acesso_o_site_do_devs()"
+});
+formatter.result({
+  "duration": 3302016500,
+  "status": "passed"
+});
+formatter.match({
+  "location": "NovoClienteStepDef.solicito_a_geracao_de_um_novo_cpf()"
+});
+formatter.result({
+  "duration": 175365200,
+  "status": "passed"
+});
+formatter.match({
+  "location": "NovoClienteStepDef.copio_o_cpf_gerado()"
+});
+formatter.result({
+  "duration": 706072900,
+  "status": "passed"
+});
+formatter.match({
+  "location": "NovoClienteStepDef.encerro_a_pagina_do_devs()"
+});
+formatter.result({
+  "duration": 720935000,
+  "status": "passed"
+});
+formatter.match({
+  "location": "NovoClienteStepDef.colo_o_documento_no_campo_cpf()"
+});
+formatter.result({
+  "duration": 164577100,
+  "status": "passed"
+});
+formatter.match({
+  "location": "NovoClienteStepDef.clico_no_botao_continuar()"
+});
+formatter.result({
+  "duration": 41775100,
   "status": "passed"
 });
 formatter.after({
-  "duration": 1197236300,
+  "duration": 208642000,
   "status": "passed"
 });
 });

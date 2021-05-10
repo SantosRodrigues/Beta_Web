@@ -1,11 +1,10 @@
 package org.example.bomPraCredito;
 
 import cucumber.api.DataTable;
-import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
-import org.example.geradorDeCpf.Pag4devsPO;
+import org.example.fourDevs.Pag4devsPO;
 import org.example.webDriverAcoes.WebDriverAcoes;
 import org.junit.Assert;
 
@@ -17,22 +16,12 @@ import static org.example.webDriverAcoes.WebDriverAcoes.getDriver;
 
 public class NovoClienteStepDef {
 
-    private PagBomPraCreditoHomePagePO pagHomePagePO;
+    private PagBomPraCreditoHomePagePO pagHomePagePO = new PagBomPraCreditoHomePagePO();
+    private PagBomPraCreditoMotivoEmprestimoPO pagBomPraCreditoMotivoEmprestimoPO = new PagBomPraCreditoMotivoEmprestimoPO();
+    private PagBomPraCreditoPossuiVeiculoPO pagBomPraCreditoPossuiVeiculoPO = new PagBomPraCreditoPossuiVeiculoPO();
+    private PagBomPraCreditoPossuiImovelPO pagBomPraCreditoPossuiImovelPO = new PagBomPraCreditoPossuiImovelPO();
+    private PagBomPraCreditoPreencherCpfPO pagBomPraCreditoPreencherCpfPO = new PagBomPraCreditoPreencherCpfPO();
     private Pag4devsPO pag4DevsPO;
-    private PagBomPraCreditoMotivoEmprestimoPO pagBomPraCreditoMotivoEmprestimoPO;
-    private PagBomPraCreditoPossuiVeiculoPO pagBomPraCreditoPossuiVeiculoPO;
-    private PagBomPraCreditoPossuiImovelPO pagBomPraCreditoPossuiImovelPO;
-    private PagBomPraCreditoPreencherCpfPO pagBomPraCreditoPreencherCpfPO;
-    private WebDriverAcoes webDriverAcoes;
-
-    public NovoClienteStepDef() {
-        webDriverAcoes = new WebDriverAcoes();
-        pagHomePagePO = new PagBomPraCreditoHomePagePO();
-        pagBomPraCreditoMotivoEmprestimoPO = new PagBomPraCreditoMotivoEmprestimoPO();
-        pagBomPraCreditoPossuiVeiculoPO = new PagBomPraCreditoPossuiVeiculoPO();
-        pagBomPraCreditoPossuiImovelPO = new PagBomPraCreditoPossuiImovelPO();
-        pagBomPraCreditoPreencherCpfPO = new PagBomPraCreditoPreencherCpfPO();
-    }
 
     @E("^que eu acesse o \"([^\"]*)\"$")
     public void que_eu_acesse_o_site(String url) {
@@ -41,8 +30,6 @@ public class NovoClienteStepDef {
 
     @E("^preencho as seguintes informacoes$")
     public void preencho_as_seguintes_informacoes(DataTable table){
-
-
         List<Map<String, String>> dadosHomePage = table.asMaps(String.class, String.class);
 
         if (dadosHomePage.get(0).get("email").equalsIgnoreCase("auto")) {
@@ -66,7 +53,8 @@ public class NovoClienteStepDef {
     public void seleciono_o_motivo_do_emprestimo(String emprestimo){
         if (emprestimo.equalsIgnoreCase("outro")) {
             pagBomPraCreditoMotivoEmprestimoPO.escolherMotivo();
-        }
+        }else
+            System.err.print("Opção inexistente no formulario!");
     }
 
     @E("^aguardo o carregamento da tela de possui veiculo$")
@@ -90,7 +78,10 @@ public class NovoClienteStepDef {
     public void seleciono_uma_alternativa_na_tela_de_possui_imovel(String imovel){
         if (imovel.equalsIgnoreCase("nao")) {
             pagBomPraCreditoPossuiImovelPO.escolherNaoPossouVeiculo();
+        }else{
+            System.err.print("Opção inexistente no formulario!");
         }
+
     }
 
     @E("^aguardo o carregamento da tela de cpf$")
@@ -127,6 +118,5 @@ public class NovoClienteStepDef {
     public void clico_no_botao_continuar(){
         Assert.assertTrue(pagBomPraCreditoPreencherCpfPO.avancar());
     }
-
-
+    
 }
