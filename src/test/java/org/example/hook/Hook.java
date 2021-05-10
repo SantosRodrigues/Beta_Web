@@ -6,8 +6,6 @@ import org.example.webDriverAcoes.WebDriverAcoes;
 
 public class Hook extends WebDriverAcoes {
 
-
-
         @Before
         public void Before(){
             iniciarNavegador("chrome");

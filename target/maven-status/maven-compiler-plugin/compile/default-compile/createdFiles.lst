@@ -1,3 +1,11 @@
-org\example\BomPraCredito\PagHomePage.class
-org\example\WebDriverAcoes.class
-org\example\BomPraCredito\PagMotivoEmprestimo.class
+org\example\bomPraCredito\PagMotivoEmprestimoPO.class
+org\example\amazon\PagResultadoPesquisaPO.class
+org\example\bomPraCredito\PagPossuiImovelPO.class
+org\example\amazon\PagHomePagePO.class
+org\example\amazon\PagLoginPO.class
+org\example\geradorDeCpf\GeradorDeCpf.class
+org\example\webDriverAcoes\WebDriverAcoes.class
+org\example\bomPraCredito\PagPreencherCpfPO.class
+org\example\bomPraCredito\PagHomePagePO.class
+org\example\geradorDeCpf\Pag4devsPO.class
+org\example\bomPraCredito\PagPossuiVeiculoPO.class

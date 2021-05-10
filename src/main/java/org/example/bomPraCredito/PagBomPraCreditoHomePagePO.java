@@ -11,9 +11,9 @@ import java.util.Random;
 import static org.example.webDriverAcoes.WebDriverAcoes.getDriver;
 import static org.example.webDriverAcoes.WebDriverAcoes.getWait;
 
-public class PagHomePagePO {
+public class PagBomPraCreditoHomePagePO {
 
-    public PagHomePagePO() {
+    public PagBomPraCreditoHomePagePO() {
         PageFactory.initElements(getDriver(), this);
     }
 

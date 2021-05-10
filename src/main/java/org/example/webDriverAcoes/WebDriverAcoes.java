@@ -25,7 +25,6 @@ public class WebDriverAcoes {
                 System.err.println("Opção incorreta, escolha entre 'chrome' e 'firefox'.");
         }
         driver.manage().window().maximize();
-        driver.get("https://bompracredito.com.br");
         wait = new WebDriverWait(driver, 30);
     }
 

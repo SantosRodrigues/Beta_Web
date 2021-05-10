@@ -1,11 +1,11 @@
 # language: pt
 
-
 Funcionalidade: Solicitação de emprestimo
 
   @NovoClienteSucesso4devs
   Esquema do Cenario: Cenario: Novo cliente solicita credito com sucesso - Pegando CPF do 4Devs
-    Dado que eu acesso o site e preencho as seguintes informacoes
+    Dado que eu acesse o "<site>"
+    E preencho as seguintes informacoes
       | valor   | parcelas   | nome   | email   | aceitoTermo   |
       | <valor> | <parcelas> | <nome> | <email> | <aceitoTermo> |
     E clico no botao continuar sem custo e sem compromisso
@@ -23,5 +23,5 @@ Funcionalidade: Solicitação de emprestimo
     Quando colo o documento no campo cpf
     Entao clico no botao continuar
     Exemplos:
-      | valor | parcelas | nome         | email | aceitoTermo | motivo | veiculo | imovel |
-      | 1500  | 12       | marcos silva | auto  | sim         | outro  | nao     | nao    |
+      | site                             | valor | parcelas | nome         | email | aceitoTermo | motivo | veiculo | imovel |
+      | https://www.bompracredito.com.br | 1500  | 12       | marcos silva | auto  | sim         | outro  | nao     | nao    |

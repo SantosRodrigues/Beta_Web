@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static org.example.webDriverAcoes.WebDriverAcoes.*;
 
-public class PagPreencherCpfPO {
+public class PagBomPraCreditoPreencherCpfPO {
 
     private WebElement lblCpf;
     private WebElement btnProximo;

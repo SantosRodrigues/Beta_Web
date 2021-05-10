@@ -8,9 +8,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import static org.example.webDriverAcoes.WebDriverAcoes.getDriver;
 import static org.example.webDriverAcoes.WebDriverAcoes.getWait;
 
-public class PagPossuiImovelPO {
+public class PagBomPraCreditoPossuiImovelPO {
 
-    public PagPossuiImovelPO() {
+    public PagBomPraCreditoPossuiImovelPO() {
         PageFactory.initElements(getDriver(), this);
     }
 

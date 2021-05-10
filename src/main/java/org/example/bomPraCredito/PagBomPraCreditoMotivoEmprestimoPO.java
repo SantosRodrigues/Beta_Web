@@ -8,27 +8,28 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import static org.example.webDriverAcoes.WebDriverAcoes.getDriver;
 import static org.example.webDriverAcoes.WebDriverAcoes.getWait;
 
-public class PagPossuiVeiculoPO {
+public class PagBomPraCreditoMotivoEmprestimoPO {
 
-    public PagPossuiVeiculoPO() {
-        PageFactory.initElements(getDriver(), this);
+    public PagBomPraCreditoMotivoEmprestimoPO(){
+        PageFactory.initElements(getDriver(),this);
     }
 
+    @FindBy(xpath = "//span[text()='Outro ']")
+    private WebElement btnOutrosMotivos;
     @FindBy(css = ".sc-Axmtr.dHxBdi > [src='./static/media/no.6dc4fcf6.svg']")
-    private WebElement btnNaoPossouVeiculo;
-    @FindBy(css = "[class='sc-Axmtr dHxBdi'] > [src='./static/media/no.6dc4fcf6.svg']")
-    private WebElement btnNaoPossouImovel;
+    private WebElement btnbtnNaoPossouVeiculo;
 
-    public void escolherNaoPossouVeiculo() {
-        btnNaoPossouVeiculo.click();
+    public void escolherMotivo() {
+        btnOutrosMotivos.click();
     }
 
     public boolean aguardar() {
         try {
-            getWait().until(ExpectedConditions.visibilityOf(btnNaoPossouImovel));
+            getWait().until(ExpectedConditions.visibilityOf(btnbtnNaoPossouVeiculo));
             return true;
         } catch (Exception e) {
             return false;
         }
     }
 }
+

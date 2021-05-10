@@ -1,1 +1,3 @@
-org\example\Runner.class
+org\example\bomPraCredito\NovoClienteStepDef.class
+org\example\runner\Runner.class
+org\example\hook\Hook.class
