@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "classpath:features",
         glue = {"org.example"},
-        tags = {"@CTAmazon"},
+        tags = {"@CTAmazonCarrinhoSucesso"},
         plugin = {
                 "pretty",
                 "html:target/cucumber-reports/cucumber-pretty"

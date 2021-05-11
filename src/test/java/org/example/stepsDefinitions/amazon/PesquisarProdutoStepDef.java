@@ -12,6 +12,7 @@ public class PesquisarProdutoStepDef {
 
     private final PagAmazonHomePagePO pagAmazonHomePagePO = new PagAmazonHomePagePO();
     private final PagAmazonResultadoPesquisaPO pagAmazonResultadoPesquisaPO = new PagAmazonResultadoPesquisaPO();
+    private final PagAmazonPerfilProdutoPO pagAmazonPerfilProdutoPO = new PagAmazonPerfilProdutoPO();
 
 
     @Dado("^que seja acessado o \"([^\"]*)\" da amazon$")
@@ -39,6 +40,25 @@ public class PesquisarProdutoStepDef {
     public void deve_ser_retornado_a_mensagem_de_produto_indisponivel(String produto){
         Assert.assertTrue(pagAmazonHomePagePO.aguardarPesquisa());
         Assert.assertEquals(pagAmazonResultadoPesquisaPO.produtoNaoEncontrado(),"Nenhum resultado para " + produto);
-        System.out.print(pagAmazonResultadoPesquisaPO.produtoNaoEncontrado());
+    }
+
+    @Dado("^e selecionado o produto desejado$")
+    public void e_selecionado_o_produto_desejado(){
+        pagAmazonResultadoPesquisaPO.selecionarProduto();
+    }
+
+    @Dado("^o perfil do produto e carregado$")
+    public void o_perfil_do_produto_e_carregado(){
+        Assert.assertTrue(pagAmazonResultadoPesquisaPO.aguardarPerfilProduto());
+    }
+
+    @Quando("^a opcao de adicionar ao carrinho e pressionado$")
+    public void a_opcao_de_adicionar_ao_carrinho_e_pressionado(){
+        pagAmazonPerfilProdutoPO.adicionarProdutoAoCarrinho();
+    }
+
+    @Entao("^validar que produto foi adicionado ao carrinho com sucesso$")
+    public void validar_que_produto_foi_adicionado_ao_carrinho_com_sucesso(){
+      Assert.assertTrue(pagAmazonPerfilProdutoPO.validarProdutoAdicionadoAoCarrinhoComSucesso());
     }
 }
