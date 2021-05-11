@@ -28,7 +28,6 @@ public class WebDriverAcoes {
         wait = new WebDriverWait(driver, 30);
     }
 
-
     public static void abrirPagina4devsCPF(){
         driver4Devs = new ChromeDriver();
         driver4Devs.manage().window().maximize();

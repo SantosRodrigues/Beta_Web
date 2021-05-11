@@ -13,7 +13,7 @@ public class Hook extends WebDriverAcoes {
 
         @After
         public void After(){
-            getDriver().close();
+            getDriver().quit();
         }
     }
 

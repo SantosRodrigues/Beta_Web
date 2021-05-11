@@ -1,7 +1,7 @@
-# new feature
-# Tags: optional
+#language: pt
 
-Feature: A description
+Funcionalidade: Adicionar produto ao carrinho
 
-  Scenario: A scenario
-    Given something..
+  Contexto: Pesquisar, escolher e adicionar produto ao carrinho de compras
+
+  Esquema do Cenario:

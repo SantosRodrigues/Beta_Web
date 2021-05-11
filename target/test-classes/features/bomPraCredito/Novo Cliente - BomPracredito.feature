@@ -2,7 +2,7 @@
 
 Funcionalidade: Solicitação de emprestimo
 
-  @NovoClienteSucesso4devs
+  @CTBomPraCredito
   Esquema do Cenario: Cenario: Novo cliente solicita credito com sucesso - Pegando CPF do 4Devs
     Dado que eu acesse o "<site>"
     E preencho as seguintes informacoes
