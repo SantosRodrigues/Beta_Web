@@ -46,7 +46,7 @@ public class PagAmazonResultadoPesquisaPO {
         }
         return false;
     }
-    public String produtoNaoEncontrado(){
+    public String mensagemDeProdutoNaoEncontrado(){
         return  txtProdutoIndisponivel.getText() + " " +txtProdutoIndisponivelNomeProduto.getText();
     }
 

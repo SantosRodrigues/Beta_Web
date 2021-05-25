@@ -2,9 +2,9 @@
 
 Funcionalidade: Solicitação de emprestimo
 
-  @CTBomPraCredito
+  @CTWeb @CTBomPraCredito
   Esquema do Cenario: Cenario: Novo cliente solicita credito com sucesso - Pegando CPF do 4Devs
-    Dado que eu acesse o "<site>"
+    Dado que eu acesse o site bom pra credito
     E preencho as seguintes informacoes
       | valor   | parcelas   | nome   | email   | aceitoTermo   |
       | <valor> | <parcelas> | <nome> | <email> | <aceitoTermo> |
@@ -23,5 +23,5 @@ Funcionalidade: Solicitação de emprestimo
     Quando colo o documento no campo cpf
     Entao clico no botao continuar
     Exemplos:
-      | site                             | valor | parcelas | nome         | email | aceitoTermo | motivo | veiculo | imovel |
-      | https://www.bompracredito.com.br | 1500  | 12       | marcos silva | auto  | sim         | outro  | nao     | nao    |
+      | valor | parcelas | nome         | email | aceitoTermo | motivo | veiculo | imovel |
+      | 1500  | 12       | marcos silva | auto  | sim         | outro  | nao     | nao    |

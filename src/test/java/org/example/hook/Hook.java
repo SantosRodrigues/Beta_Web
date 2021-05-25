@@ -8,7 +8,7 @@ public class Hook extends WebDriverAcoes {
 
         @Before
         public void Before(){
-            iniciarNavegador("chrome");
+            iniciarNavegador();
         }
 
         @After

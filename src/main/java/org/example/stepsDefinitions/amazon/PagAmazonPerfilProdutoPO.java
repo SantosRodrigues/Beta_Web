@@ -26,10 +26,6 @@ public class PagAmazonPerfilProdutoPO {
 
     public boolean validarProdutoAdicionadoAoCarrinhoComSucesso(){
         getWait().until(ExpectedConditions.visibilityOf(txtProdutoAdicionadoAoCarrinhoComSucesso));
-        if(txtProdutoAdicionadoAoCarrinhoComSucesso.getText().equalsIgnoreCase("Adicionado ao carrinho")){
-            return true;
-        }else{
-           return false;
-        }
+        return txtProdutoAdicionadoAoCarrinhoComSucesso.getText().equalsIgnoreCase("Adicionado ao carrinho");
     }
 }

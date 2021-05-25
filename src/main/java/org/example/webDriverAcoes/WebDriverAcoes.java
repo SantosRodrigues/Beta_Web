@@ -5,14 +5,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static org.example.properties.DefinitionsProperties.getProp;
+
 public class WebDriverAcoes {
     private static WebDriver driver;
     private static WebDriverWait wait;
     private static WebDriver driver4Devs;
     private static WebDriverWait wait4Devs;
 
-    public void iniciarNavegador(String navegador) {
-        switch (navegador) {
+    public void iniciarNavegador() {
+        switch (getProp().getProperty("prop.navigator")) {
             case "firefox":
                 System.setProperty("webdriver.gecko.driver", "C:\\Users\\Higor\\Downloads\\geckodriver-win64\\geckodriver.exe");
                 driver = new FirefoxDriver();
@@ -28,11 +30,11 @@ public class WebDriverAcoes {
         wait = new WebDriverWait(driver, 30);
     }
 
-    public static void abrirPagina4devsCPF(){
+    public static void abrirPagina4devsCPF() {
         driver4Devs = new ChromeDriver();
         driver4Devs.manage().window().maximize();
         driver4Devs.get("https://www.4devs.com.br/gerador_de_cpf");
-        wait4Devs = new WebDriverWait(driver4Devs,30);
+        wait4Devs = new WebDriverWait(driver4Devs, 30);
     }
 
     public static WebDriver getDriver() {

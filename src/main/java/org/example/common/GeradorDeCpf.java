@@ -1,4 +1,4 @@
-package org.example.geradorDeCpf;
+package org.example.common;
 
 public class GeradorDeCpf {
 

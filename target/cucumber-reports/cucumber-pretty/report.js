@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("features/amazon/Pesquisar produtos - Amazon.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("features/amazon/Pesquisar produto - Amazon.feature");
 formatter.feature({
   "comments": [
     {
@@ -13,127 +13,110 @@ formatter.feature({
   "keyword": "Funcionalidade"
 });
 formatter.scenarioOutline({
-  "line": 29,
-  "name": "Validar que produto foi adicionado ao carrinho",
+  "line": 8,
+  "name": "Validar que o produto esteja disponivel",
   "description": "",
-  "id": "pesquisar-produto-desejado;validar-que-produto-foi-adicionado-ao-carrinho",
+  "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-disponivel",
   "type": "scenario_outline",
   "keyword": "Esquema do Cenario",
   "tags": [
     {
-      "line": 28,
+      "line": 7,
+      "name": "@CTWeb"
+    },
+    {
+      "line": 7,
       "name": "@CTAmazon"
     },
     {
-      "line": 28,
-      "name": "@CTAmazonCarrinho"
+      "line": 7,
+      "name": "@CTAmazonProdutoDisponivel"
     }
   ]
 });
 formatter.step({
-  "line": 30,
-  "name": "que seja acessado o \"\u003csite\u003e\" da amazon",
+  "line": 9,
+  "name": "que seja acessado o site da amazon",
   "keyword": "Dado "
 });
 formatter.step({
-  "line": 31,
+  "line": 10,
   "name": "seja preenchida a barra de pesquisa com o nome do \"\u003cproduto\u003e\" que desejo procurar",
   "keyword": "E "
 });
 formatter.step({
-  "line": 32,
+  "line": 11,
   "name": "o botao de pesquisar e pressionado",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 33,
-  "name": "deve ser retornado o \"\u003cproduto\u003e\" pesquisado",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 34,
-  "name": "e selecionado o produto desejado",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 35,
-  "name": "o perfil do produto e carregado",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 36,
-  "name": "a opcao de adicionar ao carrinho e pressionado",
   "keyword": "Quando "
 });
 formatter.step({
-  "line": 37,
-  "name": "validar que produto foi adicionado ao carrinho com sucesso",
+  "line": 12,
+  "name": "deve ser retornado o \"\u003cproduto\u003e\" pesquisado",
   "keyword": "Entao "
 });
 formatter.examples({
-  "line": 38,
+  "line": 13,
   "name": "",
   "description": "",
-  "id": "pesquisar-produto-desejado;validar-que-produto-foi-adicionado-ao-carrinho;",
+  "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-disponivel;",
   "rows": [
     {
       "cells": [
-        "produto",
-        "site"
+        "produto"
       ],
-      "line": 39,
-      "id": "pesquisar-produto-desejado;validar-que-produto-foi-adicionado-ao-carrinho;;1"
+      "line": 14,
+      "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-disponivel;;1"
     },
     {
       "cells": [
-        "mi band",
-        "https://www.amazon.com.br/ref\u003dnav_logo"
+        "mi band"
       ],
-      "line": 40,
-      "id": "pesquisar-produto-desejado;validar-que-produto-foi-adicionado-ao-carrinho;;2"
+      "line": 15,
+      "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-disponivel;;2"
     }
   ],
   "keyword": "Exemplos"
 });
 formatter.before({
-  "duration": 2871753101,
+  "duration": 2283017600,
   "status": "passed"
 });
 formatter.background({
   "line": 5,
-  "name": "Buscar pelo produto desejado para realizar a compra",
+  "name": "Buscar pelo produto desejado para adicionar ao carrinho",
   "description": "",
   "type": "background",
   "keyword": "Contexto"
 });
 formatter.scenario({
-  "line": 40,
-  "name": "Validar que produto foi adicionado ao carrinho",
+  "line": 15,
+  "name": "Validar que o produto esteja disponivel",
   "description": "",
-  "id": "pesquisar-produto-desejado;validar-que-produto-foi-adicionado-ao-carrinho;;2",
+  "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-disponivel;;2",
   "type": "scenario",
   "keyword": "Esquema do Cenario",
   "tags": [
     {
-      "line": 28,
-      "name": "@CTAmazonCarrinho"
+      "line": 7,
+      "name": "@CTAmazonProdutoDisponivel"
     },
     {
-      "line": 28,
+      "line": 7,
       "name": "@CTAmazon"
+    },
+    {
+      "line": 7,
+      "name": "@CTWeb"
     }
   ]
 });
 formatter.step({
-  "line": 30,
-  "name": "que seja acessado o \"https://www.amazon.com.br/ref\u003dnav_logo\" da amazon",
-  "matchedColumns": [
-    1
-  ],
+  "line": 9,
+  "name": "que seja acessado o site da amazon",
   "keyword": "Dado "
 });
 formatter.step({
-  "line": 31,
+  "line": 10,
   "name": "seja preenchida a barra de pesquisa com o nome do \"mi band\" que desejo procurar",
   "matchedColumns": [
     0
@@ -141,49 +124,23 @@ formatter.step({
   "keyword": "E "
 });
 formatter.step({
-  "line": 32,
+  "line": 11,
   "name": "o botao de pesquisar e pressionado",
-  "keyword": "E "
+  "keyword": "Quando "
 });
 formatter.step({
-  "line": 33,
+  "line": 12,
   "name": "deve ser retornado o \"mi band\" pesquisado",
   "matchedColumns": [
     0
   ],
-  "keyword": "E "
-});
-formatter.step({
-  "line": 34,
-  "name": "e selecionado o produto desejado",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 35,
-  "name": "o perfil do produto e carregado",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 36,
-  "name": "a opcao de adicionar ao carrinho e pressionado",
-  "keyword": "Quando "
-});
-formatter.step({
-  "line": 37,
-  "name": "validar que produto foi adicionado ao carrinho com sucesso",
   "keyword": "Entao "
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "https://www.amazon.com.br/ref\u003dnav_logo",
-      "offset": 21
-    }
-  ],
-  "location": "PesquisarProdutoStepDef.que_seja_acessado_o_site_da_amazon(String)"
+  "location": "PesquisarProdutoAmazonStepDef.que_seja_acessado_o_site_da_amazon()"
 });
 formatter.result({
-  "duration": 2313837399,
+  "duration": 2093653300,
   "status": "passed"
 });
 formatter.match({
@@ -193,17 +150,17 @@ formatter.match({
       "offset": 51
     }
   ],
-  "location": "PesquisarProdutoStepDef.seja_preenchida_a_barra_de_pesquisa_com_o_nome_do_produto_que_desejo_procurar(String)"
+  "location": "PesquisarProdutoAmazonStepDef.seja_preenchida_a_barra_de_pesquisa_com_o_nome_do_produto_que_desejo_procurar(String)"
 });
 formatter.result({
-  "duration": 369232301,
+  "duration": 626370900,
   "status": "passed"
 });
 formatter.match({
-  "location": "PesquisarProdutoStepDef.o_botao_de_pesquisar_e_pressionado()"
+  "location": "PesquisarProdutoAmazonStepDef.o_botao_de_pesquisar_e_pressionado()"
 });
 formatter.result({
-  "duration": 2249604600,
+  "duration": 1545211400,
   "status": "passed"
 });
 formatter.match({
@@ -213,42 +170,147 @@ formatter.match({
       "offset": 22
     }
   ],
-  "location": "PesquisarProdutoStepDef.deve_ser_retornado_o_produto_pesquisado(String)"
+  "location": "PesquisarProdutoAmazonStepDef.deve_ser_retornado_o_produto_pesquisado(String)"
 });
 formatter.result({
-  "duration": 2288607599,
-  "status": "passed"
-});
-formatter.match({
-  "location": "PesquisarProdutoStepDef.e_selecionado_o_produto_desejado()"
-});
-formatter.result({
-  "duration": 3306279401,
-  "status": "passed"
-});
-formatter.match({
-  "location": "PesquisarProdutoStepDef.o_perfil_do_produto_e_carregado()"
-});
-formatter.result({
-  "duration": 93509301,
-  "status": "passed"
-});
-formatter.match({
-  "location": "PesquisarProdutoStepDef.a_opcao_de_adicionar_ao_carrinho_e_pressionado()"
-});
-formatter.result({
-  "duration": 2421011300,
-  "status": "passed"
-});
-formatter.match({
-  "location": "PesquisarProdutoStepDef.validar_que_produto_foi_adicionado_ao_carrinho_com_sucesso()"
-});
-formatter.result({
-  "duration": 308523200,
+  "duration": 2213858400,
   "status": "passed"
 });
 formatter.after({
-  "duration": 1053864900,
+  "duration": 842654000,
   "status": "passed"
 });
+formatter.scenarioOutline({
+  "line": 18,
+  "name": "Validar que o produto esteja indisponivel",
+  "description": "",
+  "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-indisponivel",
+  "type": "scenario_outline",
+  "keyword": "Esquema do Cenario",
+  "tags": [
+    {
+      "line": 17,
+      "name": "@CTWeb"
+    },
+    {
+      "line": 17,
+      "name": "@CTAmazon"
+    },
+    {
+      "line": 17,
+      "name": "@CTAmazonProdutoIndisponivel"
+    }
+  ]
+});
+formatter.step({
+  "line": 19,
+  "name": "que seja acessado o site da amazon",
+  "keyword": "Dado "
+});
+formatter.step({
+  "line": 20,
+  "name": "seja preenchida a barra de pesquisa com o nome do \"\u003cproduto\u003e\" que desejo procurar",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 21,
+  "name": "o botao de pesquisar e pressionado",
+  "keyword": "Quando "
+});
+formatter.step({
+  "line": 22,
+  "name": "deve ser retornado a mensagem de \"\u003cproduto\u003e\" indisponivel",
+  "keyword": "Entao "
+});
+formatter.examples({
+  "line": 23,
+  "name": "",
+  "description": "",
+  "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-indisponivel;",
+  "rows": [
+    {
+      "cells": [
+        "produto"
+      ],
+      "line": 24,
+      "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-indisponivel;;1"
+    },
+    {
+      "cells": [
+        "carro azul tunado aviao verde"
+      ],
+      "line": 25,
+      "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-indisponivel;;2"
+    },
+    {
+      "cells": [
+        "dnhasjkdlhasdhasda"
+      ],
+      "line": 26,
+      "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-indisponivel;;3"
+    }
+  ],
+  "keyword": "Exemplos"
+});
+formatter.before({
+  "duration": 1266726300,
+  "status": "passed"
+});
+formatter.background({
+  "line": 5,
+  "name": "Buscar pelo produto desejado para adicionar ao carrinho",
+  "description": "",
+  "type": "background",
+  "keyword": "Contexto"
+});
+formatter.scenario({
+  "line": 25,
+  "name": "Validar que o produto esteja indisponivel",
+  "description": "",
+  "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-indisponivel;;2",
+  "type": "scenario",
+  "keyword": "Esquema do Cenario",
+  "tags": [
+    {
+      "line": 17,
+      "name": "@CTAmazonProdutoIndisponivel"
+    },
+    {
+      "line": 17,
+      "name": "@CTAmazon"
+    },
+    {
+      "line": 17,
+      "name": "@CTWeb"
+    }
+  ]
+});
+formatter.step({
+  "line": 19,
+  "name": "que seja acessado o site da amazon",
+  "keyword": "Dado "
+});
+formatter.step({
+  "line": 20,
+  "name": "seja preenchida a barra de pesquisa com o nome do \"carro azul tunado aviao verde\" que desejo procurar",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "E "
+});
+formatter.step({
+  "line": 21,
+  "name": "o botao de pesquisar e pressionado",
+  "keyword": "Quando "
+});
+formatter.step({
+  "line": 22,
+  "name": "deve ser retornado a mensagem de \"carro azul tunado aviao verde\" indisponivel",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "Entao "
+});
+formatter.match({
+  "location": "PesquisarProdutoAmazonStepDef.que_seja_acessado_o_site_da_amazon()"
 });
