@@ -24,4 +24,8 @@ Funcionalidade: Solicitação de emprestimo
     Entao clico no botao continuar
     Exemplos:
       | valor | parcelas | nome         | email | aceitoTermo | motivo | veiculo | imovel |
-      | 1500  | 12       | marcos silva | auto  | sim         | outro  | nao     | nao    |
+      | 2000  | 9       | marcos silva | auto  | sim         | outro  | nao     | nao    |
+#      | 3000  | 12       | marcos silva | auto  | sim         | outro  | nao     | nao    |
+#      | 5000  | 18       | marcos silva | auto  | sim         | outro  | nao     | nao    |
+#      | 10000 | 24       | marcos silva | auto  | sim         | outro  | nao     | nao    |
+#      | 4510  | 12       | marcos silva | auto  | sim         | outro  | nao     | nao    |

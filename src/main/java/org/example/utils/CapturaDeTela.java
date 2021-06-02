@@ -1,9 +1,7 @@
-package org.example.common;
+package org.example.utils;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,25 +11,26 @@ import static org.example.properties.DefinitionsProperties.getProp;
 
 public class CapturaDeTela {
 
-    public void capturarTela(String nomeDaEtapa, WebDriver webDriver) {
+    public static void capturarTela(String nomeDaEtapa, WebDriver webDriver) {
 
-        if (getProp().getProperty("prop.screenShot").equals("true")) {
+        if (getProp().getProperty("prop.screenShot").equalsIgnoreCase("true")) {
 
             TakesScreenshot captura = (TakesScreenshot) webDriver;
             LocalDateTime dataHora = LocalDateTime.now();
-
             File caminhoOrigemCaptura = captura.getScreenshotAs(OutputType.FILE);
             try {
-                FileUtils.copyFile(caminhoOrigemCaptura, new File("C:\\Users\\Higor\\Downloads\\CapturaSelenium\\" + dataHora.toString().replaceAll(":", "-") + " - " + nomeDaEtapa + ".png"));
+                FileUtils.copyFile(caminhoOrigemCaptura, new File(getProp().getProperty("prop.path.screenShot") + dataHora.toString().replaceAll(":", "-") + " - " + nomeDaEtapa + ".png"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public static void limparDiretorio() {
-        if (getProp().getProperty("prop.cleanScreenShot").equals("true")) {
-            File pasta = new File("C:\\Users\\Higor\\Downloads\\CapturaSelenium");
+    public static void limparDiretorioDeCapturaDeTela() {
+
+        if (getProp().getProperty("prop.cleanScreenShot").equalsIgnoreCase("true")) {
+
+            File pasta = new File(getProp().getProperty("prop.path.screenShot"));
             File[] arquivos = pasta.listFiles();
 
             for (File arquivo : arquivos) {
@@ -39,7 +38,6 @@ public class CapturaDeTela {
                     arquivo.delete();
                 }
             }
-
         }
     }
 }

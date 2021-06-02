@@ -5,9 +5,9 @@ C:\Users\Higor\IdeaProjects\ProjetosBetaGitlab\beta_web\src\main\java\org\exampl
 C:\Users\Higor\IdeaProjects\ProjetosBetaGitlab\beta_web\src\main\java\org\example\stepsDefinitions\bomPraCredito\PagBomPraCreditoPreencherCpfPO.java
 C:\Users\Higor\IdeaProjects\ProjetosBetaGitlab\beta_web\src\main\java\org\example\stepsDefinitions\amazon\PagAmazonPerfilProdutoPO.java
 C:\Users\Higor\IdeaProjects\ProjetosBetaGitlab\beta_web\src\main\java\org\example\stepsDefinitions\bomPraCredito\PagBomPraCreditoMotivoEmprestimoPO.java
-C:\Users\Higor\IdeaProjects\ProjetosBetaGitlab\beta_web\src\main\java\org\example\common\GeradorDeCpf.java
 C:\Users\Higor\IdeaProjects\ProjetosBetaGitlab\beta_web\src\main\java\org\example\stepsDefinitions\bomPraCredito\PagBomPraCreditoPossuiImovelPO.java
-C:\Users\Higor\IdeaProjects\ProjetosBetaGitlab\beta_web\src\main\java\org\example\common\CapturaDeTela.java
+C:\Users\Higor\IdeaProjects\ProjetosBetaGitlab\beta_web\src\main\java\org\example\utils\GeradorDeCpf.java
 C:\Users\Higor\IdeaProjects\ProjetosBetaGitlab\beta_web\src\main\java\org\example\stepsDefinitions\devs4\Pag4devsPO.java
 C:\Users\Higor\IdeaProjects\ProjetosBetaGitlab\beta_web\src\main\java\org\example\stepsDefinitions\amazon\PagAmazonHomePagePO.java
+C:\Users\Higor\IdeaProjects\ProjetosBetaGitlab\beta_web\src\main\java\org\example\utils\CapturaDeTela.java
 C:\Users\Higor\IdeaProjects\ProjetosBetaGitlab\beta_web\src\main\java\org\example\webDriverAcoes\WebDriverAcoes.java

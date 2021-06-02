@@ -1,26 +1,27 @@
 package org.example.stepsDefinitions.bomPraCredito;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static org.example.webDriverAcoes.WebDriverAcoes.*;
 
 public class PagBomPraCreditoPreencherCpfPO {
 
+    public PagBomPraCreditoPreencherCpfPO(){
+        PageFactory.initElements(getDriver(),this);
+    }
+    @FindBy(css = ".sc-fzoLsD.gdXpyc")
     private WebElement lblCpf;
+    @FindBy(css = ".sc-AxhUy.sc-AxgMl.bidPMB")
     private WebElement btnProximo;
 
-
     public void preencherCPF() {
-        getWait().until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".sc-fzoLsD.gdXpyc")));
-        lblCpf = getDriver().findElement(By.cssSelector(".sc-fzoLsD.gdXpyc"));
+        getWait().until(ExpectedConditions.elementToBeClickable(lblCpf));
         lblCpf.sendKeys(Keys.CONTROL, "v");
-
-        getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='cpf']")));
-        btnProximo = getDriver().findElement(By.cssSelector(".sc-AxhUy.sc-AxgMl.bidPMB"));
-
+        getWait().until(ExpectedConditions.elementToBeClickable(btnProximo));
     }
 
     public boolean avancar() {

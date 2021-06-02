@@ -1,8 +1,8 @@
-org\example\common\CapturaDeTela.class
+org\example\utils\GeradorDeCpf.class
+org\example\utils\CapturaDeTela.class
 org\example\stepsDefinitions\bomPraCredito\PagBomPraCreditoPossuiImovelPO.class
 org\example\stepsDefinitions\amazon\PagAmazonHomePagePO.class
 org\example\stepsDefinitions\devs4\Pag4devsPO.class
-org\example\common\GeradorDeCpf.class
 org\example\stepsDefinitions\amazon\PagAmazonPerfilProdutoPO.class
 org\example\stepsDefinitions\bomPraCredito\PagBomPraCreditoMotivoEmprestimoPO.class
 org\example\stepsDefinitions\bomPraCredito\PagBomPraCreditoPossuiVeiculoPO.class

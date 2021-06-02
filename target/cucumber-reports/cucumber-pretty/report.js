@@ -1,316 +1,355 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("features/amazon/Pesquisar produto - Amazon.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("features/bomPraCredito/Novo Cliente - BomPracredito.feature");
 formatter.feature({
   "comments": [
     {
       "line": 1,
-      "value": "#language: pt"
+      "value": "# language: pt"
     }
   ],
   "line": 3,
-  "name": "Pesquisar produto desejado",
+  "name": "Solicitação de emprestimo",
   "description": "",
-  "id": "pesquisar-produto-desejado",
+  "id": "solicitação-de-emprestimo",
   "keyword": "Funcionalidade"
 });
 formatter.scenarioOutline({
-  "line": 8,
-  "name": "Validar que o produto esteja disponivel",
+  "line": 6,
+  "name": "Cenario: Novo cliente solicita credito com sucesso - Pegando CPF do 4Devs",
   "description": "",
-  "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-disponivel",
+  "id": "solicitação-de-emprestimo;cenario:-novo-cliente-solicita-credito-com-sucesso---pegando-cpf-do-4devs",
   "type": "scenario_outline",
   "keyword": "Esquema do Cenario",
   "tags": [
     {
-      "line": 7,
+      "line": 5,
       "name": "@CTWeb"
     },
     {
-      "line": 7,
-      "name": "@CTAmazon"
-    },
-    {
-      "line": 7,
-      "name": "@CTAmazonProdutoDisponivel"
+      "line": 5,
+      "name": "@CTBomPraCredito"
     }
   ]
 });
 formatter.step({
-  "line": 9,
-  "name": "que seja acessado o site da amazon",
+  "line": 7,
+  "name": "que eu acesse o site bom pra credito",
   "keyword": "Dado "
 });
 formatter.step({
-  "line": 10,
-  "name": "seja preenchida a barra de pesquisa com o nome do \"\u003cproduto\u003e\" que desejo procurar",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 11,
-  "name": "o botao de pesquisar e pressionado",
-  "keyword": "Quando "
-});
-formatter.step({
-  "line": 12,
-  "name": "deve ser retornado o \"\u003cproduto\u003e\" pesquisado",
-  "keyword": "Entao "
-});
-formatter.examples({
-  "line": 13,
-  "name": "",
-  "description": "",
-  "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-disponivel;",
+  "line": 8,
+  "name": "preencho as seguintes informacoes",
   "rows": [
     {
       "cells": [
-        "produto"
+        "valor",
+        "parcelas",
+        "nome",
+        "email",
+        "aceitoTermo"
       ],
-      "line": 14,
-      "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-disponivel;;1"
+      "line": 9
     },
     {
       "cells": [
-        "mi band"
+        "\u003cvalor\u003e",
+        "\u003cparcelas\u003e",
+        "\u003cnome\u003e",
+        "\u003cemail\u003e",
+        "\u003caceitoTermo\u003e"
       ],
-      "line": 15,
-      "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-disponivel;;2"
+      "line": 10
     }
-  ],
-  "keyword": "Exemplos"
-});
-formatter.before({
-  "duration": 2283017600,
-  "status": "passed"
-});
-formatter.background({
-  "line": 5,
-  "name": "Buscar pelo produto desejado para adicionar ao carrinho",
-  "description": "",
-  "type": "background",
-  "keyword": "Contexto"
-});
-formatter.scenario({
-  "line": 15,
-  "name": "Validar que o produto esteja disponivel",
-  "description": "",
-  "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-disponivel;;2",
-  "type": "scenario",
-  "keyword": "Esquema do Cenario",
-  "tags": [
-    {
-      "line": 7,
-      "name": "@CTAmazonProdutoDisponivel"
-    },
-    {
-      "line": 7,
-      "name": "@CTAmazon"
-    },
-    {
-      "line": 7,
-      "name": "@CTWeb"
-    }
-  ]
-});
-formatter.step({
-  "line": 9,
-  "name": "que seja acessado o site da amazon",
-  "keyword": "Dado "
-});
-formatter.step({
-  "line": 10,
-  "name": "seja preenchida a barra de pesquisa com o nome do \"mi band\" que desejo procurar",
-  "matchedColumns": [
-    0
   ],
   "keyword": "E "
 });
 formatter.step({
   "line": 11,
-  "name": "o botao de pesquisar e pressionado",
-  "keyword": "Quando "
+  "name": "clico no botao continuar sem custo e sem compromisso",
+  "keyword": "E "
 });
 formatter.step({
   "line": 12,
-  "name": "deve ser retornado o \"mi band\" pesquisado",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "Entao "
+  "name": "aguardo o carregamento da tela de motivo do emprestimo",
+  "keyword": "E "
 });
-formatter.match({
-  "location": "PesquisarProdutoAmazonStepDef.que_seja_acessado_o_site_da_amazon()"
+formatter.step({
+  "line": 13,
+  "name": "seleciono o \"\u003cmotivo\u003e\" do emprestimo",
+  "keyword": "E "
 });
-formatter.result({
-  "duration": 2093653300,
-  "status": "passed"
+formatter.step({
+  "line": 14,
+  "name": "aguardo o carregamento da tela de possui veiculo",
+  "keyword": "E "
 });
-formatter.match({
-  "arguments": [
-    {
-      "val": "mi band",
-      "offset": 51
-    }
-  ],
-  "location": "PesquisarProdutoAmazonStepDef.seja_preenchida_a_barra_de_pesquisa_com_o_nome_do_produto_que_desejo_procurar(String)"
+formatter.step({
+  "line": 15,
+  "name": "seleciono uma altenativa na tela de possui \"\u003cveiculo\u003e\"",
+  "keyword": "E "
 });
-formatter.result({
-  "duration": 626370900,
-  "status": "passed"
+formatter.step({
+  "line": 16,
+  "name": "aguardo o carregamento da tela possui imovel",
+  "keyword": "E "
 });
-formatter.match({
-  "location": "PesquisarProdutoAmazonStepDef.o_botao_de_pesquisar_e_pressionado()"
+formatter.step({
+  "line": 17,
+  "name": "seleciono uma alternativa na tela de possui \"\u003cimovel\u003e\"",
+  "keyword": "E "
 });
-formatter.result({
-  "duration": 1545211400,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "mi band",
-      "offset": 22
-    }
-  ],
-  "location": "PesquisarProdutoAmazonStepDef.deve_ser_retornado_o_produto_pesquisado(String)"
-});
-formatter.result({
-  "duration": 2213858400,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 842654000,
-  "status": "passed"
-});
-formatter.scenarioOutline({
+formatter.step({
   "line": 18,
-  "name": "Validar que o produto esteja indisponivel",
-  "description": "",
-  "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-indisponivel",
-  "type": "scenario_outline",
-  "keyword": "Esquema do Cenario",
-  "tags": [
-    {
-      "line": 17,
-      "name": "@CTWeb"
-    },
-    {
-      "line": 17,
-      "name": "@CTAmazon"
-    },
-    {
-      "line": 17,
-      "name": "@CTAmazonProdutoIndisponivel"
-    }
-  ]
+  "name": "aguardo o carregamento da tela de cpf",
+  "keyword": "E "
 });
 formatter.step({
   "line": 19,
-  "name": "que seja acessado o site da amazon",
-  "keyword": "Dado "
+  "name": "acesso o site do 4devs",
+  "keyword": "E "
 });
 formatter.step({
   "line": 20,
-  "name": "seja preenchida a barra de pesquisa com o nome do \"\u003cproduto\u003e\" que desejo procurar",
+  "name": "solicito a geracao de um novo cpf",
   "keyword": "E "
 });
 formatter.step({
   "line": 21,
-  "name": "o botao de pesquisar e pressionado",
-  "keyword": "Quando "
+  "name": "copio o cpf gerado",
+  "keyword": "E "
 });
 formatter.step({
   "line": 22,
-  "name": "deve ser retornado a mensagem de \"\u003cproduto\u003e\" indisponivel",
+  "name": "encerro a pagina do fourdevs",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 23,
+  "name": "colo o documento no campo cpf",
+  "keyword": "Quando "
+});
+formatter.step({
+  "line": 24,
+  "name": "clico no botao continuar",
   "keyword": "Entao "
 });
 formatter.examples({
-  "line": 23,
+  "line": 25,
   "name": "",
   "description": "",
-  "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-indisponivel;",
+  "id": "solicitação-de-emprestimo;cenario:-novo-cliente-solicita-credito-com-sucesso---pegando-cpf-do-4devs;",
   "rows": [
     {
       "cells": [
-        "produto"
-      ],
-      "line": 24,
-      "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-indisponivel;;1"
-    },
-    {
-      "cells": [
-        "carro azul tunado aviao verde"
-      ],
-      "line": 25,
-      "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-indisponivel;;2"
-    },
-    {
-      "cells": [
-        "dnhasjkdlhasdhasda"
+        "valor",
+        "parcelas",
+        "nome",
+        "email",
+        "aceitoTermo",
+        "motivo",
+        "veiculo",
+        "imovel"
       ],
       "line": 26,
-      "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-indisponivel;;3"
+      "id": "solicitação-de-emprestimo;cenario:-novo-cliente-solicita-credito-com-sucesso---pegando-cpf-do-4devs;;1"
+    },
+    {
+      "cells": [
+        "2000",
+        "9",
+        "marcos silva",
+        "auto",
+        "sim",
+        "outro",
+        "nao",
+        "nao"
+      ],
+      "line": 27,
+      "id": "solicitação-de-emprestimo;cenario:-novo-cliente-solicita-credito-com-sucesso---pegando-cpf-do-4devs;;2"
     }
   ],
   "keyword": "Exemplos"
 });
 formatter.before({
-  "duration": 1266726300,
+  "duration": 2710263200,
   "status": "passed"
 });
-formatter.background({
-  "line": 5,
-  "name": "Buscar pelo produto desejado para adicionar ao carrinho",
-  "description": "",
-  "type": "background",
-  "keyword": "Contexto"
-});
 formatter.scenario({
-  "line": 25,
-  "name": "Validar que o produto esteja indisponivel",
+  "line": 27,
+  "name": "Cenario: Novo cliente solicita credito com sucesso - Pegando CPF do 4Devs",
   "description": "",
-  "id": "pesquisar-produto-desejado;validar-que-o-produto-esteja-indisponivel;;2",
+  "id": "solicitação-de-emprestimo;cenario:-novo-cliente-solicita-credito-com-sucesso---pegando-cpf-do-4devs;;2",
   "type": "scenario",
   "keyword": "Esquema do Cenario",
   "tags": [
     {
-      "line": 17,
-      "name": "@CTAmazonProdutoIndisponivel"
+      "line": 5,
+      "name": "@CTBomPraCredito"
     },
     {
-      "line": 17,
-      "name": "@CTAmazon"
-    },
-    {
-      "line": 17,
+      "line": 5,
       "name": "@CTWeb"
     }
   ]
 });
 formatter.step({
-  "line": 19,
-  "name": "que seja acessado o site da amazon",
+  "line": 7,
+  "name": "que eu acesse o site bom pra credito",
   "keyword": "Dado "
 });
 formatter.step({
-  "line": 20,
-  "name": "seja preenchida a barra de pesquisa com o nome do \"carro azul tunado aviao verde\" que desejo procurar",
+  "line": 8,
+  "name": "preencho as seguintes informacoes",
   "matchedColumns": [
-    0
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "rows": [
+    {
+      "cells": [
+        "valor",
+        "parcelas",
+        "nome",
+        "email",
+        "aceitoTermo"
+      ],
+      "line": 9
+    },
+    {
+      "cells": [
+        "2000",
+        "9",
+        "marcos silva",
+        "auto",
+        "sim"
+      ],
+      "line": 10
+    }
   ],
   "keyword": "E "
 });
 formatter.step({
+  "line": 11,
+  "name": "clico no botao continuar sem custo e sem compromisso",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 12,
+  "name": "aguardo o carregamento da tela de motivo do emprestimo",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 13,
+  "name": "seleciono o \"outro\" do emprestimo",
+  "matchedColumns": [
+    5
+  ],
+  "keyword": "E "
+});
+formatter.step({
+  "line": 14,
+  "name": "aguardo o carregamento da tela de possui veiculo",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 15,
+  "name": "seleciono uma altenativa na tela de possui \"nao\"",
+  "matchedColumns": [
+    6
+  ],
+  "keyword": "E "
+});
+formatter.step({
+  "line": 16,
+  "name": "aguardo o carregamento da tela possui imovel",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 17,
+  "name": "seleciono uma alternativa na tela de possui \"nao\"",
+  "matchedColumns": [
+    7
+  ],
+  "keyword": "E "
+});
+formatter.step({
+  "line": 18,
+  "name": "aguardo o carregamento da tela de cpf",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 19,
+  "name": "acesso o site do 4devs",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 20,
+  "name": "solicito a geracao de um novo cpf",
+  "keyword": "E "
+});
+formatter.step({
   "line": 21,
-  "name": "o botao de pesquisar e pressionado",
-  "keyword": "Quando "
+  "name": "copio o cpf gerado",
+  "keyword": "E "
 });
 formatter.step({
   "line": 22,
-  "name": "deve ser retornado a mensagem de \"carro azul tunado aviao verde\" indisponivel",
-  "matchedColumns": [
-    0
-  ],
+  "name": "encerro a pagina do fourdevs",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 23,
+  "name": "colo o documento no campo cpf",
+  "keyword": "Quando "
+});
+formatter.step({
+  "line": 24,
+  "name": "clico no botao continuar",
   "keyword": "Entao "
 });
 formatter.match({
-  "location": "PesquisarProdutoAmazonStepDef.que_seja_acessado_o_site_da_amazon()"
+  "location": "NovoClienteBomPraCreditoStepDef.que_eu_acesse_o_site_site_bom_pra_credito()"
+});
+formatter.result({
+  "duration": 3612275700,
+  "status": "passed"
+});
+formatter.match({
+  "location": "NovoClienteBomPraCreditoStepDef.preencho_as_seguintes_informacoes(DataTable)"
+});
+formatter.result({
+  "duration": 1767376500,
+  "status": "passed"
+});
+formatter.match({
+  "location": "NovoClienteBomPraCreditoStepDef.clico_no_botao_continuar_sem_custo_e_sem_compromisso()"
+});
+formatter.result({
+  "duration": 73484300,
+  "status": "passed"
+});
+formatter.match({
+  "location": "NovoClienteBomPraCreditoStepDef.aguardo_o_carregamento_da_tela_de_motivo_do_emprestimo()"
+});
+formatter.result({
+  "duration": 2824538000,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "outro",
+      "offset": 13
+    }
+  ],
+  "location": "NovoClienteBomPraCreditoStepDef.seleciono_o_motivo_do_emprestimo(String)"
+});
+formatter.result({
+  "duration": 330921800,
+  "status": "passed"
+});
+formatter.match({
+  "location": "NovoClienteBomPraCreditoStepDef.aguardo_o_carregamento_da_tela_de_possui_veiculo()"
 });

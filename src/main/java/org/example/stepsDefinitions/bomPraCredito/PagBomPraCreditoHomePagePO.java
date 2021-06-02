@@ -6,8 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import java.util.Random;
-
 import static org.example.webDriverAcoes.WebDriverAcoes.getDriver;
 import static org.example.webDriverAcoes.WebDriverAcoes.getWait;
 
@@ -18,7 +16,17 @@ public class PagBomPraCreditoHomePagePO {
     }
 
     @FindBy(css = "#btnTwoThousand")
-    private WebElement btnValor;
+    private WebElement btnValor2000;
+    @FindBy(css = "#btnThreeThousand")
+    private WebElement btnValor3000;
+    @FindBy(css = "#btnFiveThousand")
+    private WebElement btnValor5000;
+    @FindBy(css = "#btnTenThousand")
+    private WebElement btnValor10000;
+    @FindBy(css = "#btnOtherValue")
+    private WebElement btnValorOutro;
+    @FindBy(css = "#amount")
+    private WebElement inpOutroValor;
     @FindBy(css = "#btnNineTerm.bpcform-button-select.bpcform-hide-mobile")
     private WebElement btnQtdParcelas9;
     @FindBy(css = "#btnTwelveTerm")
@@ -38,58 +46,48 @@ public class PagBomPraCreditoHomePagePO {
     @FindBy(xpath = "//a[text()='Voltar']")
     private WebElement btnVoltar;
 
-    private int numeroRandom;
+    public void preencherDados(String nome, String email, String parcelas, String valor) {
+            inpEmail.sendKeys(email);
+            inpNomeCompleto.sendKeys(nome);
 
-    Random random = new Random();
-
-    public void preencherDados(String nome, String email, String parcelas) {
-        inpEmail.sendKeys(email);
-        inpNomeCompleto.sendKeys(nome);
-        btnValor.click();
-
-
-        for (int i = 0; i < 1; i++) {
-            numeroRandom = random.nextInt(4);
-        }
-
-        switch (parcelas) {
-            case "12":
-                btnQtdParcelas12.click();
-                break;
-            case "9":
-                btnQtdParcelas9.click();
-                break;
-            case "18":
-                btnQtdParcelas18.click();
-                break;
-            case "24":
-                btnQtdParcelas24.click();
-                break;
-            default:
-                switch (numeroRandom) {
-                    case 0:
-                        btnQtdParcelas12.click();
-                        break;
-                    case 1:
-                        btnQtdParcelas9.click();
-                        break;
-                    case 2:
-                        btnQtdParcelas18.click();
-                        break;
-                    case 3:
-                        btnQtdParcelas24.click();
-                        break;
-                }
-            {
-
+            switch (valor) {
+                case "2000":
+                    btnValor2000.click();
+                    break;
+                case "3000":
+                    btnValor3000.click();
+                    break;
+                case "5000":
+                    btnValor5000.click();
+                    break;
+                case "10000":
+                    btnValor10000.click();
+                    break;
+                default:
+                    btnValorOutro.click();
+                    getWait().until(ExpectedConditions.elementToBeClickable(inpOutroValor));
+                    inpOutroValor.sendKeys(valor);
+                    break;
             }
-        }
 
-        btnOfertas.click();
-
+            switch (parcelas) {
+                case "9":
+                    btnQtdParcelas9.click();
+                    break;
+                case "12":
+                    btnQtdParcelas12.click();
+                    break;
+                case "18":
+                    btnQtdParcelas18.click();
+                    break;
+                case "24":
+                    btnQtdParcelas24.click();
+                    break;
+            }
+            btnOfertas.click();
     }
 
-    public void avancar(){
+    public void avancar() {
         btnContinuar.click();
     }
 
@@ -101,4 +99,5 @@ public class PagBomPraCreditoHomePagePO {
             return false;
         }
     }
+
 }

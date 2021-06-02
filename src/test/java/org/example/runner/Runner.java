@@ -5,13 +5,13 @@ import cucumber.api.junit.Cucumber;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
-import static org.example.common.CapturaDeTela.limparDiretorio;
+import static org.example.utils.CapturaDeTela.limparDiretorioDeCapturaDeTela;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "classpath:features",
         glue = {"org.example"},
-        tags = {"@CTWeb"},
+        tags = {"@CTBomPraCredito"},
         plugin = {
                 "pretty",
                 "html:target/cucumber-reports/cucumber-pretty"
@@ -20,11 +20,9 @@ import static org.example.common.CapturaDeTela.limparDiretorio;
 
 public class Runner {
 
-        @BeforeClass
-        public static void beforeClass(){
-                limparDiretorio();
-        }
+    @BeforeClass
+    public static void limpandoCapturaDeTela() {
+        limparDiretorioDeCapturaDeTela();
+    }
 
 }
-
-

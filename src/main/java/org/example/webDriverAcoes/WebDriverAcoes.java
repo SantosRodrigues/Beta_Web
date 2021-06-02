@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.example.properties.DefinitionsProperties.getProp;
 
 public class WebDriverAcoes {
+
     private static WebDriver driver;
     private static WebDriverWait wait;
     private static WebDriver driver4Devs;
@@ -16,11 +17,11 @@ public class WebDriverAcoes {
     public void iniciarNavegador() {
         switch (getProp().getProperty("prop.navigator")) {
             case "firefox":
-                System.setProperty("webdriver.gecko.driver", "C:\\Users\\Higor\\Downloads\\geckodriver-win64\\geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver", getProp().get("prop.path.driver") + "geckodriver.exe");
                 driver = new FirefoxDriver();
                 break;
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", "C:\\Users\\Higor\\Downloads\\chromedriver_win32\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", getProp().getProperty("prop.path.driver") + "chromedriver.exe");
                 driver = new ChromeDriver();
                 break;
             default:
@@ -30,25 +31,26 @@ public class WebDriverAcoes {
         wait = new WebDriverWait(driver, 30);
     }
 
-    public static void abrirPagina4devsCPF() {
-        driver4Devs = new ChromeDriver();
+    public void abrirPagina4devsCPF() {
+        if(getProp().getProperty("prop.navigator").equalsIgnoreCase("chrome")){
+            driver4Devs = new ChromeDriver();
+        }else if(getProp().getProperty("prop.navigator").equalsIgnoreCase("firefox")){
+            driver4Devs = new FirefoxDriver();
+        }
+        driver4Devs.get(getProp().getProperty("prop.url.4devs.cpf"));
         driver4Devs.manage().window().maximize();
-        driver4Devs.get("https://www.4devs.com.br/gerador_de_cpf");
         wait4Devs = new WebDriverWait(driver4Devs, 30);
     }
 
     public static WebDriver getDriver() {
         return driver;
     }
-
     public static WebDriverWait getWait() {
         return wait;
     }
-
     public static WebDriver getDriver4Devs() {
         return driver4Devs;
     }
-
     public static WebDriverWait getWait4Devs() {
         return wait4Devs;
     }

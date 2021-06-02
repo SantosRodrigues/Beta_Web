@@ -4,7 +4,7 @@ import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
-import org.example.common.CapturaDeTela;
+import org.example.utils.CapturaDeTela;
 import org.junit.Assert;
 
 import static org.example.properties.DefinitionsProperties.getProp;
@@ -16,7 +16,6 @@ public class PesquisarProdutoAmazonStepDef {
     private final PagAmazonResultadoPesquisaPO pagAmazonResultadoPesquisaPO = new PagAmazonResultadoPesquisaPO();
     private final PagAmazonPerfilProdutoPO pagAmazonPerfilProdutoPO = new PagAmazonPerfilProdutoPO();
     private final CapturaDeTela capturaDeTela = new CapturaDeTela();
-    private int i;
 
     @Dado("^que seja acessado o site da amazon$")
     public void que_seja_acessado_o_site_da_amazon() {
@@ -63,13 +62,11 @@ public class PesquisarProdutoAmazonStepDef {
     @Quando("^a opcao de adicionar ao carrinho e pressionado$")
     public void a_opcao_de_adicionar_ao_carrinho_e_pressionado() {
         pagAmazonPerfilProdutoPO.adicionarProdutoAoCarrinho();
-
     }
 
     @Entao("^validar que produto foi adicionado ao carrinho com sucesso$")
     public void validar_que_produto_foi_adicionado_ao_carrinho_com_sucesso() {
         Assert.assertTrue(pagAmazonPerfilProdutoPO.validarProdutoAdicionadoAoCarrinhoComSucesso());
         capturaDeTela.capturarTela("Produto adicionado ao carrinho", getDriver());
-
     }
 }

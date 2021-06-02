@@ -1,5 +1,6 @@
 package org.example.stepsDefinitions.devs4;
 
+import org.example.webDriverAcoes.WebDriverAcoes;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -9,8 +10,10 @@ import static org.example.webDriverAcoes.WebDriverAcoes.*;
 
 public class Pag4devsPO {
 
+    private WebDriverAcoes webDriverAcoes = new WebDriverAcoes();
+
     public Pag4devsPO() {
-        abrirPagina4devsCPF();
+        webDriverAcoes.abrirPagina4devsCPF();
         PageFactory.initElements(getDriver4Devs(), this);
     }
 
@@ -21,17 +24,18 @@ public class Pag4devsPO {
     @FindBy(css = ".clipboard-copy")
     private WebElement spnCopiar;
 
+    public void aguardandoCarregarPagina(){
+        getWait4Devs().until(ExpectedConditions.elementToBeClickable(inpSemPontuacao));
+    }
+
     public void gerarCpfSemPontuacao() {
-        getWait4Devs().until(ExpectedConditions.visibilityOf(inpSemPontuacao));
         inpSemPontuacao.click();
         btnGerarCPF.click();
-
     }
 
     public void copiarCpf() {
         getWait4Devs().until(ExpectedConditions.visibilityOf(spnCopiar));
         spnCopiar.click();
-
     }
 
     public void encerrarPagina4devs() {
