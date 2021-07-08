@@ -1,4 +1,1 @@
-org\example\runner\Runner.class
-org\example\stepsDefinitions\bomPraCredito\NovoClienteBomPraCreditoStepDef.class
-org\example\stepsDefinitions\amazon\PesquisarProdutoAmazonStepDef.class
-org\example\hook\Hook.class
+org\example\Runner.class
