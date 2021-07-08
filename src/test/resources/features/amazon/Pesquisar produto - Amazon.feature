@@ -22,7 +22,6 @@ Funcionalidade: Pesquisar produto desejado
     Entao deve ser retornado a mensagem de "<produto>" indisponivel
     Exemplos:
       | produto                       |
-      | carro azul tunado aviao verde |
       | dnhasjkdlhasdhasda            |
 
   @CTWeb @CTAmazon @CTAmazonCarrinhoSucesso

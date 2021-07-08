@@ -11,7 +11,7 @@ import static org.example.utils.CapturaDeTela.limparDiretorioDeCapturaDeTela;
 @CucumberOptions(
         features = "classpath:features",
         glue = {"org.example"},
-        tags = {"@CTBomPraCredito"},
+        tags = {"@CTWeb"},
         plugin = {
                 "pretty",
                 "html:target/cucumber-reports/cucumber-pretty"
