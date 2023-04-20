@@ -15,7 +15,11 @@ public class WebDriverAcoes {
     private static WebDriver driver;
     private static WebDriverWait wait;
 
-    public void iniciarNavegador() {
+    private WebDriverAcoes(){
+        throw new IllegalStateException("Utility class");
+    }
+
+    public static void iniciarNavegador() {
         final String dimensoes = "--window-size=1920,1080";
         final String headless = getProp().getProperty("prop.headless");
         final String pathDriver = getProp().getProperty("prop.path.driver");
