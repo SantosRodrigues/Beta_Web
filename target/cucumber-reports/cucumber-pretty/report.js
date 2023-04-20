@@ -78,7 +78,7 @@ formatter.examples({
   "keyword": "Exemplos"
 });
 formatter.before({
-  "duration": 2209239600,
+  "duration": 2773840600,
   "status": "passed"
 });
 formatter.background({
@@ -140,7 +140,7 @@ formatter.match({
   "location": "PesquisarProdutoAmazonStepDef.que_seja_acessado_o_site_da_amazon()"
 });
 formatter.result({
-  "duration": 2852135600,
+  "duration": 3160614700,
   "status": "passed"
 });
 formatter.match({
@@ -153,14 +153,14 @@ formatter.match({
   "location": "PesquisarProdutoAmazonStepDef.seja_preenchida_a_barra_de_pesquisa_com_o_nome_do_produto_que_desejo_procurar(String)"
 });
 formatter.result({
-  "duration": 498078700,
+  "duration": 671698700,
   "status": "passed"
 });
 formatter.match({
   "location": "PesquisarProdutoAmazonStepDef.o_botao_de_pesquisar_e_pressionado()"
 });
 formatter.result({
-  "duration": 1260502700,
+  "duration": 2274535400,
   "status": "passed"
 });
 formatter.match({
@@ -173,11 +173,12 @@ formatter.match({
   "location": "PesquisarProdutoAmazonStepDef.deve_ser_retornado_o_produto_pesquisado(String)"
 });
 formatter.result({
-  "duration": 1925470700,
-  "status": "passed"
+  "duration": 30195611100,
+  "error_message": "java.lang.AssertionError\r\n\tat org.junit.Assert.fail(Assert.java:86)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat org.junit.Assert.assertTrue(Assert.java:52)\r\n\tat org.example.stepsDefinitions.amazon.PesquisarProdutoAmazonStepDef.deve_ser_retornado_o_produto_pesquisado(PesquisarProdutoAmazonStepDef.java:39)\r\n\tat ✽.Entao deve ser retornado o \"mi band\" pesquisado(features/amazon/Pesquisar produto - Amazon.feature:12)\r\n",
+  "status": "failed"
 });
 formatter.after({
-  "duration": 749385000,
+  "duration": 1153614200,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -246,7 +247,7 @@ formatter.examples({
   "keyword": "Exemplos"
 });
 formatter.before({
-  "duration": 1247995200,
+  "duration": 1513605700,
   "status": "passed"
 });
 formatter.background({
@@ -308,7 +309,7 @@ formatter.match({
   "location": "PesquisarProdutoAmazonStepDef.que_seja_acessado_o_site_da_amazon()"
 });
 formatter.result({
-  "duration": 1902977100,
+  "duration": 1669169800,
   "status": "passed"
 });
 formatter.match({
@@ -321,15 +322,15 @@ formatter.match({
   "location": "PesquisarProdutoAmazonStepDef.seja_preenchida_a_barra_de_pesquisa_com_o_nome_do_produto_que_desejo_procurar(String)"
 });
 formatter.result({
-  "duration": 585930700,
-  "status": "passed"
+  "duration": 30349711300,
+  "error_message": "org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator \u0027By.cssSelector: #twotabsearchtextbox\u0027 (tried for 30 second(s) with 500 milliseconds interval)\r\n\tat org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)\r\n\tat org.example.stepsDefinitions.amazon.PagAmazonHomePagePO.preencherBarraDePesquisa(PagAmazonHomePagePO.java:26)\r\n\tat org.example.stepsDefinitions.amazon.PesquisarProdutoAmazonStepDef.seja_preenchida_a_barra_de_pesquisa_com_o_nome_do_produto_que_desejo_procurar(PesquisarProdutoAmazonStepDef.java:28)\r\n\tat ✽.E seja preenchida a barra de pesquisa com o nome do \"dnhasjkdlhasdhasda\" que desejo procurar(features/amazon/Pesquisar produto - Amazon.feature:20)\r\nCaused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#twotabsearchtextbox\"}\n  (Session info: chrome\u003d112.0.5615.138)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DESKTOP-B516F2P\u0027, ip: \u0027192.168.0.106\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_202\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\\Users\\Higor\\AppData\\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53946}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nSession ID: 08e9be986fd1a4fed7bd8c6393123cf6\n*** Element info: {Using\u003dcss selector, value\u003d#twotabsearchtextbox}\r\n\tat sun.reflect.GeneratedConstructorAccessor11.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)\r\n\tat org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy19.isDisplayed(Unknown Source)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:670)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:666)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)\r\n\tat org.example.stepsDefinitions.amazon.PagAmazonHomePagePO.preencherBarraDePesquisa(PagAmazonHomePagePO.java:26)\r\n\tat org.example.stepsDefinitions.amazon.PesquisarProdutoAmazonStepDef.seja_preenchida_a_barra_de_pesquisa_com_o_nome_do_produto_que_desejo_procurar(PesquisarProdutoAmazonStepDef.java:28)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:498)\r\n\tat cucumber.runtime.Utils$1.call(Utils.java:40)\r\n\tat cucumber.runtime.Timeout.timeout(Timeout.java:16)\r\n\tat cucumber.runtime.Utils.invoke(Utils.java:34)\r\n\tat cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:38)\r\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)\r\n\tat cucumber.runtime.Runtime.runStep(Runtime.java:300)\r\n\tat cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)\r\n\tat cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)\r\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:44)\r\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:102)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:128)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:27)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat cucumber.runtime.junit.ExamplesRunner.run(ExamplesRunner.java:59)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:128)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:27)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat cucumber.runtime.junit.ScenarioOutlineRunner.run(ScenarioOutlineRunner.java:53)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:95)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:38)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat cucumber.api.junit.Cucumber.run(Cucumber.java:100)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\r\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)\r\n\tat com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)\r\n\tat com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)\r\n\tat com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)\r\n\tat com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)\r\n\tat com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "PesquisarProdutoAmazonStepDef.o_botao_de_pesquisar_e_pressionado()"
 });
 formatter.result({
-  "duration": 891701500,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -341,11 +342,10 @@ formatter.match({
   "location": "PesquisarProdutoAmazonStepDef.deve_ser_retornado_a_mensagem_de_produto_indisponivel(String)"
 });
 formatter.result({
-  "duration": 297387800,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.after({
-  "duration": 750352100,
+  "duration": 1300669800,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -434,7 +434,7 @@ formatter.examples({
   "keyword": "Exemplos"
 });
 formatter.before({
-  "duration": 1238484100,
+  "duration": 1504351600,
   "status": "passed"
 });
 formatter.background({
@@ -516,7 +516,7 @@ formatter.match({
   "location": "PesquisarProdutoAmazonStepDef.que_seja_acessado_o_site_da_amazon()"
 });
 formatter.result({
-  "duration": 3580412400,
+  "duration": 2586722700,
   "status": "passed"
 });
 formatter.match({
@@ -529,14 +529,14 @@ formatter.match({
   "location": "PesquisarProdutoAmazonStepDef.seja_preenchida_a_barra_de_pesquisa_com_o_nome_do_produto_que_desejo_procurar(String)"
 });
 formatter.result({
-  "duration": 521054800,
+  "duration": 663391200,
   "status": "passed"
 });
 formatter.match({
   "location": "PesquisarProdutoAmazonStepDef.o_botao_de_pesquisar_e_pressionado()"
 });
 formatter.result({
-  "duration": 1417634100,
+  "duration": 2029408000,
   "status": "passed"
 });
 formatter.match({
@@ -549,484 +549,36 @@ formatter.match({
   "location": "PesquisarProdutoAmazonStepDef.deve_ser_retornado_o_produto_pesquisado(String)"
 });
 formatter.result({
-  "duration": 1955300100,
-  "status": "passed"
+  "duration": 30165595500,
+  "error_message": "java.lang.AssertionError\r\n\tat org.junit.Assert.fail(Assert.java:86)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat org.junit.Assert.assertTrue(Assert.java:52)\r\n\tat org.example.stepsDefinitions.amazon.PesquisarProdutoAmazonStepDef.deve_ser_retornado_o_produto_pesquisado(PesquisarProdutoAmazonStepDef.java:39)\r\n\tat ✽.E deve ser retornado o \"mi band\" pesquisado(features/amazon/Pesquisar produto - Amazon.feature:32)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "PesquisarProdutoAmazonStepDef.e_selecionado_o_produto_desejado()"
 });
 formatter.result({
-  "duration": 2770056100,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "PesquisarProdutoAmazonStepDef.o_perfil_do_produto_e_carregado()"
 });
 formatter.result({
-  "duration": 272591800,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "PesquisarProdutoAmazonStepDef.a_opcao_de_adicionar_ao_carrinho_e_pressionado()"
 });
 formatter.result({
-  "duration": 1078644400,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "PesquisarProdutoAmazonStepDef.validar_que_produto_foi_adicionado_ao_carrinho_com_sucesso()"
 });
 formatter.result({
-  "duration": 333161600,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.after({
-  "duration": 792327100,
-  "status": "passed"
-});
-formatter.uri("features/bomPraCredito/Novo Cliente - BomPracredito.feature");
-formatter.feature({
-  "comments": [
-    {
-      "line": 1,
-      "value": "# language: pt"
-    }
-  ],
-  "line": 3,
-  "name": "Solicitação de emprestimo",
-  "description": "",
-  "id": "solicitação-de-emprestimo",
-  "keyword": "Funcionalidade"
-});
-formatter.scenarioOutline({
-  "line": 6,
-  "name": "Cenario: Novo cliente solicita credito com sucesso - Pegando CPF do 4Devs",
-  "description": "",
-  "id": "solicitação-de-emprestimo;cenario:-novo-cliente-solicita-credito-com-sucesso---pegando-cpf-do-4devs",
-  "type": "scenario_outline",
-  "keyword": "Esquema do Cenario",
-  "tags": [
-    {
-      "line": 5,
-      "name": "@CTWeb"
-    },
-    {
-      "line": 5,
-      "name": "@CTBomPraCredito"
-    }
-  ]
-});
-formatter.step({
-  "line": 7,
-  "name": "que eu acesse o site bom pra credito",
-  "keyword": "Dado "
-});
-formatter.step({
-  "line": 8,
-  "name": "preencho as seguintes informacoes",
-  "rows": [
-    {
-      "cells": [
-        "valor",
-        "parcelas",
-        "nome",
-        "email",
-        "aceitoTermo"
-      ],
-      "line": 9
-    },
-    {
-      "cells": [
-        "\u003cvalor\u003e",
-        "\u003cparcelas\u003e",
-        "\u003cnome\u003e",
-        "\u003cemail\u003e",
-        "\u003caceitoTermo\u003e"
-      ],
-      "line": 10
-    }
-  ],
-  "keyword": "E "
-});
-formatter.step({
-  "line": 11,
-  "name": "clico no botao continuar sem custo e sem compromisso",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 12,
-  "name": "aguardo o carregamento da tela de motivo do emprestimo",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 13,
-  "name": "seleciono o \"\u003cmotivo\u003e\" do emprestimo",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 14,
-  "name": "aguardo o carregamento da tela de possui veiculo",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 15,
-  "name": "seleciono uma altenativa na tela de possui \"\u003cveiculo\u003e\"",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 16,
-  "name": "aguardo o carregamento da tela possui imovel",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 17,
-  "name": "seleciono uma alternativa na tela de possui \"\u003cimovel\u003e\"",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 18,
-  "name": "aguardo o carregamento da tela de cpf",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 19,
-  "name": "acesso o site do 4devs",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 20,
-  "name": "solicito a geracao de um novo cpf",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 21,
-  "name": "copio o cpf gerado",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 22,
-  "name": "encerro a pagina do fourdevs",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 23,
-  "name": "colo o documento no campo cpf",
-  "keyword": "Quando "
-});
-formatter.step({
-  "line": 24,
-  "name": "clico no botao continuar",
-  "keyword": "Entao "
-});
-formatter.examples({
-  "line": 25,
-  "name": "",
-  "description": "",
-  "id": "solicitação-de-emprestimo;cenario:-novo-cliente-solicita-credito-com-sucesso---pegando-cpf-do-4devs;",
-  "rows": [
-    {
-      "cells": [
-        "valor",
-        "parcelas",
-        "nome",
-        "email",
-        "aceitoTermo",
-        "motivo",
-        "veiculo",
-        "imovel"
-      ],
-      "line": 26,
-      "id": "solicitação-de-emprestimo;cenario:-novo-cliente-solicita-credito-com-sucesso---pegando-cpf-do-4devs;;1"
-    },
-    {
-      "cells": [
-        "2000",
-        "9",
-        "marcos silva",
-        "auto",
-        "sim",
-        "outro",
-        "nao",
-        "nao"
-      ],
-      "line": 27,
-      "id": "solicitação-de-emprestimo;cenario:-novo-cliente-solicita-credito-com-sucesso---pegando-cpf-do-4devs;;2"
-    }
-  ],
-  "keyword": "Exemplos"
-});
-formatter.before({
-  "duration": 1277695300,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 27,
-  "name": "Cenario: Novo cliente solicita credito com sucesso - Pegando CPF do 4Devs",
-  "description": "",
-  "id": "solicitação-de-emprestimo;cenario:-novo-cliente-solicita-credito-com-sucesso---pegando-cpf-do-4devs;;2",
-  "type": "scenario",
-  "keyword": "Esquema do Cenario",
-  "tags": [
-    {
-      "line": 5,
-      "name": "@CTBomPraCredito"
-    },
-    {
-      "line": 5,
-      "name": "@CTWeb"
-    }
-  ]
-});
-formatter.step({
-  "line": 7,
-  "name": "que eu acesse o site bom pra credito",
-  "keyword": "Dado "
-});
-formatter.step({
-  "line": 8,
-  "name": "preencho as seguintes informacoes",
-  "matchedColumns": [
-    0,
-    1,
-    2,
-    3,
-    4
-  ],
-  "rows": [
-    {
-      "cells": [
-        "valor",
-        "parcelas",
-        "nome",
-        "email",
-        "aceitoTermo"
-      ],
-      "line": 9
-    },
-    {
-      "cells": [
-        "2000",
-        "9",
-        "marcos silva",
-        "auto",
-        "sim"
-      ],
-      "line": 10
-    }
-  ],
-  "keyword": "E "
-});
-formatter.step({
-  "line": 11,
-  "name": "clico no botao continuar sem custo e sem compromisso",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 12,
-  "name": "aguardo o carregamento da tela de motivo do emprestimo",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 13,
-  "name": "seleciono o \"outro\" do emprestimo",
-  "matchedColumns": [
-    5
-  ],
-  "keyword": "E "
-});
-formatter.step({
-  "line": 14,
-  "name": "aguardo o carregamento da tela de possui veiculo",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 15,
-  "name": "seleciono uma altenativa na tela de possui \"nao\"",
-  "matchedColumns": [
-    6
-  ],
-  "keyword": "E "
-});
-formatter.step({
-  "line": 16,
-  "name": "aguardo o carregamento da tela possui imovel",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 17,
-  "name": "seleciono uma alternativa na tela de possui \"nao\"",
-  "matchedColumns": [
-    7
-  ],
-  "keyword": "E "
-});
-formatter.step({
-  "line": 18,
-  "name": "aguardo o carregamento da tela de cpf",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 19,
-  "name": "acesso o site do 4devs",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 20,
-  "name": "solicito a geracao de um novo cpf",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 21,
-  "name": "copio o cpf gerado",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 22,
-  "name": "encerro a pagina do fourdevs",
-  "keyword": "E "
-});
-formatter.step({
-  "line": 23,
-  "name": "colo o documento no campo cpf",
-  "keyword": "Quando "
-});
-formatter.step({
-  "line": 24,
-  "name": "clico no botao continuar",
-  "keyword": "Entao "
-});
-formatter.match({
-  "location": "NovoClienteBomPraCreditoStepDef.que_eu_acesse_o_site_site_bom_pra_credito()"
-});
-formatter.result({
-  "duration": 2081453700,
-  "status": "passed"
-});
-formatter.match({
-  "location": "NovoClienteBomPraCreditoStepDef.preencho_as_seguintes_informacoes(DataTable)"
-});
-formatter.result({
-  "duration": 1405696600,
-  "status": "passed"
-});
-formatter.match({
-  "location": "NovoClienteBomPraCreditoStepDef.clico_no_botao_continuar_sem_custo_e_sem_compromisso()"
-});
-formatter.result({
-  "duration": 60826400,
-  "status": "passed"
-});
-formatter.match({
-  "location": "NovoClienteBomPraCreditoStepDef.aguardo_o_carregamento_da_tela_de_motivo_do_emprestimo()"
-});
-formatter.result({
-  "duration": 2589755000,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "outro",
-      "offset": 13
-    }
-  ],
-  "location": "NovoClienteBomPraCreditoStepDef.seleciono_o_motivo_do_emprestimo(String)"
-});
-formatter.result({
-  "duration": 276896200,
-  "status": "passed"
-});
-formatter.match({
-  "location": "NovoClienteBomPraCreditoStepDef.aguardo_o_carregamento_da_tela_de_possui_veiculo()"
-});
-formatter.result({
-  "duration": 1304286800,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "nao",
-      "offset": 44
-    }
-  ],
-  "location": "NovoClienteBomPraCreditoStepDef.seleciono_uma_altenativa_na_tela_de_possui_veiculo(String)"
-});
-formatter.result({
-  "duration": 205880700,
-  "status": "passed"
-});
-formatter.match({
-  "location": "NovoClienteBomPraCreditoStepDef.aguardo_o_carregamento_da_tela_possui_imovel()"
-});
-formatter.result({
-  "duration": 1322429900,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "nao",
-      "offset": 45
-    }
-  ],
-  "location": "NovoClienteBomPraCreditoStepDef.seleciono_uma_alternativa_na_tela_de_possui_imovel(String)"
-});
-formatter.result({
-  "duration": 224198900,
-  "status": "passed"
-});
-formatter.match({
-  "location": "NovoClienteBomPraCreditoStepDef.aguardo_o_carregamento_da_tela_de_cpf()"
-});
-formatter.result({
-  "duration": 1329460100,
-  "status": "passed"
-});
-formatter.match({
-  "location": "NovoClienteBomPraCreditoStepDef.acesso_o_site_do_devs()"
-});
-formatter.result({
-  "duration": 3829557900,
-  "status": "passed"
-});
-formatter.match({
-  "location": "NovoClienteBomPraCreditoStepDef.solicito_a_geracao_de_um_novo_cpf()"
-});
-formatter.result({
-  "duration": 141938900,
-  "status": "passed"
-});
-formatter.match({
-  "location": "NovoClienteBomPraCreditoStepDef.copio_o_cpf_gerado()"
-});
-formatter.result({
-  "duration": 791288900,
-  "status": "passed"
-});
-formatter.match({
-  "location": "NovoClienteBomPraCreditoStepDef.encerro_a_pagina_do_devs()"
-});
-formatter.result({
-  "duration": 716208800,
-  "status": "passed"
-});
-formatter.match({
-  "location": "NovoClienteBomPraCreditoStepDef.colo_o_documento_no_campo_cpf()"
-});
-formatter.result({
-  "duration": 406772900,
-  "status": "passed"
-});
-formatter.match({
-  "location": "NovoClienteBomPraCreditoStepDef.clico_no_botao_continuar()"
-});
-formatter.result({
-  "duration": 76064700,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 748261300,
+  "duration": 1207126800,
   "status": "passed"
 });
 });
