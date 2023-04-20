@@ -21,8 +21,8 @@ Funcionalidade: Pesquisar produto desejado
     Quando o botao de pesquisar e pressionado
     Entao deve ser retornado a mensagem de "<produto>" indisponivel
     Exemplos:
-      | produto                       |
-      | dnhasjkdlhasdhasda            |
+      | produto                              |
+      | asjdajsdkasjdklsajdklasjldjasjdsajda |
 
   @CTWeb @CTAmazon @CTAmazonCarrinhoSucesso
   Esquema do Cenario: Validar que produto foi adicionado ao carrinho

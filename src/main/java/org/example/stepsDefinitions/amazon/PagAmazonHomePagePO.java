@@ -19,7 +19,7 @@ public class PagAmazonHomePagePO {
     private WebElement lblBarraDePesquisa;
     @FindBy(css = "#nav-search-submit-button")
     private WebElement btnPesquisar;
-    @FindBy(css = ".a-spacing-small.a-spacing-top-mini")
+    @FindBy(css = "#nav-main")
     private WebElement txtResultadoPesquisa;
 
     public void preencherBarraDePesquisa(String pesquisa) {
