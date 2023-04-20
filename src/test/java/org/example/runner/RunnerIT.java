@@ -18,11 +18,10 @@ import static org.example.utils.CapturaDeTela.limparDiretorioDeCapturaDeTela;
         }
 )
 
-public class Runner {
+public class RunnerIT {
 
-    @BeforeClass
-    public static void limpandoCapturaDeTela() {
-        limparDiretorioDeCapturaDeTela();
-    }
-
+        @BeforeClass
+        public static void beforeClass() {
+                limparDiretorioDeCapturaDeTela();
+        }
 }
