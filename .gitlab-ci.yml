@@ -1,0 +1,13 @@
+stages:
+  - build
+
+build:
+  stage: build
+  tags:
+    - shared-windows
+  allow_failure: false
+  script:
+    - echo pipeline rodando...
+    - echo pipeline rodou com sucesso!
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
