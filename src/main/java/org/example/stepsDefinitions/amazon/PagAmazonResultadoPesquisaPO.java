@@ -15,20 +15,18 @@ import static org.example.webDriverAcoes.WebDriverAcoes.getWait;
 
 public class PagAmazonResultadoPesquisaPO {
 
-    public PagAmazonResultadoPesquisaPO(){
-        PageFactory.initElements(getDriver(),this);
+    public PagAmazonResultadoPesquisaPO() {
+        PageFactory.initElements(getDriver(), this);
     }
 
     @FindBy(xpath = "//span[@class='a-size-medium a-color-base'][position()=1]")
-    private WebElement txtProdutoIndisponivel;
+    private WebElement txtProdutoIndisponivelMensagem;
     @FindBy(xpath = "//span[@class='a-size-medium a-color-base'][position()=2]")
     private WebElement txtProdutoIndisponivelNomeProduto;
     @FindBy(css = "#productTitle")
     private WebElement txtTituloDoProduto;
 
-    private int index = 1;
-
-    public boolean resgatarNomeDoProduto(String produto) {
+    public List<String> retornarListaDeProdutosEncontrados() {
 
         List<String> titulos = new ArrayList<>();
 
@@ -37,28 +35,23 @@ public class PagAmazonResultadoPesquisaPO {
         }
 
         titulos.replaceAll(String::toLowerCase);
-
-        for (String str : titulos) {
-            if (str.trim().contains(produto.toLowerCase())) {
-                index += titulos.indexOf(str.trim());
-                return true;
-            }
-        }
-        return false;
-    }
-    public String mensagemDeProdutoNaoEncontrado(){
-        return  txtProdutoIndisponivel.getText() + " " +txtProdutoIndisponivelNomeProduto.getText();
+        return titulos;
     }
 
-    public void selecionarProduto(){
+    public String mensagemDeProdutoNaoEncontrado() {
+        return txtProdutoIndisponivelMensagem.getText() + " " + txtProdutoIndisponivelNomeProduto.getText();
+    }
+
+    public void selecionarProduto(int index) {
         getDriver().findElement((By.xpath("(//span[@class='a-size-base-plus a-color-base a-text-normal'])[position()=" + index + "]"))).click();
+
     }
 
-    public boolean aguardarPerfilProduto(){
-        try{
+    public boolean aguardarPerfilProduto() {
+        try {
             getWait().until(ExpectedConditions.visibilityOf(txtTituloDoProduto));
             return true;
-        }catch(TimeoutException e){
+        } catch (TimeoutException e) {
             return false;
         }
     }

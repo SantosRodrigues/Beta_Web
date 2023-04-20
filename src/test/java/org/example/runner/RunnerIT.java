@@ -1,7 +1,7 @@
 package org.example.runner;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
@@ -20,8 +20,8 @@ import static org.example.utils.CapturaDeTela.limparDiretorioDeCapturaDeTela;
 
 public class RunnerIT {
 
-        @BeforeClass
-        public static void beforeClass() {
-                limparDiretorioDeCapturaDeTela();
-        }
+    @BeforeClass
+    public static void beforeClass() {
+        limparDiretorioDeCapturaDeTela();
+    }
 }

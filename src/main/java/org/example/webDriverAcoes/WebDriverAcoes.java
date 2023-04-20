@@ -15,7 +15,7 @@ public class WebDriverAcoes {
     private static WebDriver driver;
     private static WebDriverWait wait;
 
-    private WebDriverAcoes(){
+    private WebDriverAcoes() {
         throw new IllegalStateException("Utility class");
     }
 
@@ -32,19 +32,20 @@ public class WebDriverAcoes {
                 break;
             case "chrome":
                 System.setProperty("webdriver.chrome.driver", pathDriver + "chromedriver.exe");
-                ChromeOptions chromeOptions =  new ChromeOptions().setHeadless(headless.equalsIgnoreCase("true"));
+                ChromeOptions chromeOptions = new ChromeOptions().setHeadless(headless.equalsIgnoreCase("true"));
                 driver = new ChromeDriver(chromeOptions.addArguments(dimensoes));
                 break;
             default:
-                System.err.println("Opção incorreta, escolha entre 'chrome' e 'firefox'.");
+                throw new IllegalArgumentException("Opção incorreta, escolha entre 'chrome' e 'firefox'.");
         }
         driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, 30);
+        wait = new WebDriverWait(driver, 15);
     }
 
     public static WebDriver getDriver() {
         return driver;
     }
+
     public static WebDriverWait getWait() {
         return wait;
     }

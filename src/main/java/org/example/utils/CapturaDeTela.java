@@ -1,6 +1,6 @@
 package org.example.utils;
 
-import cucumber.api.Scenario;
+import io.cucumber.java.Scenario;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 

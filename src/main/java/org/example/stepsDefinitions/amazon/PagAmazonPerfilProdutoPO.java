@@ -10,7 +10,7 @@ import static org.example.webDriverAcoes.WebDriverAcoes.getWait;
 
 public class PagAmazonPerfilProdutoPO {
 
-    public PagAmazonPerfilProdutoPO(){
+    public PagAmazonPerfilProdutoPO() {
         PageFactory.initElements(getDriver(), this);
     }
 
@@ -19,13 +19,13 @@ public class PagAmazonPerfilProdutoPO {
     @FindBy(css = ".a-size-medium-plus.a-color-base.sw-atc-text.a-text-bold")
     private WebElement txtProdutoAdicionadoAoCarrinhoComSucesso;
 
-    public void adicionarProdutoAoCarrinho(){
+    public void adicionarProdutoAoCarrinho() {
         getWait().until(ExpectedConditions.elementToBeClickable(btnAdicionarCarrinho));
         btnAdicionarCarrinho.click();
     }
 
-    public boolean validarProdutoAdicionadoAoCarrinhoComSucesso(){
+    public String validarProdutoAdicionadoAoCarrinhoComSucesso() {
         getWait().until(ExpectedConditions.visibilityOf(txtProdutoAdicionadoAoCarrinhoComSucesso));
-        return txtProdutoAdicionadoAoCarrinhoComSucesso.getText().equalsIgnoreCase("Adicionado ao carrinho");
+        return txtProdutoAdicionadoAoCarrinhoComSucesso.getText();
     }
 }

@@ -1,72 +1,49 @@
 package org.example.stepsDefinitions.amazon;
 
-import cucumber.api.java.pt.Dado;
-import cucumber.api.java.pt.E;
-import cucumber.api.java.pt.Entao;
-import cucumber.api.java.pt.Quando;
+import io.cucumber.java.pt.E;
+import io.cucumber.java.pt.Entao;
+import io.cucumber.java.pt.Quando;
+import io.cucumber.java.pt.Dado;
 import org.example.utils.CapturaDeTela;
 import org.junit.Assert;
 
+import java.util.List;
+
 import static org.example.hook.Hook.scenario;
-import static org.example.properties.DefinitionsProperties.getProp;
 import static org.example.webDriverAcoes.WebDriverAcoes.getDriver;
 
 public class PesquisarProdutoAmazonStepDef {
 
     private final PagAmazonHomePagePO pagAmazonHomePagePO = new PagAmazonHomePagePO();
     private final PagAmazonResultadoPesquisaPO pagAmazonResultadoPesquisaPO = new PagAmazonResultadoPesquisaPO();
-    private final PagAmazonPerfilProdutoPO pagAmazonPerfilProdutoPO = new PagAmazonPerfilProdutoPO();
+    private int index = 0;
 
-    @Dado("^que seja acessado o site da amazon$")
-    public void que_seja_acessado_o_site_da_amazon() {
-        getDriver().get(getProp().getProperty("prop.url.amazon"));
-        CapturaDeTela.capturarTela("Pagina Inicial", getDriver(), scenario);
-    }
-
-    @E("^seja preenchida a barra de pesquisa com o nome do \"([^\"]*)\" que desejo procurar$")
-    public void seja_preenchida_a_barra_de_pesquisa_com_o_nome_do_produto_que_desejo_procurar(String pesquisa) {
-        pagAmazonHomePagePO.preencherBarraDePesquisa(pesquisa);
-        CapturaDeTela.capturarTela("Preencher barra de pesquisa", getDriver(), scenario);
-    }
-
-    @Quando("^o botao de pesquisar e pressionado$")
-    public void o_botao_de_pesquisar_e_pressionado() {
-        pagAmazonHomePagePO.clicarEmPesquisar();
-    }
-
-    @Entao("^deve ser retornado o \"([^\"]*)\" pesquisado$")
+    @Entao("deve ser retornado o {string} pesquisado")
     public void deve_ser_retornado_o_produto_pesquisado(String produto) {
-        Assert.assertTrue(pagAmazonHomePagePO.aguardarPesquisa());
-        Assert.assertTrue(pagAmazonResultadoPesquisaPO.resgatarNomeDoProduto(produto));
+        Assert.assertTrue(pagAmazonHomePagePO.aguardarQuePesquisaSejaRealizada());
+        boolean itemEncontrado = false;
+
+        List<String> listaDeProdutos = pagAmazonResultadoPesquisaPO.retornarListaDeProdutosEncontrados();
+        for (String item : listaDeProdutos) {
+            this.index++;
+            if (item.contains(produto)) {
+                itemEncontrado = true;
+                break;
+            }
+        }
+        Assert.assertTrue(itemEncontrado);
         CapturaDeTela.capturarTela("Retorno de produto disponivel", getDriver(), scenario);
     }
 
-    @Entao("^deve ser retornado a mensagem de \"([^\"]*)\" indisponivel$")
+    @Entao("deve ser retornado a mensagem de {string} indisponivel")
     public void deve_ser_retornado_a_mensagem_de_produto_indisponivel(String produto) {
-        Assert.assertTrue(pagAmazonHomePagePO.aguardarPesquisa());
+        Assert.assertTrue(pagAmazonHomePagePO.aguardarQuePesquisaSejaRealizada());
         Assert.assertEquals(pagAmazonResultadoPesquisaPO.mensagemDeProdutoNaoEncontrado(), "Nenhum resultado para " + produto);
         CapturaDeTela.capturarTela("Retorno de produto indisponivel", getDriver(), scenario);
     }
 
-    @Dado("^e selecionado o produto desejado$")
+    @Dado("e selecionado o produto desejado")
     public void e_selecionado_o_produto_desejado() {
-        pagAmazonResultadoPesquisaPO.selecionarProduto();
-    }
-
-    @Dado("^o perfil do produto e carregado$")
-    public void o_perfil_do_produto_e_carregado() {
-        Assert.assertTrue(pagAmazonResultadoPesquisaPO.aguardarPerfilProduto());
-        CapturaDeTela.capturarTela("Perfil do produto", getDriver(), scenario);
-    }
-
-    @Quando("^a opcao de adicionar ao carrinho e pressionado$")
-    public void a_opcao_de_adicionar_ao_carrinho_e_pressionado() {
-        pagAmazonPerfilProdutoPO.adicionarProdutoAoCarrinho();
-    }
-
-    @Entao("^validar que produto foi adicionado ao carrinho com sucesso$")
-    public void validar_que_produto_foi_adicionado_ao_carrinho_com_sucesso() {
-        Assert.assertTrue(pagAmazonPerfilProdutoPO.validarProdutoAdicionadoAoCarrinhoComSucesso());
-        CapturaDeTela.capturarTela("Produto adicionado ao carrinho", getDriver(), scenario);
+        pagAmazonResultadoPesquisaPO.selecionarProduto(index);
     }
 }

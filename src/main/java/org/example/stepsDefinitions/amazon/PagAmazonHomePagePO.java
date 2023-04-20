@@ -20,7 +20,7 @@ public class PagAmazonHomePagePO {
     @FindBy(css = "#nav-search-submit-button")
     private WebElement btnPesquisar;
     @FindBy(css = "#nav-main")
-    private WebElement txtResultadoPesquisa;
+    private WebElement divResultadoPesquisa;
 
     public void preencherBarraDePesquisa(String pesquisa) {
         getWait().until(ExpectedConditions.elementToBeClickable(lblBarraDePesquisa));
@@ -31,9 +31,9 @@ public class PagAmazonHomePagePO {
         btnPesquisar.click();
     }
 
-    public boolean aguardarPesquisa() {
+    public boolean aguardarQuePesquisaSejaRealizada() {
         try {
-            getWait().until(ExpectedConditions.visibilityOf(txtResultadoPesquisa));
+            getWait().until(ExpectedConditions.visibilityOf(divResultadoPesquisa));
             return true;
         } catch (TimeoutException e) {
             return false;

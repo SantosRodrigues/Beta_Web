@@ -1,8 +1,8 @@
 package org.example.hook;
 
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 
 import static org.example.utils.CapturaDeTela.capturarTela;
 import static org.example.webDriverAcoes.WebDriverAcoes.getDriver;
@@ -24,7 +24,8 @@ public class Hook {
 
         if (scenario.isFailed()) {
             capturarTela("Cenario falhou!", getDriver(), scenario);
+        } else {
+            getDriver().quit();
         }
-        getDriver().quit();
     }
 }
