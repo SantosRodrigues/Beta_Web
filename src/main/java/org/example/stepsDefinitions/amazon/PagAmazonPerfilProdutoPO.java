@@ -16,7 +16,7 @@ public class PagAmazonPerfilProdutoPO {
 
     @FindBy(css = "#add-to-cart-button")
     private WebElement btnAdicionarCarrinho;
-    @FindBy(css = ".a-size-medium.a-text-bold")
+    @FindBy(css = ".a-size-medium-plus.a-color-base.sw-atc-text.a-text-bold")
     private WebElement txtProdutoAdicionadoAoCarrinhoComSucesso;
 
     public void adicionarProdutoAoCarrinho(){
