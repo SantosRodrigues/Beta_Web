@@ -16,7 +16,7 @@ public class PerfilProdutoAmazonStepDef {
     @Dado("^o perfil do produto e carregado$")
     public void o_perfil_do_produto_e_carregado() {
         Assert.assertTrue(pagAmazonResultadoPesquisaPO.aguardarPerfilProduto());
-        CapturaDeTela.capturarTela("Perfil do produto", getDriver(), scenario);
+        CapturaDeTela.capturarTela(getDriver(), scenario, "Perfil do produto");
     }
 
     @Quando("a opcao de adicionar ao carrinho e pressionado")

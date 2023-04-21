@@ -23,7 +23,7 @@ public class CapturaDeTela {
      * @param scenario utilizado para obter a informação do nome da feature sendo executada no momento.
      * @param nomeDaEtapa nome da etapa para melhor descricao da captura de tela.
      */
-    public static void capturarTela(String nomeDaEtapa, WebDriver webDriver, Scenario scenario) {
+    public static void capturarTela(WebDriver webDriver, Scenario scenario, String nomeDaEtapa) {
         String pathDiretorio = getParametro(PATH_CAPTURAR_TELA) + scenario.getName() + "\\";
         String nomeDoArquivo = LocalDateTime.now().toString().replace(":", "-") + " - " + nomeDaEtapa;
         final String extensao = ".png";

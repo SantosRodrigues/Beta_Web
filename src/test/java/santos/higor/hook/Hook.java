@@ -21,7 +21,7 @@ public class Hook {
     public void after(Scenario scenario) {
 
         if (scenario.isFailed()) {
-            CapturaDeTela.capturarTela("Cenario falhou!", WebDriverAcoes.getDriver(), scenario);
+            CapturaDeTela.capturarTela(WebDriverAcoes.getDriver(), scenario, "Cenario falhou!");
         }
         WebDriverAcoes.getDriver().quit();
 

@@ -30,14 +30,14 @@ public class PesquisarProdutoAmazonStepDef {
             }
         }
         Assert.assertTrue(itemEncontrado);
-        CapturaDeTela.capturarTela("Retorno de produto disponivel", getDriver(), scenario);
+        CapturaDeTela.capturarTela(getDriver(), scenario, "Retorno de produto disponivel");
     }
 
     @Entao("deve ser retornado a mensagem de {string} indisponivel")
     public void deve_ser_retornado_a_mensagem_de_produto_indisponivel(String produto) {
         Assert.assertTrue(pagAmazonHomePagePO.aguardarQuePesquisaSejaRealizada());
         Assert.assertEquals(pagAmazonResultadoPesquisaPO.mensagemDeProdutoNaoEncontrado(), "Nenhum resultado para " + produto);
-        CapturaDeTela.capturarTela("Retorno de produto indisponivel", getDriver(), scenario);
+        CapturaDeTela.capturarTela(getDriver(), scenario, "Retorno de produto indisponivel");
     }
 
     @Dado("e selecionado o produto desejado")
