@@ -1,13 +1,44 @@
 stages:
-  - build
+  - teste-unitario
+  - teste-integracao
 
-build:
-  stage: build
+teste-unitario:
+  stage: teste-unitario
   tags:
-    - shared-windows
+    - runner-web
   allow_failure: false
   script:
-    - echo pipeline rodando...
-    - echo pipeline rodou com sucesso!
+    - mvn clean test
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+  artifacts:
+    when: always
+    expire_in: 5 days
+    paths:
+      - ./target/surefire-reports/*.xml
+    reports:
+      junit: ./target/surefire-reports/*.xml
+
+teste-integracao:
+  stage: teste-integracao
+  tags:
+    - runner-web
+  allow_failure: false
+  script:
+    - mvn clean verify 
+        "-Dprop.headless=$PROP_HEADLESS"
+        "-Dprop.navigator=$PROP_NAVEGADOR"
+        "-Dprop.screenShot=$PROP_CAPTURA_TELA"
+        "-Dprop.cleanScreenShot=$PROP_LIMPAR_CAPTURA_TELA"
+        "-Dprop.url.amazon=$PROP_URL_AMAZON"
+        "-Dprop.path.driver=$PROP_PATH_DRIVER"
+        "-Dprop.path.screenShot=$PROP_PATH_CAPTURA_TELA"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+  artifacts:
+    when: always
+    expire_in: 5 days
+    paths:
+      - ./target/failsafe-reports/TEST*.xml
+    reports:
+      junit: ./target/failsafe-reports/*.xml
