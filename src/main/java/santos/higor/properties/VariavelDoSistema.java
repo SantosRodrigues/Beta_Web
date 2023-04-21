@@ -6,18 +6,18 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class DefinitionsProperties {
+public class VariavelDoSistema {
 
-    private DefinitionsProperties() {
+    private VariavelDoSistema() {
         throw new IllegalStateException("Utility class");
     }
 
-    private static Properties getDefinitions() {
+    protected static Properties lerArquivoPropeties(String path) {
         Properties props = new Properties();
-        try (FileInputStream file = new FileInputStream(".\\src\\test\\resources\\definitions.properties")) {
+        try (FileInputStream file = new FileInputStream(path)) {
             props.load(file);
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
+            throw new IllegalArgumentException("Path informado é invalido.");
         }
         return props;
     }
@@ -30,13 +30,14 @@ public class DefinitionsProperties {
     public static String getParametro(Parametros parametro) {
         String textoEnum = parametro.getParametro();
         String vmoptions = System.getProperty(textoEnum);
-        String propriedade = getDefinitions().getProperty(textoEnum);
+        String pathDefinitions = ".\\src\\test\\resources\\definitions.properties";
+        String propriedade = lerArquivoPropeties(pathDefinitions).getProperty(textoEnum);
 
         if (vmoptions == null || vmoptions.isEmpty()){
             if(propriedade == null || propriedade.isEmpty()){
                 throw new IllegalArgumentException(String.format("Informe o valor do parâmetro [%s] corretamente.", textoEnum));
             }
-            return getDefinitions().getProperty(textoEnum);
+            return lerArquivoPropeties(pathDefinitions).getProperty(textoEnum);
         }
         return vmoptions;
     }

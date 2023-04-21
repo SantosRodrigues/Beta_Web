@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 
 import static santos.higor.enums.Parametros.*;
-import static santos.higor.properties.DefinitionsProperties.getParametro;
+import static santos.higor.properties.VariavelDoSistema.getParametro;
 
 public class CapturaDeTela {
 

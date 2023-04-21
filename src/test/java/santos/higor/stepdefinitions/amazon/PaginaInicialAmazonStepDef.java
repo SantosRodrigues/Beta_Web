@@ -8,7 +8,7 @@ import santos.higor.webdriveracoes.WebDriverAcoes;
 
 import static santos.higor.enums.Parametros.URL_AMAZON;
 import static santos.higor.hook.Hook.scenario;
-import static santos.higor.properties.DefinitionsProperties.getParametro;
+import static santos.higor.properties.VariavelDoSistema.getParametro;
 
 public class PaginaInicialAmazonStepDef {
 

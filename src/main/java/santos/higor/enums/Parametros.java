@@ -2,6 +2,10 @@ package santos.higor.enums;
 
 public enum Parametros{
 
+    /**
+     * Enum [ERROR] criado para realizar teste unitário.
+     */
+    ERROR("prop.error"),
     URL_AMAZON("prop.url.amazon"),
     PATH_CAPTURAR_TELA("prop.path.screenShot"),
     PATH_DRIVER_BASE("prop.path.driver"),

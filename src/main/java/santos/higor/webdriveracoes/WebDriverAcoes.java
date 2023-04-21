@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static santos.higor.enums.Parametros.*;
-import static santos.higor.properties.DefinitionsProperties.getParametro;
+import static santos.higor.properties.VariavelDoSistema.getParametro;
 
 public class WebDriverAcoes {
 
