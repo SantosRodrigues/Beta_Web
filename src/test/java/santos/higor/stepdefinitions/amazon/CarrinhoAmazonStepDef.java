@@ -1,9 +1,9 @@
-package santos.higor.stepsDefinitions.amazon;
+package santos.higor.stepdefinitions.amazon;
 
 import io.cucumber.java.pt.Entao;
 import santos.higor.utils.CapturaDeTela;
 import org.junit.Assert;
-import santos.higor.webDriverAcoes.WebDriverAcoes;
+import santos.higor.webdriveracoes.WebDriverAcoes;
 
 import static santos.higor.hook.Hook.scenario;
 

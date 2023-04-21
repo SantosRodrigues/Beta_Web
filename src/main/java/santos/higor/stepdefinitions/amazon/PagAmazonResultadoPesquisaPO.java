@@ -1,4 +1,4 @@
-package santos.higor.stepsDefinitions.amazon;
+package santos.higor.stepdefinitions.amazon;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import santos.higor.webDriverAcoes.WebDriverAcoes;
+import santos.higor.webdriveracoes.WebDriverAcoes;
 
 import java.util.ArrayList;
 import java.util.List;

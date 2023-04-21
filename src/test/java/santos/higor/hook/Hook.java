@@ -4,7 +4,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import santos.higor.utils.CapturaDeTela;
-import santos.higor.webDriverAcoes.WebDriverAcoes;
+import santos.higor.webdriveracoes.WebDriverAcoes;
 
 public class Hook {
 
@@ -22,8 +22,8 @@ public class Hook {
 
         if (scenario.isFailed()) {
             CapturaDeTela.capturarTela("Cenario falhou!", WebDriverAcoes.getDriver(), scenario);
-        } else {
-            WebDriverAcoes.getDriver().quit();
         }
+        WebDriverAcoes.getDriver().quit();
+
     }
 }

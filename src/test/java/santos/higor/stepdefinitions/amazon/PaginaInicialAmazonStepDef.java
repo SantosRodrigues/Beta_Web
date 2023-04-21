@@ -1,13 +1,14 @@
-package santos.higor.stepsDefinitions.amazon;
+package santos.higor.stepdefinitions.amazon;
 
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Quando;
 import santos.higor.utils.CapturaDeTela;
-import santos.higor.webDriverAcoes.WebDriverAcoes;
+import santos.higor.webdriveracoes.WebDriverAcoes;
 
+import static santos.higor.enums.Parametros.URL_AMAZON;
 import static santos.higor.hook.Hook.scenario;
-import static santos.higor.properties.DefinitionsProperties.getProp;
+import static santos.higor.properties.DefinitionsProperties.getParametro;
 
 public class PaginaInicialAmazonStepDef {
 
@@ -15,7 +16,7 @@ public class PaginaInicialAmazonStepDef {
 
     @Dado("que seja acessado o site da amazon")
     public void que_seja_acessado_o_site_da_amazon() {
-        WebDriverAcoes.getDriver().get(getProp().getProperty("prop.url.amazon"));
+        WebDriverAcoes.getDriver().get(getParametro(URL_AMAZON));
         CapturaDeTela.capturarTela("Pagina Inicial", WebDriverAcoes.getDriver(), scenario);
     }
 

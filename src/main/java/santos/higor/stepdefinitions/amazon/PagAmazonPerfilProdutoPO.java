@@ -1,10 +1,10 @@
-package santos.higor.stepsDefinitions.amazon;
+package santos.higor.stepdefinitions.amazon;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import santos.higor.webDriverAcoes.WebDriverAcoes;
+import santos.higor.webdriveracoes.WebDriverAcoes;
 
 public class PagAmazonPerfilProdutoPO {
 

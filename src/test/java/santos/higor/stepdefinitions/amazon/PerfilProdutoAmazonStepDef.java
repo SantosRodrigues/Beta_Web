@@ -1,4 +1,4 @@
-package santos.higor.stepsDefinitions.amazon;
+package santos.higor.stepdefinitions.amazon;
 
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Quando;
@@ -6,7 +6,7 @@ import santos.higor.utils.CapturaDeTela;
 import org.junit.Assert;
 
 import static santos.higor.hook.Hook.scenario;
-import static santos.higor.webDriverAcoes.WebDriverAcoes.getDriver;
+import static santos.higor.webdriveracoes.WebDriverAcoes.getDriver;
 
 public class PerfilProdutoAmazonStepDef {
 

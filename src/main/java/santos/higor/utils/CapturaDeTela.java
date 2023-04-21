@@ -3,11 +3,13 @@ package santos.higor.utils;
 import io.cucumber.java.Scenario;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
-import santos.higor.properties.DefinitionsProperties;
 
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
+
+import static santos.higor.enums.Parametros.*;
+import static santos.higor.properties.DefinitionsProperties.getParametro;
 
 public class CapturaDeTela {
 
@@ -16,12 +18,11 @@ public class CapturaDeTela {
     }
 
     public static void capturarTela(String nomeDaEtapa, WebDriver webDriver, Scenario scenario) {
-        String pathDiretorio = DefinitionsProperties.getProp().getProperty("prop.path.screenShot") + scenario.getName() + "\\";
+        String pathDiretorio = getParametro(PATH_CAPTURAR_TELA) + scenario.getName() + "\\";
         String nomeDoArquivo = LocalDateTime.now().toString().replace(":", "-") + " - " + nomeDaEtapa;
         final String extensao = ".png";
 
-        if (DefinitionsProperties.getProp().getProperty("prop.screenShot").equalsIgnoreCase("true")) {
-
+        if (Boolean.parseBoolean(getParametro(CAPUTRAR_TELA))) {
             File capturaDeTela = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
 
             try {
@@ -33,10 +34,8 @@ public class CapturaDeTela {
     }
 
     public static void limparDiretorioDeCapturaDeTela() {
-
-        if (DefinitionsProperties.getProp().getProperty("prop.cleanScreenShot").equalsIgnoreCase("true")) {
-
-            File pasta = new File(DefinitionsProperties.getProp().getProperty("prop.path.screenShot"));
+        if (Boolean.parseBoolean(getParametro(LIMPAR_CAPTURAS_DE_TELA))) {
+            File pasta = new File(getParametro(PATH_CAPTURAR_TELA));
 
             try {
                 FileUtils.deleteDirectory(pasta);

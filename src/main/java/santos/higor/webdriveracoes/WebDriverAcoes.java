@@ -1,4 +1,4 @@
-package santos.higor.webDriverAcoes;
+package santos.higor.webdriveracoes;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -7,7 +7,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static santos.higor.properties.DefinitionsProperties.getProp;
+import static santos.higor.enums.Parametros.*;
+import static santos.higor.properties.DefinitionsProperties.getParametro;
 
 public class WebDriverAcoes {
 
@@ -20,18 +21,18 @@ public class WebDriverAcoes {
 
     public static void iniciarNavegador() {
         final String dimensoes = "--window-size=1920,1080";
-        final String headless = getProp().getProperty("prop.headless");
-        final String pathDriver = getProp().getProperty("prop.path.driver");
+        final boolean headless = Boolean.parseBoolean(getParametro(HEADLESS));
+        final String pathDriver = getParametro(PATH_DRIVER_BASE);
 
-        switch (getProp().getProperty("prop.navigator")) {
+        switch (getParametro(NAVEGADOR)) {
             case "firefox":
                 System.setProperty("webdriver.gecko.driver", pathDriver + "geckodriver.exe");
-                FirefoxOptions firefoxOptions = new FirefoxOptions().setHeadless(headless.equalsIgnoreCase("true"));
+                FirefoxOptions firefoxOptions = new FirefoxOptions().setHeadless(headless);
                 driver = new FirefoxDriver(firefoxOptions.addArguments(dimensoes));
                 break;
             case "chrome":
                 System.setProperty("webdriver.chrome.driver", pathDriver + "chromedriver.exe");
-                ChromeOptions chromeOptions = new ChromeOptions().setHeadless(headless.equalsIgnoreCase("true"));
+                ChromeOptions chromeOptions = new ChromeOptions().setHeadless(headless);
                 driver = new ChromeDriver(chromeOptions.addArguments(dimensoes));
                 break;
             default:

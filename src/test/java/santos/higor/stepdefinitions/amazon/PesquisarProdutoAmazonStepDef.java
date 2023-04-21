@@ -1,4 +1,4 @@
-package santos.higor.stepsDefinitions.amazon;
+package santos.higor.stepdefinitions.amazon;
 
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Dado;
@@ -8,7 +8,7 @@ import org.junit.Assert;
 import java.util.List;
 
 import static santos.higor.hook.Hook.scenario;
-import static santos.higor.webDriverAcoes.WebDriverAcoes.getDriver;
+import static santos.higor.webdriveracoes.WebDriverAcoes.getDriver;
 
 public class PesquisarProdutoAmazonStepDef {
 
