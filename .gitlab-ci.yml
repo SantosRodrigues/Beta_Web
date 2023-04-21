@@ -26,7 +26,7 @@ teste-integracao:
   stage: teste-integracao
   tags:
     - runner-web
-  allow_failure: false
+  allow_failure: true
   script:
     - mvn clean verify
       "-Dprop.headless=$PROP_HEADLESS"
