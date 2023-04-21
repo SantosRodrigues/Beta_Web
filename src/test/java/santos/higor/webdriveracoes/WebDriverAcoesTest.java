@@ -5,20 +5,39 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static santos.higor.enums.Parametros.HEADLESS;
+import static santos.higor.enums.Parametros.NAVEGADOR;
 import static santos.higor.webdriveracoes.WebDriverAcoes.*;
 
 public class WebDriverAcoesTest {
 
     @Test
-    public void criarNavegadorComSuscesso() {
+    public void criarNavegadorFirefoxComSuscesso() {
+        System.setProperty(HEADLESS.getParametro(), "true");
         //DADO
-        System.setProperty("prop.headless", "true");
+        System.setProperty(NAVEGADOR.getParametro(), "firefox");
         iniciarNavegador();
         //QUANDO
         WebDriver webDriver = getDriver();
         //ENTAO
         Assert.assertNotNull(webDriver);
-        System.clearProperty("prop.headless");
+        System.clearProperty(HEADLESS.getParametro());
+        System.clearProperty(NAVEGADOR.getParametro());
+        webDriver.quit();
+    }
+
+    @Test
+    public void criarNavegadorChromeComSuscesso() {
+        System.setProperty(HEADLESS.getParametro(), "true");
+        //DADO
+        System.setProperty(NAVEGADOR.getParametro(), "chrome");
+        iniciarNavegador();
+        //QUANDO
+        WebDriver webDriver = getDriver();
+        //ENTAO
+        Assert.assertNotNull(webDriver);
+        System.clearProperty(HEADLESS.getParametro());
+        System.clearProperty(NAVEGADOR.getParametro());
         webDriver.quit();
     }
 
@@ -26,7 +45,7 @@ public class WebDriverAcoesTest {
     public void informarNavegadorInvalido() {
         String mensagem = "";
         //DADO
-        System.setProperty("prop.navigator", "navegador");
+        System.setProperty(NAVEGADOR.getParametro(), "navegador");
         //QUANDO
         try {
             iniciarNavegador();
@@ -35,19 +54,19 @@ public class WebDriverAcoesTest {
         }
         //ENTAO
         Assert.assertEquals("Opção incorreta, escolha entre 'chrome' e 'firefox'.", mensagem);
-        System.clearProperty("prop.navigator");
+        System.clearProperty(NAVEGADOR.getParametro());
     }
 
     @Test
     public void criarWebDriverWaitComSucesso(){
+        System.setProperty(HEADLESS.getParametro(), "true");
         //DADO
-        System.setProperty("prop.headless", "true");
         iniciarNavegador();
         //QUANDO
         WebDriverWait webDriverWait = getWait();
         //ENTAO
         Assert.assertNotNull(webDriverWait);
-        System.clearProperty("prop.headless");
+        System.clearProperty(HEADLESS.getParametro());
         getDriver().quit();
     }
 }
