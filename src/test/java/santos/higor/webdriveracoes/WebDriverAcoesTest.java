@@ -12,11 +12,13 @@ public class WebDriverAcoesTest {
     @Test
     public void criarNavegadorComSuscesso() {
         //DADO
+        System.setProperty("prop.headless", "true");
         iniciarNavegador();
         //QUANDO
         WebDriver webDriver = getDriver();
         //ENTAO
         Assert.assertNotNull(webDriver);
+        System.clearProperty("prop.headless");
         webDriver.quit();
     }
 
@@ -39,11 +41,13 @@ public class WebDriverAcoesTest {
     @Test
     public void criarWebDriverWaitComSucesso(){
         //DADO
+        System.setProperty("prop.headless", "true");
         iniciarNavegador();
         //QUANDO
         WebDriverWait webDriverWait = getWait();
         //ENTAO
         Assert.assertNotNull(webDriverWait);
+        System.clearProperty("prop.headless");
         getDriver().quit();
     }
 }
