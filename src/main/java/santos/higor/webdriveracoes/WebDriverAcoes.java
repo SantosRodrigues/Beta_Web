@@ -19,6 +19,9 @@ public class WebDriverAcoes {
         throw new IllegalStateException("Utility class");
     }
 
+    /**
+     * Realiza a inicialização do navegador.
+     */
     public static void iniciarNavegador() {
         final String dimensoes = "--window-size=1920,1080";
         final boolean headless = Boolean.parseBoolean(getParametro(HEADLESS));

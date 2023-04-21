@@ -22,6 +22,11 @@ public class DefinitionsProperties {
         return props;
     }
 
+    /**
+     * Retorna os parametros informavos via VMOptions e definidos no arquivo "definitions.properties" respectivamente.
+     * @param parametro Enum responsável por centralizar os possíveis parametros.
+     * @return a informação atribuida ao parâmetro.
+     */
     public static String getParametro(Parametros parametro) {
         String textoEnum = parametro.getParametro();
         String vmoptions = System.getProperty(textoEnum);
@@ -35,6 +40,4 @@ public class DefinitionsProperties {
         }
         return vmoptions;
     }
-
-
 }

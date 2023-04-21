@@ -17,6 +17,12 @@ public class CapturaDeTela {
         throw new IllegalStateException("Utility class");
     }
 
+    /**
+     * Realiza a captura de tela e armazena na raiz do projeto.
+     * @param webDriver driver que deseja realizar a captura de tela.
+     * @param scenario utilizado para obter a informação do nome da feature sendo executada no momento.
+     * @param nomeDaEtapa nome da etapa para melhor descricao da captura de tela.
+     */
     public static void capturarTela(String nomeDaEtapa, WebDriver webDriver, Scenario scenario) {
         String pathDiretorio = getParametro(PATH_CAPTURAR_TELA) + scenario.getName() + "\\";
         String nomeDoArquivo = LocalDateTime.now().toString().replace(":", "-") + " - " + nomeDaEtapa;
@@ -33,6 +39,9 @@ public class CapturaDeTela {
         }
     }
 
+    /**
+     * Realiza a limpeza do diretório onde ficam armazenados as capturas de tela.
+     */
     public static void limparDiretorioDeCapturaDeTela() {
         if (Boolean.parseBoolean(getParametro(LIMPAR_CAPTURAS_DE_TELA))) {
             File pasta = new File(getParametro(PATH_CAPTURAR_TELA));
