@@ -12,7 +12,8 @@ teste-unitario:
   rules:
     - if:
         $CI_PIPELINE_SOURCE == "merge_request_event" ||
-        $CI_JOB_MANUAL == "true"
+        $CI_JOB_MANUAL == "true" ||
+        $DEBUG == "true"
   artifacts:
     when: always
     expire_in: 5 days
@@ -38,7 +39,8 @@ teste-integracao:
   rules:
     - if:
         $CI_PIPELINE_SOURCE == "merge_request_event" ||
-        $CI_JOB_MANUAL == "true"
+        $CI_JOB_MANUAL == "true" ||
+        $DEBUG == "true"
   artifacts:
     when: always
     expire_in: 5 days
