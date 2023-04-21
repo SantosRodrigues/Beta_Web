@@ -1,11 +1,11 @@
-package org.example.stepsDefinitions.amazon;
+package santos.higor.stepsDefinitions.amazon;
 
 import io.cucumber.java.pt.Entao;
-import org.example.utils.CapturaDeTela;
+import santos.higor.utils.CapturaDeTela;
 import org.junit.Assert;
+import santos.higor.webDriverAcoes.WebDriverAcoes;
 
-import static org.example.hook.Hook.scenario;
-import static org.example.webDriverAcoes.WebDriverAcoes.getDriver;
+import static santos.higor.hook.Hook.scenario;
 
 public class CarrinhoAmazonStepDef {
 
@@ -14,6 +14,6 @@ public class CarrinhoAmazonStepDef {
     @Entao("validar que produto foi adicionado ao carrinho com sucesso")
     public void validar_que_produto_foi_adicionado_ao_carrinho_com_sucesso() {
         Assert.assertEquals("Adicionado ao carrinho", pagAmazonPerfilProdutoPO.validarProdutoAdicionadoAoCarrinhoComSucesso());
-        CapturaDeTela.capturarTela("Produto adicionado ao carrinho", getDriver(), scenario);
+        CapturaDeTela.capturarTela("Produto adicionado ao carrinho", WebDriverAcoes.getDriver(), scenario);
     }
 }

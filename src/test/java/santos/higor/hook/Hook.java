@@ -1,12 +1,10 @@
-package org.example.hook;
+package santos.higor.hook;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-
-import static org.example.utils.CapturaDeTela.capturarTela;
-import static org.example.webDriverAcoes.WebDriverAcoes.getDriver;
-import static org.example.webDriverAcoes.WebDriverAcoes.iniciarNavegador;
+import santos.higor.utils.CapturaDeTela;
+import santos.higor.webDriverAcoes.WebDriverAcoes;
 
 public class Hook {
 
@@ -16,16 +14,16 @@ public class Hook {
     public void before(Scenario scenario) {
         Hook.scenario = scenario;
 
-        iniciarNavegador();
+        WebDriverAcoes.iniciarNavegador();
     }
 
     @After
     public void after(Scenario scenario) {
 
         if (scenario.isFailed()) {
-            capturarTela("Cenario falhou!", getDriver(), scenario);
+            CapturaDeTela.capturarTela("Cenario falhou!", WebDriverAcoes.getDriver(), scenario);
         } else {
-            getDriver().quit();
+            WebDriverAcoes.getDriver().quit();
         }
     }
 }

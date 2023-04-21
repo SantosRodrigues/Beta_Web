@@ -1,11 +1,10 @@
-package org.example.runner;
+package santos.higor.runner;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
-
-import static org.example.utils.CapturaDeTela.limparDiretorioDeCapturaDeTela;
+import santos.higor.utils.CapturaDeTela;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -22,6 +21,6 @@ public class RunnerIT {
 
     @BeforeClass
     public static void beforeClass() {
-        limparDiretorioDeCapturaDeTela();
+        CapturaDeTela.limparDiretorioDeCapturaDeTela();
     }
 }

@@ -1,4 +1,4 @@
-package org.example.properties;
+package santos.higor.properties;
 
 import java.io.FileInputStream;
 import java.io.IOException;

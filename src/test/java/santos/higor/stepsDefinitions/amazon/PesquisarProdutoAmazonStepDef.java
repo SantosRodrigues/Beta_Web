@@ -1,16 +1,14 @@
-package org.example.stepsDefinitions.amazon;
+package santos.higor.stepsDefinitions.amazon;
 
-import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
-import io.cucumber.java.pt.Quando;
 import io.cucumber.java.pt.Dado;
-import org.example.utils.CapturaDeTela;
+import santos.higor.utils.CapturaDeTela;
 import org.junit.Assert;
 
 import java.util.List;
 
-import static org.example.hook.Hook.scenario;
-import static org.example.webDriverAcoes.WebDriverAcoes.getDriver;
+import static santos.higor.hook.Hook.scenario;
+import static santos.higor.webDriverAcoes.WebDriverAcoes.getDriver;
 
 public class PesquisarProdutoAmazonStepDef {
 

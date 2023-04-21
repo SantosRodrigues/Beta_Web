@@ -1,18 +1,16 @@
-package org.example.stepsDefinitions.amazon;
+package santos.higor.stepsDefinitions.amazon;
 
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import static org.example.webDriverAcoes.WebDriverAcoes.getDriver;
-import static org.example.webDriverAcoes.WebDriverAcoes.getWait;
+import santos.higor.webDriverAcoes.WebDriverAcoes;
 
 public class PagAmazonHomePagePO {
 
     public PagAmazonHomePagePO() {
-        PageFactory.initElements(getDriver(), this);
+        PageFactory.initElements(WebDriverAcoes.getDriver(), this);
     }
 
     @FindBy(css = "#twotabsearchtextbox")
@@ -23,7 +21,7 @@ public class PagAmazonHomePagePO {
     private WebElement divResultadoPesquisa;
 
     public void preencherBarraDePesquisa(String pesquisa) {
-        getWait().until(ExpectedConditions.elementToBeClickable(lblBarraDePesquisa));
+        WebDriverAcoes.getWait().until(ExpectedConditions.elementToBeClickable(lblBarraDePesquisa));
         lblBarraDePesquisa.sendKeys(pesquisa);
     }
 
@@ -33,7 +31,7 @@ public class PagAmazonHomePagePO {
 
     public boolean aguardarQuePesquisaSejaRealizada() {
         try {
-            getWait().until(ExpectedConditions.visibilityOf(divResultadoPesquisa));
+            WebDriverAcoes.getWait().until(ExpectedConditions.visibilityOf(divResultadoPesquisa));
             return true;
         } catch (TimeoutException e) {
             return false;

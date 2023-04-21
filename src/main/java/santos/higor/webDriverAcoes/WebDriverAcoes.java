@@ -1,6 +1,5 @@
-package org.example.webDriverAcoes;
+package santos.higor.webDriverAcoes;
 
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -8,7 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static org.example.properties.DefinitionsProperties.getProp;
+import static santos.higor.properties.DefinitionsProperties.getProp;
 
 public class WebDriverAcoes {
 

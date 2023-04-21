@@ -1,4 +1,4 @@
-package org.example.stepsDefinitions.amazon;
+package santos.higor.stepsDefinitions.amazon;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -6,17 +6,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import santos.higor.webDriverAcoes.WebDriverAcoes;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.example.webDriverAcoes.WebDriverAcoes.getDriver;
-import static org.example.webDriverAcoes.WebDriverAcoes.getWait;
-
 public class PagAmazonResultadoPesquisaPO {
 
     public PagAmazonResultadoPesquisaPO() {
-        PageFactory.initElements(getDriver(), this);
+        PageFactory.initElements(WebDriverAcoes.getDriver(), this);
     }
 
     @FindBy(xpath = "//span[@class='a-size-medium a-color-base'][position()=1]")
@@ -31,7 +29,7 @@ public class PagAmazonResultadoPesquisaPO {
         List<String> titulos = new ArrayList<>();
 
         for (int indicador = 1; indicador <= 48; indicador++) {
-            titulos.add(getDriver().findElement((By.xpath("(//span[@class='a-size-base-plus a-color-base a-text-normal'])[position()=" + indicador + "]"))).getText());
+            titulos.add(WebDriverAcoes.getDriver().findElement((By.xpath("(//span[@class='a-size-base-plus a-color-base a-text-normal'])[position()=" + indicador + "]"))).getText());
         }
 
         titulos.replaceAll(String::toLowerCase);
@@ -43,13 +41,13 @@ public class PagAmazonResultadoPesquisaPO {
     }
 
     public void selecionarProduto(int index) {
-        getDriver().findElement((By.xpath("(//span[@class='a-size-base-plus a-color-base a-text-normal'])[position()=" + index + "]"))).click();
+        WebDriverAcoes.getDriver().findElement((By.xpath("(//span[@class='a-size-base-plus a-color-base a-text-normal'])[position()=" + index + "]"))).click();
 
     }
 
     public boolean aguardarPerfilProduto() {
         try {
-            getWait().until(ExpectedConditions.visibilityOf(txtTituloDoProduto));
+            WebDriverAcoes.getWait().until(ExpectedConditions.visibilityOf(txtTituloDoProduto));
             return true;
         } catch (TimeoutException e) {
             return false;
