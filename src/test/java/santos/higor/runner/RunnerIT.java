@@ -9,7 +9,7 @@ import santos.higor.utils.CapturaDeTela;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "classpath:features",
-        glue = {"org.example"},
+        glue = {"santos.higor"},
         tags = "@CTWeb",
         plugin = {
                 "pretty",
