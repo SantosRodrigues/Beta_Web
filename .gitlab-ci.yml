@@ -12,7 +12,8 @@ teste-unitario:
   rules:
     - if:
         $CI_PIPELINE_SOURCE == "merge_request_event" ||
-        $CI_JOB_MANUAL == "true" ||
+        $CI_COMMIT_BRANCH == "develop" ||
+        $CI_COMMIT_BRANCH == "master" ||
         $DEBUG == "true"
   artifacts:
     when: always
@@ -29,6 +30,7 @@ teste-integracao:
   allow_failure: true
   script:
     - mvn clean verify
+      "-DskipUnitTests=true"
       "-Dprop.headless=$PROP_HEADLESS"
       "-Dprop.navigator=$PROP_NAVEGADOR"
       "-Dprop.screenShot=$PROP_CAPTURA_TELA"
@@ -39,7 +41,8 @@ teste-integracao:
   rules:
     - if:
         $CI_PIPELINE_SOURCE == "merge_request_event" ||
-        $CI_JOB_MANUAL == "true" ||
+        $CI_COMMIT_BRANCH == "develop" ||
+        $CI_COMMIT_BRANCH == "master" ||
         $DEBUG == "true"
   artifacts:
     when: always
