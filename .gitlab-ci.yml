@@ -20,6 +20,7 @@ teste-unitario:
     expire_in: 5 days
     paths:
       - ./target/surefire-reports/*.xml
+      - ./target/site/jacoco/*
     reports:
       junit: ./target/surefire-reports/*.xml
 
