@@ -1,5 +1,6 @@
 stages:
   - teste-unitario
+  - cobertura
   - teste-integracao
 
 teste-unitario:
@@ -8,21 +9,51 @@ teste-unitario:
     - runner-web
   allow_failure: false
   script:
-    - mvn clean test
+    - mvn clean test org.jacoco:jacoco-maven-plugin:prepare-agent test jacoco:report
+  coverage: '/cobertura de codigo: /Total.*?([0-9]{1,3})%/'
   rules:
     - if:
+        (
         $CI_PIPELINE_SOURCE == "merge_request_event" ||
         $CI_COMMIT_BRANCH == "develop" ||
         $CI_COMMIT_BRANCH == "master" ||
         $DEBUG == "true"
+        )
   artifacts:
     when: always
     expire_in: 5 days
     paths:
       - ./target/surefire-reports/*.xml
-      - ./target/site/jacoco/*
+      - ./target/site/jacoco/jacoco.xml
     reports:
-      junit: ./target/surefire-reports/*.xml
+      junit:
+        - ./target/surefire-reports/*.xml
+        - ./target/site/jacoco/jacoco.xml
+
+cobertura:
+  stage: cobertura
+  tags:
+    - runner-web
+  script:
+    - python C:/Users/Higor/Downloads/cover2cover/cover2cover-master/cover2cover.py target/site/jacoco/jacoco.xml $CI_PROJECT_DIR\src\main\java\ > target/site/cobertura.xml
+  needs: ["teste-unitario"]
+  when: always
+  coverage: '/cobertura de codigo: /Total.*?([0-9]{1,3})%/'
+  rules:
+    - if:
+        (
+        $CI_PIPELINE_SOURCE == "merge_request_event" ||
+        $CI_COMMIT_BRANCH == "develop" ||
+        $CI_COMMIT_BRANCH == "master" ||
+        $DEBUG == "true"
+        )
+  artifacts:
+    paths:
+      - target/site/cobertura.xml
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: ./target/site/cobertura.xml
 
 teste-integracao:
   stage: teste-integracao
@@ -41,10 +72,12 @@ teste-integracao:
       "-Dprop.path.screenShot=$PROP_PATH_CAPTURA_TELA"
   rules:
     - if:
+        (
         $CI_PIPELINE_SOURCE == "merge_request_event" ||
         $CI_COMMIT_BRANCH == "develop" ||
         $CI_COMMIT_BRANCH == "master" ||
         $DEBUG == "true"
+        )
   artifacts:
     when: always
     expire_in: 5 days
