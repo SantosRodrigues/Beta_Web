@@ -23,20 +23,19 @@ public class WebDriverAcoes {
      * Realiza a inicialização do navegador.
      */
     public static void iniciarNavegador() {
-        final String dimensoes = "--window-size=1920,1080";
         final boolean headless = Boolean.parseBoolean(getParametro(HEADLESS));
         final String pathDriver = getParametro(PATH_DRIVER_BASE);
 
-        switch (getParametro(NAVEGADOR)) {
+        switch (getParametro(NAVEGADOR).toLowerCase()) {
             case "firefox":
                 System.setProperty("webdriver.gecko.driver", pathDriver + "geckodriver.exe");
-                FirefoxOptions firefoxOptions = new FirefoxOptions().setHeadless(headless);
-                driver = new FirefoxDriver(firefoxOptions.addArguments(dimensoes));
+                FirefoxOptions firefoxOptions = new FirefoxOptions().setHeadless(headless).setBinary("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
+                driver = new FirefoxDriver(firefoxOptions);
                 break;
             case "chrome":
                 System.setProperty("webdriver.chrome.driver", pathDriver + "chromedriver.exe");
                 ChromeOptions chromeOptions = new ChromeOptions().setHeadless(headless);
-                driver = new ChromeDriver(chromeOptions.addArguments(dimensoes));
+                driver = new ChromeDriver(chromeOptions);
                 break;
             default:
                 throw new IllegalArgumentException("Opção incorreta, escolha entre 'chrome' e 'firefox'.");

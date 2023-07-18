@@ -6,8 +6,11 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import santos.higor.utils.CapturaDeTela;
 
+import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
+
 @RunWith(Cucumber.class)
 @CucumberOptions(
+        snippets = CAMELCASE,
         features = "classpath:features",
         glue = {"santos.higor"},
         tags = "@CTWeb",
