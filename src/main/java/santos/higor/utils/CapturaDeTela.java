@@ -2,6 +2,7 @@ package santos.higor.utils;
 
 import io.cucumber.java.Scenario;
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.*;
 
 import java.io.File;
@@ -19,12 +20,13 @@ public class CapturaDeTela {
 
     /**
      * Realiza a captura de tela e armazena na raiz do projeto.
-     * @param webDriver driver que deseja realizar a captura de tela.
-     * @param scenario utilizado para obter a informação do nome da feature sendo executada no momento.
+     *
+     * @param webDriver   driver que deseja realizar a captura de tela.
+     * @param scenario    utilizado para obter a informação do nome da feature sendo executada no momento.
      * @param nomeDaEtapa nome da etapa para melhor descricao da captura de tela.
      */
     public static void capturarTela(WebDriver webDriver, Scenario scenario, String nomeDaEtapa) {
-        String pathDiretorio = getParametro(PATH_CAPTURAR_TELA) + scenario.getName() + "\\";
+        String pathDiretorio = String.format(getParametro(PATH_CAPTURAR_TELA), scenario.getName());
         String nomeDoArquivo = LocalDateTime.now().toString().replace(":", "-") + " - " + nomeDaEtapa;
         final String extensao = ".png";
 
@@ -34,7 +36,7 @@ public class CapturaDeTela {
             try {
                 FileUtils.copyFile(capturaDeTela, new File(pathDiretorio + nomeDoArquivo + extensao));
             } catch (IOException e) {
-                e.printStackTrace();
+                LogManager.getLogger().info(e);
             }
         }
     }
@@ -44,12 +46,12 @@ public class CapturaDeTela {
      */
     public static void limparDiretorioDeCapturaDeTela() {
         if (Boolean.parseBoolean(getParametro(LIMPAR_CAPTURAS_DE_TELA))) {
-            File pasta = new File(getParametro(PATH_CAPTURAR_TELA));
+            File pasta = new File(getParametro(PATH_CAPTURAR_TELA).substring(0, 13));
 
             try {
                 FileUtils.deleteDirectory(pasta);
             } catch (IOException e) {
-                e.printStackTrace();
+                LogManager.getLogger().info(e);
             }
         }
     }

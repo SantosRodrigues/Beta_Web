@@ -26,10 +26,13 @@ teste-unitario:
     paths:
       - ./target/surefire-reports/*.xml
       - ./target/site/jacoco/jacoco.xml
+      - ./target/classes/santos/higor/*/*.*
     reports:
       junit:
         - ./target/surefire-reports/*.xml
         - ./target/site/jacoco/jacoco.xml
+        - ./target/classes/santos/higor/*/*.*
+
 
 cobertura:
   stage: cobertura
@@ -91,6 +94,8 @@ sonarqube:
   stage: sonar
   tags:
     - runner-web
+  dependencies:
+    - teste-unitario
   allow_failure: true
   variables:
     SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
@@ -100,7 +105,7 @@ sonarqube:
     paths:
       - .sonar/cache
   script:
-    - mvn test sonar:sonar "-Dsonar.projectKey=beta_web" "-Dsonar.projectName=beta_web" "-Dsonar.login=$SONAR_TOKEN"
+    - mvn sonar:sonar "-Dsonar.projectKey=beta_web" "-Dsonar.projectName=beta_web" "-Dsonar.token=$SONAR_TOKEN"
   rules:
     - if: $CI_COMMIT_BRANCH == 'master'
 
