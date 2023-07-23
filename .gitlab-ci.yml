@@ -105,7 +105,7 @@ sonarqube:
     paths:
       - .sonar/cache
   script:
-    - mvn sonar:sonar "-Dsonar.projectKey=beta_web" "-Dsonar.projectName=beta_web" "-Dsonar.login=$SONAR_TOKEN"
+    - mvn sonar:sonar "-Dsonar.projectKey=beta_web" "-Dsonar.projectName=beta_web" "-Dsonar.token=$SONAR_TOKEN"
   rules:
     - if: $CI_COMMIT_BRANCH == 'master'
 
