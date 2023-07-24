@@ -26,13 +26,10 @@ teste-unitario:
     paths:
       - ./target/surefire-reports/*.xml
       - ./target/site/jacoco/jacoco.xml
-      - ./target/classes/santos/higor/*/*.*
     reports:
       junit:
         - ./target/surefire-reports/*.xml
         - ./target/site/jacoco/jacoco.xml
-        - ./target/classes/santos/higor/*/*.*
-
 
 cobertura:
   stage: cobertura
@@ -105,7 +102,7 @@ sonarqube:
     paths:
       - .sonar/cache
   script:
-    - mvn sonar:sonar "-Dsonar.projectKey=beta_web" "-Dsonar.projectName=beta_web" "-Dsonar.token=$SONAR_TOKEN"
+    - mvn clean test sonar:sonar "-Dsonar.projectKey=beta_web" "-Dsonar.projectName=beta_web" "-Dsonar.token=$SONAR_TOKEN" "-Dsonar.exclusions=src/main/java/santos/higor/stepdefinitions/**/*.*"
   rules:
     - if: $CI_COMMIT_BRANCH == 'master'
 
