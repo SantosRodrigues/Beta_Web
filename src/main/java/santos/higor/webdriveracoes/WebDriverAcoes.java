@@ -7,6 +7,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 import static santos.higor.enums.Parametros.*;
 import static santos.higor.properties.VariavelDoSistema.getParametro;
 
@@ -41,7 +43,7 @@ public class WebDriverAcoes {
                 throw new IllegalArgumentException("Opção incorreta, escolha entre 'chrome' e 'firefox'.");
         }
         driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, 15);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }
 
     public static WebDriver getDriver() {
