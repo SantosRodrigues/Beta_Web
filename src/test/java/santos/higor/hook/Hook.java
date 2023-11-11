@@ -6,13 +6,13 @@ import io.cucumber.java.Scenario;
 import santos.higor.utils.CapturaDeTela;
 import santos.higor.webdriveracoes.WebDriverAcoes;
 
-public class Hook {
+import static santos.higor.utils.GerenciadorDeScenario.setScenario;
 
-    public static Scenario scenario;
+public class Hook {
 
     @Before
     public void before(Scenario scenario) {
-        Hook.scenario = scenario;
+        setScenario(scenario);
 
         WebDriverAcoes.iniciarNavegador();
     }

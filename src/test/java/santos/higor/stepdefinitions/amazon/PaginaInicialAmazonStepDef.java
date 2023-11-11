@@ -7,8 +7,8 @@ import santos.higor.utils.CapturaDeTela;
 import santos.higor.webdriveracoes.WebDriverAcoes;
 
 import static santos.higor.enums.Parametros.URL_AMAZON;
-import static santos.higor.hook.Hook.scenario;
 import static santos.higor.properties.VariavelDoSistema.getParametro;
+import static santos.higor.utils.GerenciadorDeScenario.getScenario;
 
 public class PaginaInicialAmazonStepDef {
 
@@ -17,13 +17,13 @@ public class PaginaInicialAmazonStepDef {
     @Dado("que seja acessado o site da amazon")
     public void que_seja_acessado_o_site_da_amazon() {
         WebDriverAcoes.getDriver().get(getParametro(URL_AMAZON));
-        CapturaDeTela.capturarTela(WebDriverAcoes.getDriver(), scenario, "Pagina Inicial");
+        CapturaDeTela.capturarTela(WebDriverAcoes.getDriver(), getScenario(), "Pagina Inicial");
     }
 
     @E("seja preenchida a barra de pesquisa com o nome do {string} que desejo procurar")
     public void seja_preenchida_a_barra_de_pesquisa_com_o_nome_do_produto_que_desejo_procurar(String pesquisa) {
         pagAmazonHomePagePO.preencherBarraDePesquisa(pesquisa);
-        CapturaDeTela.capturarTela(WebDriverAcoes.getDriver(), scenario, "Preencher barra de pesquisa");
+        CapturaDeTela.capturarTela(WebDriverAcoes.getDriver(), getScenario(), "Preencher barra de pesquisa");
     }
 
     @Quando("o botao de pesquisar e pressionado")

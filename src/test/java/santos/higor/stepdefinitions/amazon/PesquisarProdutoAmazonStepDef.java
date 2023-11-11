@@ -7,7 +7,7 @@ import org.junit.Assert;
 
 import java.util.List;
 
-import static santos.higor.hook.Hook.scenario;
+import static santos.higor.utils.GerenciadorDeScenario.getScenario;
 import static santos.higor.webdriveracoes.WebDriverAcoes.getDriver;
 
 public class PesquisarProdutoAmazonStepDef {
@@ -30,14 +30,14 @@ public class PesquisarProdutoAmazonStepDef {
             }
         }
         Assert.assertTrue(itemEncontrado);
-        CapturaDeTela.capturarTela(getDriver(), scenario, "Retorno de produto disponivel");
+        CapturaDeTela.capturarTela(getDriver(), getScenario(), "Retorno de produto disponivel");
     }
 
     @Entao("deve ser retornado a mensagem de {string} indisponivel")
     public void deve_ser_retornado_a_mensagem_de_produto_indisponivel(String produto) {
         Assert.assertTrue(pagAmazonHomePagePO.aguardarQuePesquisaSejaRealizada());
         Assert.assertEquals(pagAmazonResultadoPesquisaPO.mensagemDeProdutoNaoEncontrado(), "Nenhum resultado para " + produto);
-        CapturaDeTela.capturarTela(getDriver(), scenario, "Retorno de produto indisponivel");
+        CapturaDeTela.capturarTela(getDriver(), getScenario(), "Retorno de produto indisponivel");
     }
 
     @Dado("e selecionado o produto desejado")
