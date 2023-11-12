@@ -1,5 +1,6 @@
 package santos.higor.stepdefinitions.amazon;
 
+import com.aventstack.extentreports.Status;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Dado;
 import santos.higor.utils.CapturaDeTela;
@@ -7,6 +8,7 @@ import org.junit.Assert;
 
 import java.util.List;
 
+import static santos.higor.relatorio.Extent.getCurrentTest;
 import static santos.higor.utils.GerenciadorDeScenario.getScenario;
 import static santos.higor.webdriveracoes.WebDriverAcoes.getDriver;
 
@@ -31,6 +33,8 @@ public class PesquisarProdutoAmazonStepDef {
         }
         Assert.assertTrue(itemEncontrado);
         CapturaDeTela.capturarTela(getDriver(), getScenario(), "Retorno de produto disponivel");
+        getCurrentTest().log(Status.PASS,"Retorno de produto disponivel");
+
     }
 
     @Entao("deve ser retornado a mensagem de {string} indisponivel")
@@ -38,10 +42,13 @@ public class PesquisarProdutoAmazonStepDef {
         Assert.assertTrue(pagAmazonHomePagePO.aguardarQuePesquisaSejaRealizada());
         Assert.assertEquals(pagAmazonResultadoPesquisaPO.mensagemDeProdutoNaoEncontrado(), "Nenhum resultado para " + produto);
         CapturaDeTela.capturarTela(getDriver(), getScenario(), "Retorno de produto indisponivel");
+        getCurrentTest().log(Status.PASS,"Retorno de produto indisponivel");
+
     }
 
     @Dado("e selecionado o produto desejado")
     public void e_selecionado_o_produto_desejado() {
         pagAmazonResultadoPesquisaPO.selecionarProduto(index);
+        getCurrentTest().log(Status.PASS,"Produto selecionado");
     }
 }

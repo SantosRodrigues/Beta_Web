@@ -25,9 +25,16 @@
     <log4j.version>2.20.0</log4j.version>
     <skipUnitTests>false</skipUnitTests>
     <sonar.qualitygate.wait>true</sonar.qualitygate.wait>
+    <extentreport.version>5.0.9</extentreport.version>
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>com.aventstack</groupId>
+      <artifactId>extentreports</artifactId>
+      <version>${extentreport.version}</version>
+    </dependency>
+
     <dependency>
       <groupId>org.jacoco</groupId>
       <artifactId>jacoco-maven-plugin</artifactId>
