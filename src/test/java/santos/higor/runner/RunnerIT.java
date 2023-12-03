@@ -29,7 +29,7 @@ public class RunnerIT {
         CapturaDeTela.limparDiretorioDeCapturaDeTela();
         startExtent();
         startSpark();
-        getExtentInstance().attachReporter(getSpark());
+        getExtentInstance().attachReporter(getSparkInstance());
 
     }
 

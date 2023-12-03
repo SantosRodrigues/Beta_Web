@@ -8,8 +8,8 @@ import com.aventstack.extentreports.reporter.configuration.ViewName;
 public class Extent {
 
     private static  ExtentReports extentInstance;
-    private static ExtentSparkReporter spark;
-    private static ExtentTest currentTest;
+    private static ExtentSparkReporter sparkInstance;
+    private static ExtentTest testeAtualEmExecucao;
 
     private Extent() {
         throw new IllegalStateException("Utility class");
@@ -28,22 +28,22 @@ public class Extent {
      * os testes secundária.
      */
     public static void startSpark() {
-        Extent.spark = new ExtentSparkReporter("target/Spark.html").viewConfigurer()
+        Extent.sparkInstance = new ExtentSparkReporter("target/relatorio-extent.html").viewConfigurer()
                 .viewOrder()
                 .as(new ViewName[] { ViewName.DASHBOARD, ViewName.TEST})
                 .apply();
 
     }
 
-    public static ExtentSparkReporter getSpark(){
-        return spark;
+    public static ExtentSparkReporter getSparkInstance(){
+        return sparkInstance;
     }
 
-    public static void setCurrentTest(ExtentTest currentTest) {
-        Extent.currentTest = currentTest;
+    public static void setTesteAtualEmExecucao(ExtentTest testeAtualEmExecucao) {
+        Extent.testeAtualEmExecucao = testeAtualEmExecucao;
     }
 
-    public static ExtentTest getCurrentTest() {
-        return currentTest;
+    public static ExtentTest getTesteAtualEmExecucao() {
+        return testeAtualEmExecucao;
     }
 }

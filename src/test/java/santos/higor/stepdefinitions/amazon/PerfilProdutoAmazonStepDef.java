@@ -1,12 +1,15 @@
 package santos.higor.stepdefinitions.amazon;
 
-import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.gherkin.model.Given;
+import com.aventstack.extentreports.gherkin.model.When;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Quando;
 import santos.higor.utils.CapturaDeTela;
 import org.junit.Assert;
 
-import static santos.higor.relatorio.Extent.getCurrentTest;
+import static com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath;
+import static santos.higor.relatorio.Extent.getTesteAtualEmExecucao;
+import static santos.higor.utils.CapturaDeTela.recuperarPathTelaCapturada;
 import static santos.higor.utils.GerenciadorDeScenario.getScenario;
 import static santos.higor.webdriveracoes.WebDriverAcoes.getDriver;
 
@@ -19,12 +22,14 @@ public class PerfilProdutoAmazonStepDef {
     public void o_perfil_do_produto_e_carregado() {
         Assert.assertTrue(pagAmazonResultadoPesquisaPO.aguardarPerfilProduto());
         CapturaDeTela.capturarTela(getDriver(), getScenario(), "Perfil do produto");
-        getCurrentTest().log(Status.PASS,"Perfil do produto");
+        getTesteAtualEmExecucao().createNode(Given.class,"Perfil do produto")
+                .pass(createScreenCaptureFromPath(recuperarPathTelaCapturada(),"Perfil do produto").build());
     }
 
     @Quando("a opcao de adicionar ao carrinho e pressionado")
     public void a_opcao_de_adicionar_ao_carrinho_e_pressionado() {
         pagAmazonPerfilProdutoPO.adicionarProdutoAoCarrinho();
-        getCurrentTest().log(Status.PASS,"Adicionar ao carrinho");
+        getTesteAtualEmExecucao().createNode(When.class,"Adicionar ao carrinho")
+                .pass(createScreenCaptureFromPath(recuperarPathTelaCapturada(),"Adicionar ao carrinho").build());
     }
 }

@@ -18,6 +18,10 @@ public class CapturaDeTela {
         throw new IllegalStateException("Utility class");
     }
 
+    private static String pathDiretorio;
+    private static String nomeDoArquivo;
+    private static final String EXTENSAO = ".png";
+
     /**
      * Realiza a captura de tela e armazena na raiz do projeto.
      *
@@ -26,19 +30,25 @@ public class CapturaDeTela {
      * @param nomeDaEtapa nome da etapa para melhor descricao da captura de tela.
      */
     public static void capturarTela(WebDriver webDriver, Scenario scenario, String nomeDaEtapa) {
-        String pathDiretorio = String.format(getParametro(PATH_CAPTURAR_TELA), scenario.getName());
-        String nomeDoArquivo = LocalDateTime.now().toString().replace(":", "-") + " - " + nomeDaEtapa;
-        final String extensao = ".png";
+        pathDiretorio = String.format(getParametro(PATH_CAPTURAR_TELA), scenario.getName());
+        nomeDoArquivo = LocalDateTime.now().toString().replace(":", "-") + " - " + nomeDaEtapa;
 
         if (Boolean.parseBoolean(getParametro(CAPUTRAR_TELA))) {
             File capturaDeTela = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
 
             try {
-                FileUtils.copyFile(capturaDeTela, new File(pathDiretorio + nomeDoArquivo + extensao));
+                FileUtils.copyFile(capturaDeTela, new File(pathDiretorio + nomeDoArquivo + EXTENSAO));
             } catch (IOException e) {
                 LogManager.getLogger().info(e);
             }
         }
+    }
+
+    /**
+     * @return Path da ultima captura de tela realizada.
+     */
+    public static String recuperarPathTelaCapturada() {
+        return (pathDiretorio.replace(".", "..") + nomeDoArquivo + EXTENSAO);
     }
 
     /**

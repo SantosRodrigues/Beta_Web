@@ -32,11 +32,13 @@ public class WebDriverAcoes {
             case "firefox":
                 System.setProperty("webdriver.gecko.driver", pathDriver + "geckodriver.exe");
                 FirefoxOptions firefoxOptions = new FirefoxOptions().setHeadless(headless).setBinary("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
+                firefoxOptions.addArguments("--window-size=1920,1080");
                 driver = new FirefoxDriver(firefoxOptions);
                 break;
             case "chrome":
                 System.setProperty("webdriver.chrome.driver", pathDriver + "chromedriver.exe");
                 ChromeOptions chromeOptions = new ChromeOptions().setHeadless(headless);
+                chromeOptions.addArguments("--window-size=1920,1080");
                 driver = new ChromeDriver(chromeOptions);
                 break;
             default:
