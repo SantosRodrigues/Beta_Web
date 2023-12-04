@@ -5,12 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import santos.higor.webdriveracoes.WebDriverAcoes;
+import santos.higor.webdriveracoes.WebDriverSetup;
+
+import static santos.higor.webdriveracoes.WebDriverAcoes.esperarWebDriverElement;
 
 public class PagAmazonHomePagePO {
 
     public PagAmazonHomePagePO() {
-        PageFactory.initElements(WebDriverAcoes.getDriver(), this);
+        PageFactory.initElements(WebDriverSetup.getDriver(), this);
     }
 
     @FindBy(css = "#twotabsearchtextbox")
@@ -21,7 +23,7 @@ public class PagAmazonHomePagePO {
     private WebElement divResultadoPesquisa;
 
     public void preencherBarraDePesquisa(String pesquisa) {
-        WebDriverAcoes.getWait().until(ExpectedConditions.elementToBeClickable(lblBarraDePesquisa));
+        esperarWebDriverElement(() -> WebDriverSetup.getWait().until(ExpectedConditions.elementToBeClickable(lblBarraDePesquisa)));
         lblBarraDePesquisa.sendKeys(pesquisa);
     }
 
@@ -31,7 +33,7 @@ public class PagAmazonHomePagePO {
 
     public boolean aguardarQuePesquisaSejaRealizada() {
         try {
-            WebDriverAcoes.getWait().until(ExpectedConditions.visibilityOf(divResultadoPesquisa));
+            esperarWebDriverElement(() -> WebDriverSetup.getWait().until(ExpectedConditions.visibilityOf(divResultadoPesquisa)));
             return true;
         } catch (TimeoutException e) {
             return false;

@@ -4,12 +4,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import santos.higor.webdriveracoes.WebDriverAcoes;
+import santos.higor.webdriveracoes.WebDriverSetup;
+
+import static santos.higor.webdriveracoes.WebDriverAcoes.esperarWebDriverElement;
 
 public class PagAmazonPerfilProdutoPO {
 
     public PagAmazonPerfilProdutoPO() {
-        PageFactory.initElements(WebDriverAcoes.getDriver(), this);
+        PageFactory.initElements(WebDriverSetup.getDriver(), this);
     }
 
     @FindBy(css = "#add-to-cart-button")
@@ -18,12 +20,12 @@ public class PagAmazonPerfilProdutoPO {
     private WebElement txtProdutoAdicionadoAoCarrinhoComSucesso;
 
     public void adicionarProdutoAoCarrinho() {
-        WebDriverAcoes.getWait().until(ExpectedConditions.elementToBeClickable(btnAdicionarCarrinho));
+        esperarWebDriverElement(() -> WebDriverSetup.getWait().until(ExpectedConditions.elementToBeClickable(btnAdicionarCarrinho)));
         btnAdicionarCarrinho.click();
     }
 
     public String validarProdutoAdicionadoAoCarrinhoComSucesso() {
-        WebDriverAcoes.getWait().until(ExpectedConditions.visibilityOf(txtProdutoAdicionadoAoCarrinhoComSucesso));
+        esperarWebDriverElement(() -> WebDriverSetup.getWait().until(ExpectedConditions.visibilityOf(txtProdutoAdicionadoAoCarrinhoComSucesso)));
         return txtProdutoAdicionadoAoCarrinhoComSucesso.getText();
     }
 }

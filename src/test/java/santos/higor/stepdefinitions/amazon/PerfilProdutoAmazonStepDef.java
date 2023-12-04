@@ -11,7 +11,7 @@ import static com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptur
 import static santos.higor.relatorio.Extent.getTesteAtualEmExecucao;
 import static santos.higor.utils.CapturaDeTela.recuperarPathTelaCapturada;
 import static santos.higor.utils.GerenciadorDeScenario.getScenario;
-import static santos.higor.webdriveracoes.WebDriverAcoes.getDriver;
+import static santos.higor.webdriveracoes.WebDriverSetup.getDriver;
 
 public class PerfilProdutoAmazonStepDef {
 

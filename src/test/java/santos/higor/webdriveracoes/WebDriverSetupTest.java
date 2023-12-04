@@ -7,9 +7,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static santos.higor.enums.Parametros.HEADLESS;
 import static santos.higor.enums.Parametros.NAVEGADOR;
-import static santos.higor.webdriveracoes.WebDriverAcoes.*;
+import static santos.higor.webdriveracoes.WebDriverSetup.*;
 
-public class WebDriverAcoesTest {
+public class WebDriverSetupTest {
 
     @Test
     public void criarNavegadorFirefoxComSuscesso() {

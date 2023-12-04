@@ -26,9 +26,17 @@
     <skipUnitTests>false</skipUnitTests>
     <sonar.qualitygate.wait>true</sonar.qualitygate.wait>
     <extentreport.version>5.0.9</extentreport.version>
+    <assertj.version>3.24.2</assertj.version>
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>${assertj.version}</version>
+      <scope>test</scope>
+    </dependency>
+
     <dependency>
       <groupId>com.aventstack</groupId>
       <artifactId>extentreports</artifactId>
@@ -96,6 +104,12 @@
       <artifactId>log4j-core</artifactId>
       <version>${log4j.version}</version>
     </dependency>
+      <dependency>
+          <groupId>org.assertj</groupId>
+          <artifactId>assertj-core</artifactId>
+          <version>3.24.2</version>
+          <scope>compile</scope>
+      </dependency>
   </dependencies>
 
 

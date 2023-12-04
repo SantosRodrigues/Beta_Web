@@ -5,7 +5,7 @@ import com.aventstack.extentreports.gherkin.model.Then;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Dado;
 import santos.higor.utils.CapturaDeTela;
-import org.junit.Assert;
+import santos.higor.validacoes.ValidacaoAssertJ;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import static com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptur
 import static santos.higor.relatorio.Extent.getTesteAtualEmExecucao;
 import static santos.higor.utils.CapturaDeTela.recuperarPathTelaCapturada;
 import static santos.higor.utils.GerenciadorDeScenario.getScenario;
-import static santos.higor.webdriveracoes.WebDriverAcoes.getDriver;
+import static santos.higor.webdriveracoes.WebDriverSetup.getDriver;
 
 public class PesquisarProdutoAmazonStepDef {
 
@@ -23,7 +23,10 @@ public class PesquisarProdutoAmazonStepDef {
 
     @Entao("deve ser retornado o {string} pesquisado")
     public void deve_ser_retornado_o_produto_pesquisado(String produto) {
-        Assert.assertTrue(pagAmazonHomePagePO.aguardarQuePesquisaSejaRealizada());
+        ValidacaoAssertJ validacaoAssertJ = new ValidacaoAssertJ();
+
+        validacaoAssertJ.validoQueSejaVerdadeiro(pagAmazonHomePagePO.aguardarQuePesquisaSejaRealizada());
+
         boolean itemEncontrado = false;
 
         List<String> listaDeProdutos = pagAmazonResultadoPesquisaPO.retornarListaDeProdutosEncontrados();
@@ -34,8 +37,11 @@ public class PesquisarProdutoAmazonStepDef {
                 break;
             }
         }
-        Assert.assertTrue(itemEncontrado);
+
+        validacaoAssertJ.validoQueSejaVerdadeiro(itemEncontrado);
+
         CapturaDeTela.capturarTela(getDriver(), getScenario(), "Retorno de produto disponivel");
+
         getTesteAtualEmExecucao().createNode(Then.class,"Retorno de produto disponivel")
                 .pass(createScreenCaptureFromPath(recuperarPathTelaCapturada(),"Pesquisa de produto").build());
 
@@ -43,9 +49,13 @@ public class PesquisarProdutoAmazonStepDef {
 
     @Entao("deve ser retornado a mensagem de {string} indisponivel")
     public void deve_ser_retornado_a_mensagem_de_produto_indisponivel(String produto) {
-        Assert.assertTrue(pagAmazonHomePagePO.aguardarQuePesquisaSejaRealizada());
-        Assert.assertEquals(pagAmazonResultadoPesquisaPO.mensagemDeProdutoNaoEncontrado(), "Nenhum resultado para " + produto);
+        ValidacaoAssertJ validacaoAssertJ = new ValidacaoAssertJ();
+
+        validacaoAssertJ.validoQueSejaVerdadeiro(pagAmazonHomePagePO.aguardarQuePesquisaSejaRealizada());
+        validacaoAssertJ.validoQueTextoEIgual("Nenhum resultado para " + produto, pagAmazonResultadoPesquisaPO.mensagemDeProdutoNaoEncontrado());
+
         CapturaDeTela.capturarTela(getDriver(), getScenario(), "Retorno de produto indisponivel");
+
         getTesteAtualEmExecucao().createNode(Then.class,"Retorno de produto indisponivel")
                 .pass(createScreenCaptureFromPath(recuperarPathTelaCapturada(),"Pesquisa de produto indisponivel").build());
 
@@ -54,6 +64,7 @@ public class PesquisarProdutoAmazonStepDef {
     @Dado("e selecionado o produto desejado")
     public void e_selecionado_o_produto_desejado() {
         pagAmazonResultadoPesquisaPO.selecionarProduto(index);
+
         getTesteAtualEmExecucao().createNode(Given.class,"Produto selecionado")
                 .pass(createScreenCaptureFromPath(recuperarPathTelaCapturada(),"Produto selecionado").build());
     }

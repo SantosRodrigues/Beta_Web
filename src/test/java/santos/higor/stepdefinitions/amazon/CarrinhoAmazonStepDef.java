@@ -3,8 +3,8 @@ package santos.higor.stepdefinitions.amazon;
 import com.aventstack.extentreports.gherkin.model.Then;
 import io.cucumber.java.pt.Entao;
 import santos.higor.utils.CapturaDeTela;
-import org.junit.Assert;
-import santos.higor.webdriveracoes.WebDriverAcoes;
+import santos.higor.validacoes.ValidacaoAssertJ;
+import santos.higor.webdriveracoes.WebDriverSetup;
 
 import static com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath;
 import static santos.higor.relatorio.Extent.getTesteAtualEmExecucao;
@@ -17,8 +17,12 @@ public class CarrinhoAmazonStepDef {
 
     @Entao("validar que produto foi adicionado ao carrinho com sucesso")
     public void validar_que_produto_foi_adicionado_ao_carrinho_com_sucesso() {
-        Assert.assertEquals("Adicionado ao carrinho", pagAmazonPerfilProdutoPO.validarProdutoAdicionadoAoCarrinhoComSucesso());
-        CapturaDeTela.capturarTela(WebDriverAcoes.getDriver(), getScenario(), "Produto adicionado ao carrinho");
+        ValidacaoAssertJ validacaoIgualdade = new ValidacaoAssertJ();
+
+        validacaoIgualdade.validoQueTextoEIgual("Adicionado ao carrinho", pagAmazonPerfilProdutoPO.validarProdutoAdicionadoAoCarrinhoComSucesso());
+
+        CapturaDeTela.capturarTela(WebDriverSetup.getDriver(), getScenario(), "Produto adicionado ao carrinho");
+
         getTesteAtualEmExecucao().createNode(Then.class,"Produto adicionado ao carrinho")
                 .pass(createScreenCaptureFromPath(recuperarPathTelaCapturada(),"Produto adicionado ao carrinho").build());
 

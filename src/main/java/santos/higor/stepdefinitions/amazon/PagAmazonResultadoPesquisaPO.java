@@ -6,15 +6,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import santos.higor.webdriveracoes.WebDriverAcoes;
+import santos.higor.webdriveracoes.WebDriverSetup;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static santos.higor.webdriveracoes.WebDriverAcoes.esperarWebDriverElement;
+
 public class PagAmazonResultadoPesquisaPO {
 
     public PagAmazonResultadoPesquisaPO() {
-        PageFactory.initElements(WebDriverAcoes.getDriver(), this);
+        PageFactory.initElements(WebDriverSetup.getDriver(), this);
     }
 
     @FindBy(xpath = "//span[@class='a-size-medium a-color-base'][position()=1]")
@@ -29,7 +31,7 @@ public class PagAmazonResultadoPesquisaPO {
         List<String> titulos = new ArrayList<>();
 
         for (int indicador = 1; indicador <= 48; indicador++) {
-            titulos.add(WebDriverAcoes.getDriver().findElement((By.xpath("(//span[@class='a-size-base-plus a-color-base a-text-normal'])[position()=" + indicador + "]"))).getText());
+            titulos.add(WebDriverSetup.getDriver().findElement((By.xpath("(//span[@class='a-size-base-plus a-color-base a-text-normal'])[position()=" + indicador + "]"))).getText());
         }
 
         titulos.replaceAll(String::toLowerCase);
@@ -41,13 +43,13 @@ public class PagAmazonResultadoPesquisaPO {
     }
 
     public void selecionarProduto(int index) {
-        WebDriverAcoes.getDriver().findElement((By.xpath("(//span[@class='a-size-base-plus a-color-base a-text-normal'])[position()=" + index + "]"))).click();
+        WebDriverSetup.getDriver().findElement((By.xpath("(//span[@class='a-size-base-plus a-color-base a-text-normal'])[position()=" + index + "]"))).click();
 
     }
 
     public boolean aguardarPerfilProduto() {
         try {
-            WebDriverAcoes.getWait().until(ExpectedConditions.visibilityOf(txtTituloDoProduto));
+            esperarWebDriverElement(() -> WebDriverSetup.getWait().until(ExpectedConditions.visibilityOf(txtTituloDoProduto)));
             return true;
         } catch (TimeoutException e) {
             return false;
