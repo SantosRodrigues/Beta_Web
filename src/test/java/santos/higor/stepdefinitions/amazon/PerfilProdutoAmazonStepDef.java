@@ -5,7 +5,7 @@ import com.aventstack.extentreports.gherkin.model.When;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Quando;
 import santos.higor.utils.CapturaDeTela;
-import org.junit.Assert;
+import santos.higor.validacoes.ValidacaoAssertJ;
 
 import static com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath;
 import static santos.higor.relatorio.Extent.getTesteAtualEmExecucao;
@@ -20,8 +20,12 @@ public class PerfilProdutoAmazonStepDef {
 
     @Dado("^o perfil do produto e carregado$")
     public void o_perfil_do_produto_e_carregado() {
-        Assert.assertTrue(pagAmazonResultadoPesquisaPO.aguardarPerfilProduto());
+        ValidacaoAssertJ validacaoAssertJ = new ValidacaoAssertJ();
+
+        validacaoAssertJ.validoQueSejaVerdadeiro(pagAmazonResultadoPesquisaPO.aguardarPerfilProduto());
+
         CapturaDeTela.capturarTela(getDriver(), getScenario(), "Perfil do produto");
+
         getTesteAtualEmExecucao().createNode(Given.class,"Perfil do produto")
                 .pass(createScreenCaptureFromPath(recuperarPathTelaCapturada(),"Perfil do produto").build());
     }
