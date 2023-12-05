@@ -27,9 +27,18 @@
     <sonar.qualitygate.wait>true</sonar.qualitygate.wait>
     <extentreport.version>5.0.9</extentreport.version>
     <assertj.version>3.24.2</assertj.version>
+    <lombok.version>1.18.24</lombok.version>
   </properties>
 
   <dependencies>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
@@ -104,12 +113,7 @@
       <artifactId>log4j-core</artifactId>
       <version>${log4j.version}</version>
     </dependency>
-      <dependency>
-          <groupId>org.assertj</groupId>
-          <artifactId>assertj-core</artifactId>
-          <version>3.24.2</version>
-          <scope>compile</scope>
-      </dependency>
+
   </dependencies>
 
 

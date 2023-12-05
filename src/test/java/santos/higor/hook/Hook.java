@@ -12,24 +12,11 @@ import static santos.higor.relatorio.Extent.*;
 import static santos.higor.utils.CapturaDeTela.recuperarPathTelaCapturada;
 import static santos.higor.utils.GerenciadorDeScenario.getScenario;
 import static santos.higor.utils.GerenciadorDeScenario.setScenario;
-import static santos.higor.validacoes.ValidacaoAssertJ.getExceptionAssertionError;
-import static santos.higor.validacoes.ValidacaoAssertJ.setExceptionAssertionError;
-import static santos.higor.webdriveracoes.WebDriverAcoes.getWebDriverException;
+import static santos.higor.validacoes.ValidacaoAssertJ.*;
 import static santos.higor.webdriveracoes.WebDriverAcoes.setWebDriverException;
+import static santos.higor.webdriveracoes.WebDriverAcoes.getWebDriverException;
 
 public class Hook {
-
-    private String descricaoDaFalha() {
-        String motivoDeError;
-        try {
-            motivoDeError = getExceptionAssertionError().getMessage();
-            setExceptionAssertionError(null);
-        } catch (NullPointerException npe) {
-            motivoDeError = getWebDriverException().getMessage();
-            setWebDriverException(null);
-        }
-        return motivoDeError;
-    }
 
     @Before
     public void before(Scenario scenario) {
@@ -56,5 +43,17 @@ public class Hook {
         }
         WebDriverSetup.getDriver().quit();
 
+    }
+
+    private String descricaoDaFalha() {
+        String motivoDeError;
+        try {
+            motivoDeError = getExceptionAssertionError().getMessage();
+            setExceptionAssertionError(null);
+        } catch (NullPointerException npe) {
+            motivoDeError = getWebDriverException().getMessage();
+            setWebDriverException(null);
+        }
+        return motivoDeError;
     }
 }

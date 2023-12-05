@@ -1,21 +1,16 @@
 package santos.higor.validacoes;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.assertj.core.api.Assertions;
 
 public class ValidacaoAssertJ {
 
+    @Getter @Setter
     private static AssertionError exceptionAssertionError;
 
     public ValidacaoAssertJ() {
         exceptionAssertionError = null;
-    }
-
-    public static AssertionError getExceptionAssertionError() {
-        return exceptionAssertionError;
-    }
-
-    public static void setExceptionAssertionError(AssertionError exceptionAssertionError) {
-        ValidacaoAssertJ.exceptionAssertionError = exceptionAssertionError;
     }
 
     /**

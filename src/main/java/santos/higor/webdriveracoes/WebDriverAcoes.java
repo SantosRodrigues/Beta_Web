@@ -1,19 +1,17 @@
 package santos.higor.webdriveracoes;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.openqa.selenium.WebElement;
 
 import java.util.function.Supplier;
-
 public class WebDriverAcoes {
 
+    @Getter @Setter
     private static Exception webDriverException;
 
-    public static Exception getWebDriverException() {
-        return webDriverException;
-    }
-
-    public static void setWebDriverException(Exception webDriverException) {
-        WebDriverAcoes.webDriverException = webDriverException;
+    private WebDriverAcoes(){
+        throw new IllegalStateException("Utility class");
     }
 
     /**

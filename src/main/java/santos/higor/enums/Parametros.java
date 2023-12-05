@@ -1,5 +1,8 @@
 package santos.higor.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum Parametros{
 
     /**
@@ -21,7 +24,4 @@ public enum Parametros{
         this.parametro = parametro;
     }
 
-    public String getParametro() {
-        return parametro;
-    }
 }

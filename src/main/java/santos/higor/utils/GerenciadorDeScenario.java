@@ -1,20 +1,15 @@
 package santos.higor.utils;
 
 import io.cucumber.java.Scenario;
+import lombok.Getter;
+import lombok.Setter;
 
 public class GerenciadorDeScenario {
 
-    public GerenciadorDeScenario (){
-        throw new IllegalStateException("Utility class");
-    }
-
+    @Getter @Setter
     private static Scenario scenario;
 
-    public static void setScenario(Scenario scenario) {
-        GerenciadorDeScenario.scenario = scenario;
-    }
-
-    public static Scenario getScenario() {
-        return scenario;
+    private GerenciadorDeScenario (){
+        throw new IllegalStateException("Utility class");
     }
 }

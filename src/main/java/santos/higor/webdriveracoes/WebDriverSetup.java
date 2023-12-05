@@ -1,5 +1,6 @@
 package santos.higor.webdriveracoes;
 
+import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -12,9 +13,12 @@ import java.time.Duration;
 import static santos.higor.enums.Parametros.*;
 import static santos.higor.properties.VariavelDoSistema.getParametro;
 
+
 public class WebDriverSetup {
 
+    @Getter
     private static WebDriver driver;
+    @Getter
     private static WebDriverWait wait;
 
     private WebDriverSetup() {
@@ -46,13 +50,5 @@ public class WebDriverSetup {
         }
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-    }
-
-    public static WebDriver getDriver() {
-        return driver;
-    }
-
-    public static WebDriverWait getWait() {
-        return wait;
     }
 }
