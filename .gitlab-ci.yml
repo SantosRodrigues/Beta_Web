@@ -72,6 +72,7 @@ teste-integracao:
       "-Dprop.url.amazon=$PROP_URL_AMAZON"
       "-Dprop.path.driver=$PROP_PATH_DRIVER"
       "-Dprop.path.screenShot=$PROP_PATH_CAPTURA_TELA"
+      "-Dcucumber.filter.tags=$TAGS"
   rules:
     - if:
         (
