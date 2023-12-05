@@ -41,8 +41,4 @@ public class VariavelDoSistema {
         }
         return vmoptions;
     }
-
-    public String teste(){
-        return "azul";
-    }
 }
